@@ -1,0 +1,213 @@
+[gd_scene load_steps=49 format=3 uid="uid://drdp1htdylexn"]
+
+[ext_resource type="Texture2D" uid="uid://djgqkr7srugdv" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0200.png" id="1_rlggf"]
+[ext_resource type="Texture2D" uid="uid://d246lfe0wbmfp" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0201.png" id="2_8g8ib"]
+[ext_resource type="Texture2D" uid="uid://cseahio34vfiw" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0202.png" id="3_evhrv"]
+[ext_resource type="Texture2D" uid="uid://cc6r2aouwruff" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0203.png" id="4_ix50p"]
+[ext_resource type="Texture2D" uid="uid://cj6d4vme0crp4" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0204.png" id="5_h4moo"]
+[ext_resource type="Texture2D" uid="uid://ci5450x70bcu6" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0205.png" id="6_yvn8s"]
+[ext_resource type="Texture2D" uid="uid://b2uoeuwenk1ri" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0206.png" id="7_1wpi4"]
+[ext_resource type="Texture2D" uid="uid://bhyoeupog3jfd" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0207.png" id="8_yosni"]
+[ext_resource type="Texture2D" uid="uid://2bt0feavtd7a" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0208.png" id="9_r3gsl"]
+[ext_resource type="Texture2D" uid="uid://c6glti4pu7mxn" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0209.png" id="10_tvnjc"]
+[ext_resource type="Texture2D" uid="uid://do5a41mjomuss" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0210.png" id="11_1acul"]
+[ext_resource type="Texture2D" uid="uid://csd5q04mo36bd" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0211.png" id="12_ql1sc"]
+[ext_resource type="Texture2D" uid="uid://cpcfc17owtxi5" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0212.png" id="13_fbmjx"]
+[ext_resource type="Texture2D" uid="uid://d37cx2gmrqatd" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0213.png" id="14_nkxbt"]
+[ext_resource type="Texture2D" uid="uid://ifhs0xogqae2" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0214.png" id="15_ary7u"]
+[ext_resource type="Texture2D" uid="uid://blen20xxt22pe" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0215.png" id="16_qrrwm"]
+[ext_resource type="Texture2D" uid="uid://6fsfbfw5vir6" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0216.png" id="17_0gc7j"]
+[ext_resource type="Texture2D" uid="uid://d2wfukykutumv" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0217.png" id="18_qni76"]
+[ext_resource type="Texture2D" uid="uid://bm6g42nwnmfi6" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0218.png" id="19_b1hpd"]
+[ext_resource type="Texture2D" uid="uid://ds3iairuop3do" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0219.png" id="20_3hlfd"]
+[ext_resource type="Texture2D" uid="uid://cvf3m7y358ias" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0220.png" id="21_84vin"]
+[ext_resource type="Texture2D" uid="uid://c3wtlnbsfndjg" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0221.png" id="22_iiffa"]
+[ext_resource type="Texture2D" uid="uid://dtg8l0vfaocec" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0222.png" id="23_jqshr"]
+[ext_resource type="Texture2D" uid="uid://bmy0ufg4wcfqs" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0223.png" id="24_retnm"]
+[ext_resource type="Texture2D" uid="uid://brw23p7otjoyl" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0224.png" id="25_kwyvi"]
+[ext_resource type="Texture2D" uid="uid://jkm7ikjijy0q" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0225.png" id="26_suei1"]
+[ext_resource type="Texture2D" uid="uid://bxuyhdkv606np" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0226.png" id="27_we8ar"]
+[ext_resource type="Texture2D" uid="uid://do7jp4s0avyju" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0227.png" id="28_ytxk5"]
+[ext_resource type="Texture2D" uid="uid://c5j3sj4e0pxp6" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0228.png" id="29_uhubb"]
+[ext_resource type="Texture2D" uid="uid://yesclktxqcdb" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0229.png" id="30_lbyox"]
+[ext_resource type="Texture2D" uid="uid://batuktbjd70e4" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0230.png" id="31_x3gc8"]
+[ext_resource type="Texture2D" uid="uid://c7rd53a276t2t" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0231.png" id="32_fwkas"]
+[ext_resource type="Texture2D" uid="uid://cyc7ukck8cjej" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0232.png" id="33_5uytl"]
+[ext_resource type="Texture2D" uid="uid://cdjkyaakyotqx" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0233.png" id="34_ju2h6"]
+[ext_resource type="Texture2D" uid="uid://dkxse2mn6pabm" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0234.png" id="35_b5oum"]
+[ext_resource type="Texture2D" uid="uid://bdro7xvdo615f" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0235.png" id="36_bxntg"]
+[ext_resource type="Texture2D" uid="uid://bqny23bjtjr6t" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0236.png" id="37_0of7k"]
+[ext_resource type="Texture2D" uid="uid://bxmvvlfuaopv2" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0237.png" id="38_gy5q2"]
+[ext_resource type="Texture2D" uid="uid://duqu65by5ivna" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0238.png" id="39_acqio"]
+[ext_resource type="Texture2D" uid="uid://byh2buirju2qy" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0239.png" id="40_htxd7"]
+[ext_resource type="Texture2D" uid="uid://cf8atx7pdpt81" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0240.png" id="41_1ilw2"]
+[ext_resource type="Texture2D" uid="uid://scnibmywmmvs" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0241.png" id="42_yuup7"]
+[ext_resource type="Texture2D" uid="uid://bg07f3eumeadk" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0242.png" id="43_kjc8h"]
+[ext_resource type="Texture2D" uid="uid://cdyth2yno3g6s" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0243.png" id="44_ltkk8"]
+[ext_resource type="Texture2D" uid="uid://badc8ar7khvjj" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0244.png" id="45_k38bi"]
+[ext_resource type="Texture2D" uid="uid://cjlx0ffbihem" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0245.png" id="46_nwvtw"]
+[ext_resource type="Texture2D" uid="uid://c2io62iesrioy" path="res://EW/images/character_select/bg_anim/未命名MSR特选曲目组合包_Vol.0246.png" id="47_iirmp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rlggf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rlggf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8g8ib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_evhrv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ix50p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_h4moo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yvn8s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1wpi4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_yosni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_r3gsl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_tvnjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_1acul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ql1sc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_fbmjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_nkxbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ary7u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_qrrwm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_0gc7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_qni76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_b1hpd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_3hlfd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_84vin")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_iiffa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_jqshr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_retnm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_kwyvi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_suei1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_we8ar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_ytxk5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_uhubb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_lbyox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_x3gc8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_fwkas")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_5uytl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_ju2h6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_b5oum")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_bxntg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_0of7k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_gy5q2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_acqio")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_htxd7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_1ilw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_yuup7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_kjc8h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_ltkk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_k38bi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_nwvtw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_iirmp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
+
+[node name="CharSelectBgEW" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.4, 1.4)
+sprite_frames = SubResource("SpriteFrames_rlggf")
+autoplay = "default"
+frame_progress = 0.882034
+offset = Vector2(960, 440)

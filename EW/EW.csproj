@@ -61,7 +61,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="EW\images\card_portraits\big\" />
       <Folder Include="EW\images\powers\big\" />
       <Folder Include="EW\images\relics\big\" />
       <Folder Include="EW\images\assets\" />

@@ -1,5 +1,6 @@
 ﻿using BaseLib.Abstracts;
 using BaseLib.Utils.NodeFactories;
+using EW.EWCode.Cards;
 using EW.EWCode.Extensions;
 using Godot;
 using MegaCrit.Sts2.Core.Entities.Characters;
@@ -17,14 +18,17 @@ namespace EW.EWCode.Character
         public static readonly Color Color = new("ffffff");
 
         public override string CustomCharacterSelectBg =>
-            "res://scenes/screens/char_sel/char_select_bg_ew.tscn";
+            "res://EW/scenes/screens/char_sel/bg_anim_full.tscn";
 
+        public override string CustomVisualPath =>
+            "res://EW/scenes/character/ew_combat_visual.tscn";
 
         public override Color NameColor => Color;
         public override CharacterGender Gender => CharacterGender.Neutral;
         public override int StartingHp => 90;
 
         public override IEnumerable<CardModel> StartingDeck => [
+            ModelDb.Card<DieZhouJi>(),
             ModelDb.Card<StrikeIronclad>(),
             ModelDb.Card<StrikeIronclad>(),
             ModelDb.Card<StrikeIronclad>(),
@@ -59,9 +63,9 @@ namespace EW.EWCode.Character
                 return icon;
             }
         }
-        public override string CustomIconTexturePath => "立绘_维什戴尔_skin2.png".AssetsPath(); // need 精2立绘
-        public override string CustomCharacterSelectIconPath => "立绘_维什戴尔_skin2.png".AssetsPath(); // need 精2立绘
-        public override string CustomCharacterSelectLockedIconPath => "立绘_维什戴尔_skin2.png".AssetsPath(); // need 精2立绘
-        public override string CustomMapMarkerPath => "立绘_维什戴尔_skin2.png".AssetsPath(); // need 精2立绘
+        public override string CustomIconTexturePath => "大头.png".AssetsPath(); // ingame 左上 小图
+        public override string CustomCharacterSelectIconPath => "半身像3.png".AssetsPath(); // need 精2立绘
+        public override string CustomCharacterSelectLockedIconPath => "半身像3.png".AssetsPath(); // need 精2立绘
+        public override string CustomMapMarkerPath => "大头2.png".AssetsPath(); // 地图标识
     }
 }

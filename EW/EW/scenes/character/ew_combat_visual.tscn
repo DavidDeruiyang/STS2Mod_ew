@@ -1,0 +1,366 @@
+[gd_scene load_steps=80 format=3 uid="uid://sixge4hec2pp"]
+
+[ext_resource type="Texture2D" uid="uid://lbgg1aufykjb" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.101.png" id="1_1t4vt"]
+[ext_resource type="Texture2D" uid="uid://psq7xts85f61" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.102.png" id="2_86edg"]
+[ext_resource type="Texture2D" uid="uid://lgl8384ew5p1" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.103.png" id="3_s2jvv"]
+[ext_resource type="Texture2D" uid="uid://834r5du6v0j2" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.104.png" id="4_ns7so"]
+[ext_resource type="Texture2D" uid="uid://darao3fbkgore" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.105.png" id="5_7o3l1"]
+[ext_resource type="Texture2D" uid="uid://b774i1kfkjesd" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.106.png" id="6_mmdmi"]
+[ext_resource type="Texture2D" uid="uid://cwbtpqc5cy2mi" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.107.png" id="7_8o5td"]
+[ext_resource type="Texture2D" uid="uid://bmrxwv6micx41" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.108.png" id="8_mtvfk"]
+[ext_resource type="Texture2D" uid="uid://blwmwyonxmpc7" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.109.png" id="9_snw26"]
+[ext_resource type="Texture2D" uid="uid://4gifhc3v6hcb" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.110.png" id="10_1w6oj"]
+[ext_resource type="Texture2D" uid="uid://chg50qkay36hc" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.111.png" id="11_bl7uj"]
+[ext_resource type="Texture2D" uid="uid://cqi5l744xju2h" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.112.png" id="12_jongc"]
+[ext_resource type="Texture2D" uid="uid://c6vl8vq4bmwht" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.113.png" id="13_0recn"]
+[ext_resource type="Texture2D" uid="uid://brbrtg8d3anqb" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.114.png" id="14_witok"]
+[ext_resource type="Texture2D" uid="uid://bmd7jqqmss0s2" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.115.png" id="15_xq4nk"]
+[ext_resource type="Texture2D" uid="uid://inlr15x5ql7o" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.116.png" id="16_0xqxb"]
+[ext_resource type="Texture2D" uid="uid://cylsvxgwmsxcl" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.117.png" id="17_kpiu2"]
+[ext_resource type="Texture2D" uid="uid://dlk0dxe0yymx0" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.118.png" id="18_qtya6"]
+[ext_resource type="Texture2D" uid="uid://p5si5hkevgt4" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.119.png" id="19_ow4xy"]
+[ext_resource type="Texture2D" uid="uid://dahv4asn36cak" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.120.png" id="20_bmrjx"]
+[ext_resource type="Texture2D" uid="uid://mr0k1r83xdhq" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.121.png" id="21_djcoe"]
+[ext_resource type="Texture2D" uid="uid://cal4dlsyv1nss" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.122.png" id="22_osfbj"]
+[ext_resource type="Texture2D" uid="uid://c5pq4bx7veunf" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.123.png" id="23_n1twr"]
+[ext_resource type="Texture2D" uid="uid://65wltq6o23j5" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.124.png" id="24_whn4t"]
+[ext_resource type="Texture2D" uid="uid://cvov86pfr5wda" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.125.png" id="25_ged02"]
+[ext_resource type="Texture2D" uid="uid://fdtxeegbxkk6" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.126.png" id="26_pyjyl"]
+[ext_resource type="Texture2D" uid="uid://d2ds0gd0nnoon" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.127.png" id="27_1be6g"]
+[ext_resource type="Texture2D" uid="uid://cna57p3d32pa5" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.128.png" id="28_ycyl3"]
+[ext_resource type="Texture2D" uid="uid://hl6604qqgp3a" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.129.png" id="29_etm7t"]
+[ext_resource type="Texture2D" uid="uid://bh220lxkovrf6" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.130.png" id="30_w5wvq"]
+[ext_resource type="Texture2D" uid="uid://3tocd1y8be64" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.131.png" id="31_p763v"]
+[ext_resource type="Texture2D" uid="uid://bf33e00wmwkf4" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.132.png" id="32_pgg4e"]
+[ext_resource type="Texture2D" uid="uid://ctpfhdtg05a5d" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.133.png" id="33_s6qvp"]
+[ext_resource type="Texture2D" uid="uid://b8lv6jjixfj7a" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.134.png" id="34_o6mff"]
+[ext_resource type="Texture2D" uid="uid://x8r7dvtofdty" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.135.png" id="35_4oh1m"]
+[ext_resource type="Texture2D" uid="uid://dhuc0jxxll2f1" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.136.png" id="36_gh4i0"]
+[ext_resource type="Texture2D" uid="uid://ds48soar3lkb0" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.137.png" id="37_osqks"]
+[ext_resource type="Texture2D" uid="uid://d2ygn64uawh82" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.138.png" id="38_4qhxo"]
+[ext_resource type="Texture2D" uid="uid://bx26w2p060yru" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.139.png" id="39_xfpp6"]
+[ext_resource type="Texture2D" uid="uid://bn5gnf4gh1qmn" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.140.png" id="40_wsy6b"]
+[ext_resource type="Texture2D" uid="uid://bv4ksehy7xbgo" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.141.png" id="41_yfjyp"]
+[ext_resource type="Texture2D" uid="uid://di3rddif0g6e0" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.142.png" id="42_2tb1q"]
+[ext_resource type="Texture2D" uid="uid://bufq8bsys3un7" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.143.png" id="43_ksk2x"]
+[ext_resource type="Texture2D" uid="uid://dcp3hdxk1sdyy" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.144.png" id="44_ct8k2"]
+[ext_resource type="Texture2D" uid="uid://cev5xwxlog2eq" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.145.png" id="45_cdk3p"]
+[ext_resource type="Texture2D" uid="uid://mybm4h2ojke2" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.146.png" id="46_drmva"]
+[ext_resource type="Texture2D" uid="uid://b484ed8dlf1qs" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.147.png" id="47_ql0q1"]
+[ext_resource type="Texture2D" uid="uid://djo8jlan5xnt2" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.148.png" id="48_rmhj1"]
+[ext_resource type="Texture2D" uid="uid://dx1bb4rptv4i3" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.149.png" id="49_ii6hm"]
+[ext_resource type="Texture2D" uid="uid://6alqcctnl4rj" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.150.png" id="50_k3x07"]
+[ext_resource type="Texture2D" uid="uid://e6lpfmwk4y1o" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.151.png" id="51_ielk1"]
+[ext_resource type="Texture2D" uid="uid://c1iik6aavl8kv" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.152.png" id="52_jvynt"]
+[ext_resource type="Texture2D" uid="uid://cy0y5y660s44s" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.153.png" id="53_q5ocj"]
+[ext_resource type="Texture2D" uid="uid://dhel6ge14jsbn" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.154.png" id="54_bcdkf"]
+[ext_resource type="Texture2D" uid="uid://bsi3d3id3jnvi" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.155.png" id="55_akoff"]
+[ext_resource type="Texture2D" uid="uid://cegfybd5c20qh" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.156.png" id="56_lumxk"]
+[ext_resource type="Texture2D" uid="uid://ccweg0jub7qdx" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.157.png" id="57_gnkw5"]
+[ext_resource type="Texture2D" uid="uid://6n533f6qgvew" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.158.png" id="58_gb0wf"]
+[ext_resource type="Texture2D" uid="uid://debm4e5j7dywk" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.159.png" id="59_0xc1i"]
+[ext_resource type="Texture2D" uid="uid://77kx5uypl4y6" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.160.png" id="60_vepwc"]
+[ext_resource type="Texture2D" uid="uid://cr05wsne257ph" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.161.png" id="61_hh8xy"]
+[ext_resource type="Texture2D" uid="uid://c6bw6pnv5l4i1" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.162.png" id="62_goh2l"]
+[ext_resource type="Texture2D" uid="uid://cg1cp4jjufqq3" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.163.png" id="63_sh8ak"]
+[ext_resource type="Texture2D" uid="uid://1sap7vaa68cr" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.164.png" id="64_nqsoq"]
+[ext_resource type="Texture2D" uid="uid://bkkdsii3rwoi1" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.165.png" id="65_6cn52"]
+[ext_resource type="Texture2D" uid="uid://u27d7563pdf1" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.166.png" id="66_pvxio"]
+[ext_resource type="Texture2D" uid="uid://dmxtl8pxd1sid" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.167.png" id="67_t28qf"]
+[ext_resource type="Texture2D" uid="uid://di8mob2j7atwd" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.168.png" id="68_l74cy"]
+[ext_resource type="Texture2D" uid="uid://dx65r4u0dal51" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.169.png" id="69_5di23"]
+[ext_resource type="Texture2D" uid="uid://dy3t2ho4bcirm" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.170.png" id="70_xqkef"]
+[ext_resource type="Texture2D" uid="uid://b86213rvtcqls" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.171.png" id="71_xhlk5"]
+[ext_resource type="Texture2D" uid="uid://cjx84phfckr8x" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.172.png" id="72_d8q1a"]
+[ext_resource type="Texture2D" uid="uid://bm2ulhacgsedx" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.173.png" id="73_6mcw6"]
+[ext_resource type="Texture2D" uid="uid://bjkhcmv368fav" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.174.png" id="74_51p7t"]
+[ext_resource type="Texture2D" uid="uid://br6oewnarousl" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.175.png" id="75_bjvg3"]
+[ext_resource type="Texture2D" uid="uid://d1lmhba2g47au" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.176.png" id="76_g8217"]
+[ext_resource type="Texture2D" uid="uid://kqjebuwld0q0" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.177.png" id="77_eo2ab"]
+[ext_resource type="Texture2D" uid="uid://bh4cgf42sf1ni" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.178.png" id="78_7g5xv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_11isj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1t4vt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_86edg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_s2jvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ns7so")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7o3l1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mmdmi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8o5td")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_mtvfk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_snw26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_1w6oj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_bl7uj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_jongc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_0recn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_witok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_xq4nk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_0xqxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_kpiu2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_qtya6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ow4xy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_bmrjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_djcoe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_osfbj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_n1twr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_whn4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_ged02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_pyjyl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_1be6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_ycyl3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_etm7t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_w5wvq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_p763v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_pgg4e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_s6qvp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_o6mff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_4oh1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_gh4i0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_osqks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_4qhxo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_xfpp6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_wsy6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_yfjyp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_2tb1q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_ksk2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_ct8k2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_cdk3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_drmva")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_ql0q1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_rmhj1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_ii6hm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_k3x07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_ielk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_jvynt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_q5ocj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_bcdkf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_akoff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_lumxk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_gnkw5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_gb0wf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_0xc1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_vepwc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_hh8xy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_goh2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_sh8ak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_nqsoq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_6cn52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_pvxio")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_t28qf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_l74cy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_5di23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_xqkef")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_xhlk5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_d8q1a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_6mcw6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_51p7t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_bjvg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_g8217")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_eo2ab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_7g5xv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 15.0
+}]
+
+[node name="EWCombatVisual" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -891.0
+offset_top = -572.0
+offset_right = -891.0
+offset_bottom = -572.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Visuals" type="Node2D" parent="."]
+position = Vector2(897, 551)
+
+[node name="Body" type="AnimatedSprite2D" parent="Visuals"]
+position = Vector2(-899, -628)
+scale = Vector2(0.65, 0.65)
+sprite_frames = SubResource("SpriteFrames_11isj")
+animation = &"idle"
+autoplay = "idle"
+frame = 44
+frame_progress = 0.39978117
+offset = Vector2(0, -220)
+
+[node name="Bounds" type="Control" parent="."]
+anchors_preset = 0
+offset_left = -120.0
+offset_top = -290.0
+offset_right = 120.0
+offset_bottom = 30.0
+
+[node name="IntentPosition" type="Marker2D" parent="."]
+position = Vector2(0, -400)
+
+[node name="CenterPos" type="Marker2D" parent="."]
+position = Vector2(0, -150)
+
+[node name="TalkPos" type="Marker2D" parent="."]
+position = Vector2(77, -192)
+
+[node name="OrbPos" type="Marker2D" parent="."]
+position = Vector2(-1, -398)

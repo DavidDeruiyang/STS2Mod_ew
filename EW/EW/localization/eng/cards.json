@@ -1,3 +1,5 @@
 {
-  
+  "EW-DIE_ZHOU_JI.title": "爹肘击",
+  "EW-DIE_ZHOU_JI.description": "好大雷造成 {Damage:diff()} 伤害.",
+  "EW-DIE_ZHOU_JI.upgradeDescription": "好大雷造成 {Damage:diff()} 伤害."
 }

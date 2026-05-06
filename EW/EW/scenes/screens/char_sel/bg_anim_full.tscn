@@ -1,0 +1,765 @@
+[gd_scene load_steps=187 format=3 uid="uid://dcvvegdvvam7j"]
+
+[ext_resource type="Texture2D" uid="uid://cicprhhqkpcyb" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02000.png" id="1_ths0n"]
+[ext_resource type="Texture2D" uid="uid://c4n4mdnheryhj" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02001.png" id="2_2dbt1"]
+[ext_resource type="Texture2D" uid="uid://rdcx74pcfpgw" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02002.png" id="3_uw0it"]
+[ext_resource type="Texture2D" uid="uid://q05jbm2lyf21" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02003.png" id="4_gpcu4"]
+[ext_resource type="Texture2D" uid="uid://bmx5twhsnwisr" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02004.png" id="5_b0kwr"]
+[ext_resource type="Texture2D" uid="uid://diddjk3j5mgbu" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02005.png" id="6_u8l7l"]
+[ext_resource type="Texture2D" uid="uid://c4uqh82thdkgt" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02006.png" id="7_jppjw"]
+[ext_resource type="Texture2D" uid="uid://b0ttv6xjashjb" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02007.png" id="8_p433l"]
+[ext_resource type="Texture2D" uid="uid://b83rk4lpj30uu" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02008.png" id="9_tydyn"]
+[ext_resource type="Texture2D" uid="uid://cwindvjow2562" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02009.png" id="10_d8m1p"]
+[ext_resource type="Texture2D" uid="uid://c16t2fmrhagm3" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02010.png" id="11_riqi8"]
+[ext_resource type="Texture2D" uid="uid://14ltjmq32l8e" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02011.png" id="12_js2qj"]
+[ext_resource type="Texture2D" uid="uid://b4rxqrsk4fxmq" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02012.png" id="13_h267i"]
+[ext_resource type="Texture2D" uid="uid://c5vs3btut608g" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02013.png" id="14_xi787"]
+[ext_resource type="Texture2D" uid="uid://c6miaw8g6yoff" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02014.png" id="15_n4c7m"]
+[ext_resource type="Texture2D" uid="uid://b43r7bnpsgsju" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02015.png" id="16_weino"]
+[ext_resource type="Texture2D" uid="uid://dpe55u35l5kue" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02016.png" id="17_w2wgy"]
+[ext_resource type="Texture2D" uid="uid://c1dnyfwdhog0k" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02017.png" id="18_int52"]
+[ext_resource type="Texture2D" uid="uid://b42brr4qm2c7v" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02018.png" id="19_fvurm"]
+[ext_resource type="Texture2D" uid="uid://bnei1bsx6eif8" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02019.png" id="20_rhl7u"]
+[ext_resource type="Texture2D" uid="uid://cwypa175vh44n" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02020.png" id="21_dd1fe"]
+[ext_resource type="Texture2D" uid="uid://djxaih8vqujwf" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02021.png" id="22_6gnd5"]
+[ext_resource type="Texture2D" uid="uid://8k8x0ghcvi0a" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02022.png" id="23_uifux"]
+[ext_resource type="Texture2D" uid="uid://c62mumt3jkpmt" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02023.png" id="24_244pt"]
+[ext_resource type="Texture2D" uid="uid://bamecdb6pj70a" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02024.png" id="25_ylcmq"]
+[ext_resource type="Texture2D" uid="uid://cw5h61bo6qe6" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02025.png" id="26_g778n"]
+[ext_resource type="Texture2D" uid="uid://cgogg0l0b5xmr" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02026.png" id="27_svuit"]
+[ext_resource type="Texture2D" uid="uid://b8fqpcctdf0bf" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02027.png" id="28_alyyf"]
+[ext_resource type="Texture2D" uid="uid://cslmkud68xmhi" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02028.png" id="29_gspai"]
+[ext_resource type="Texture2D" uid="uid://e1j70mjs72i0" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02029.png" id="30_jg05j"]
+[ext_resource type="Texture2D" uid="uid://dlxnm1c23sxjo" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02030.png" id="31_b7acf"]
+[ext_resource type="Texture2D" uid="uid://cbdlgyr7wqvo7" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02031.png" id="32_wbd4h"]
+[ext_resource type="Texture2D" uid="uid://dqjysnyx63h0o" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02032.png" id="33_doo3x"]
+[ext_resource type="Texture2D" uid="uid://c37d4lbdff84m" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02033.png" id="34_a002l"]
+[ext_resource type="Texture2D" uid="uid://cl5ywctj04h73" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02034.png" id="35_darad"]
+[ext_resource type="Texture2D" uid="uid://hjb4iwi2ae77" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02035.png" id="36_1v4k5"]
+[ext_resource type="Texture2D" uid="uid://d0j5hxq40uw6d" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02036.png" id="37_4w4on"]
+[ext_resource type="Texture2D" uid="uid://jcicrfmoqau3" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02037.png" id="38_dtwqc"]
+[ext_resource type="Texture2D" uid="uid://b0wgw8cp0xaeh" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02038.png" id="39_ema2t"]
+[ext_resource type="Texture2D" uid="uid://7wvhu6qqqufv" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02039.png" id="40_ad3y3"]
+[ext_resource type="Texture2D" uid="uid://jppx8m1q1ej6" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02040.png" id="41_dqpf6"]
+[ext_resource type="Texture2D" uid="uid://cwbxllml87k0u" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02041.png" id="42_3ck8j"]
+[ext_resource type="Texture2D" uid="uid://cav8idjexkkrc" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02042.png" id="43_5pl4w"]
+[ext_resource type="Texture2D" uid="uid://ca3baga2mxwaa" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02043.png" id="44_ata1i"]
+[ext_resource type="Texture2D" uid="uid://b0cxhidgbjcpr" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02044.png" id="45_53xkt"]
+[ext_resource type="Texture2D" uid="uid://ds2upqjuy8bqd" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02045.png" id="46_6dawb"]
+[ext_resource type="Texture2D" uid="uid://bx581vnb4fiou" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02046.png" id="47_ky8ya"]
+[ext_resource type="Texture2D" uid="uid://dyqkas04bjh8p" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02047.png" id="48_kuava"]
+[ext_resource type="Texture2D" uid="uid://bhtjxo44frvbk" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02048.png" id="49_t444a"]
+[ext_resource type="Texture2D" uid="uid://clhmtjnta8vil" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02049.png" id="50_j1ie5"]
+[ext_resource type="Texture2D" uid="uid://dop710f3ivmgg" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02050.png" id="51_rhxas"]
+[ext_resource type="Texture2D" uid="uid://ddmhn8k2ux17d" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02051.png" id="52_mrug0"]
+[ext_resource type="Texture2D" uid="uid://bryadkyyxslx4" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02052.png" id="53_ps4cc"]
+[ext_resource type="Texture2D" uid="uid://kya3sxhvcxaf" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02053.png" id="54_o5ape"]
+[ext_resource type="Texture2D" uid="uid://ct013w2iyr3ko" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02054.png" id="55_kjs1s"]
+[ext_resource type="Texture2D" uid="uid://duaa2qoh3tk5y" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02055.png" id="56_xpeqq"]
+[ext_resource type="Texture2D" uid="uid://cxjoq3ng31fvi" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02056.png" id="57_seg11"]
+[ext_resource type="Texture2D" uid="uid://m25vfge2gcsd" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02057.png" id="58_0okpf"]
+[ext_resource type="Texture2D" uid="uid://bqkrwipofmpco" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02058.png" id="59_0vqb6"]
+[ext_resource type="Texture2D" uid="uid://djmihq67mxds7" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02059.png" id="60_tle8c"]
+[ext_resource type="Texture2D" uid="uid://c0wgi2cuce0sg" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02060.png" id="61_ucb11"]
+[ext_resource type="Texture2D" uid="uid://b85a424sf3uc4" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02061.png" id="62_m6ajd"]
+[ext_resource type="Texture2D" uid="uid://qlnil5yonoi" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02062.png" id="63_m6moa"]
+[ext_resource type="Texture2D" uid="uid://ua3nkellt4tq" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02063.png" id="64_mcjvv"]
+[ext_resource type="Texture2D" uid="uid://ccxlcsncs8qaj" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02064.png" id="65_qw8h6"]
+[ext_resource type="Texture2D" uid="uid://cba5fjlexln0k" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02065.png" id="66_a3j41"]
+[ext_resource type="Texture2D" uid="uid://bb0ktdj14b36" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02066.png" id="67_pvyxu"]
+[ext_resource type="Texture2D" uid="uid://1bshxjhalhhl" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02067.png" id="68_x02ki"]
+[ext_resource type="Texture2D" uid="uid://c51haduy5wpl7" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02068.png" id="69_r4vbt"]
+[ext_resource type="Texture2D" uid="uid://c4bixe6010pg2" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02069.png" id="70_uu3lj"]
+[ext_resource type="Texture2D" uid="uid://ci6wvli7f43yv" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02070.png" id="71_durv6"]
+[ext_resource type="Texture2D" uid="uid://ln3106qqw5mj" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02071.png" id="72_vd8ih"]
+[ext_resource type="Texture2D" uid="uid://bxit3o0vhsghb" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02072.png" id="73_jl1po"]
+[ext_resource type="Texture2D" uid="uid://clg1evruv6fdm" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02073.png" id="74_ichte"]
+[ext_resource type="Texture2D" uid="uid://ccwxmemk23cah" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02074.png" id="75_16wlk"]
+[ext_resource type="Texture2D" uid="uid://bwr7pq1vkno80" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02075.png" id="76_g4pqv"]
+[ext_resource type="Texture2D" uid="uid://dhirpxyelqtb5" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02076.png" id="77_2dvw4"]
+[ext_resource type="Texture2D" uid="uid://cx7qufnb4nm24" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02077.png" id="78_s1uow"]
+[ext_resource type="Texture2D" uid="uid://c2n6chphyrepw" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02078.png" id="79_waqp0"]
+[ext_resource type="Texture2D" uid="uid://b87636jefdt46" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02079.png" id="80_4h1v1"]
+[ext_resource type="Texture2D" uid="uid://bsmn8q4rhs2r7" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02080.png" id="81_fr02u"]
+[ext_resource type="Texture2D" uid="uid://c3sjfbfqqm3r2" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02081.png" id="82_65m3v"]
+[ext_resource type="Texture2D" uid="uid://5tmubyspljcl" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02082.png" id="83_ystd8"]
+[ext_resource type="Texture2D" uid="uid://c6fsslfqa6c3x" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02083.png" id="84_ywlav"]
+[ext_resource type="Texture2D" uid="uid://dekqbff4tuydw" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02084.png" id="85_fvlij"]
+[ext_resource type="Texture2D" uid="uid://vsrpkfwamfks" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02085.png" id="86_ir1dt"]
+[ext_resource type="Texture2D" uid="uid://ch4snd8y6ekl" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02086.png" id="87_7by54"]
+[ext_resource type="Texture2D" uid="uid://qyw0dhh72mg3" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02087.png" id="88_6ef56"]
+[ext_resource type="Texture2D" uid="uid://buxiuylyx6pd5" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02088.png" id="89_xg4b4"]
+[ext_resource type="Texture2D" uid="uid://b2u1hv5wo4h21" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02089.png" id="90_smlkr"]
+[ext_resource type="Texture2D" uid="uid://bvdbsbdtug33l" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02090.png" id="91_472ac"]
+[ext_resource type="Texture2D" uid="uid://dk7x5tuxhwf0n" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02091.png" id="92_fdwvx"]
+[ext_resource type="Texture2D" uid="uid://dtsnahrvqjs3i" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02092.png" id="93_o6cg6"]
+[ext_resource type="Texture2D" uid="uid://bx3kwll7ms3ci" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02093.png" id="94_5wckg"]
+[ext_resource type="Texture2D" uid="uid://cxaodx5ictmhe" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02094.png" id="95_0dsdd"]
+[ext_resource type="Texture2D" uid="uid://rjt1r3al42xy" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02095.png" id="96_k8ub0"]
+[ext_resource type="Texture2D" uid="uid://mi05hie7uin8" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02096.png" id="97_tlmhy"]
+[ext_resource type="Texture2D" uid="uid://c3kurbajp2fgx" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02097.png" id="98_a1tdm"]
+[ext_resource type="Texture2D" uid="uid://c4j5mhdd224pd" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02098.png" id="99_d6dh5"]
+[ext_resource type="Texture2D" uid="uid://c21m12lg5uers" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02099.png" id="100_l8l4j"]
+[ext_resource type="Texture2D" uid="uid://dpxdkawo1ryys" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02100.png" id="101_q4b01"]
+[ext_resource type="Texture2D" uid="uid://cr73oimp5y5n1" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02101.png" id="102_qi0m3"]
+[ext_resource type="Texture2D" uid="uid://clwd4334equ5o" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02102.png" id="103_pga8d"]
+[ext_resource type="Texture2D" uid="uid://b5tnwskrbrinv" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02103.png" id="104_bjucl"]
+[ext_resource type="Texture2D" uid="uid://ccr8rks4suqx4" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02104.png" id="105_mcirs"]
+[ext_resource type="Texture2D" uid="uid://dnso1sthkroo" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02105.png" id="106_7y3nw"]
+[ext_resource type="Texture2D" uid="uid://bfucbskemijps" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02106.png" id="107_v3jnq"]
+[ext_resource type="Texture2D" uid="uid://djyg6027pujyw" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02107.png" id="108_mcjl4"]
+[ext_resource type="Texture2D" uid="uid://cmr1df2pvhmds" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02108.png" id="109_8ql1r"]
+[ext_resource type="Texture2D" uid="uid://bccbdhxc4pxum" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02109.png" id="110_0a767"]
+[ext_resource type="Texture2D" uid="uid://b714dxlj5hvv" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02110.png" id="111_0o7s4"]
+[ext_resource type="Texture2D" uid="uid://f1dpgqlpymka" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02111.png" id="112_ixsdx"]
+[ext_resource type="Texture2D" uid="uid://cdwd17v3ixa3y" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02112.png" id="113_86g4j"]
+[ext_resource type="Texture2D" uid="uid://dme86g2p8p523" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02113.png" id="114_gm3mw"]
+[ext_resource type="Texture2D" uid="uid://jc2hmxrba8u" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02114.png" id="115_37bjs"]
+[ext_resource type="Texture2D" uid="uid://bkv2f711menx0" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02115.png" id="116_if7y4"]
+[ext_resource type="Texture2D" uid="uid://dpcoetudgdqal" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02116.png" id="117_vx8xi"]
+[ext_resource type="Texture2D" uid="uid://dp5mo7ytrhehd" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02117.png" id="118_67ex4"]
+[ext_resource type="Texture2D" uid="uid://cjos5bnj43rfm" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02118.png" id="119_pmp7t"]
+[ext_resource type="Texture2D" uid="uid://b3trrjhfkfayn" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02119.png" id="120_soyt3"]
+[ext_resource type="Texture2D" uid="uid://dslkahcnl1784" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02120.png" id="121_d05bp"]
+[ext_resource type="Texture2D" uid="uid://c24f48uatxo06" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02121.png" id="122_steee"]
+[ext_resource type="Texture2D" uid="uid://cf5a0swul51hu" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02122.png" id="123_djox2"]
+[ext_resource type="Texture2D" uid="uid://du8c3eovcmmyo" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02123.png" id="124_g2w1f"]
+[ext_resource type="Texture2D" uid="uid://bjgpurd5uy2f6" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02124.png" id="125_kvyuw"]
+[ext_resource type="Texture2D" uid="uid://dtut8ya45pwtk" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02125.png" id="126_abrjy"]
+[ext_resource type="Texture2D" uid="uid://cntdmgvasy412" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02126.png" id="127_ff3qi"]
+[ext_resource type="Texture2D" uid="uid://d1pttjv5uvmg0" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02127.png" id="128_rmcgn"]
+[ext_resource type="Texture2D" uid="uid://grr0jfn8tpur" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02128.png" id="129_wujo3"]
+[ext_resource type="Texture2D" uid="uid://psoheu6gmts" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02129.png" id="130_kqghq"]
+[ext_resource type="Texture2D" uid="uid://dw4qswlevu12h" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02130.png" id="131_044bl"]
+[ext_resource type="Texture2D" uid="uid://b26k0ns5x58q1" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02131.png" id="132_xhgfp"]
+[ext_resource type="Texture2D" uid="uid://bihj7loefoxg0" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02132.png" id="133_cir57"]
+[ext_resource type="Texture2D" uid="uid://dlohegagyg80c" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02133.png" id="134_lmlg5"]
+[ext_resource type="Texture2D" uid="uid://bolgec3ebdtn1" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02134.png" id="135_cjdjj"]
+[ext_resource type="Texture2D" uid="uid://b1dx13vosm4dr" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02135.png" id="136_i41sp"]
+[ext_resource type="Texture2D" uid="uid://2iwhpd8pl1jo" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02136.png" id="137_n8tto"]
+[ext_resource type="Texture2D" uid="uid://wi4n7r8djd5v" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02137.png" id="138_84ihm"]
+[ext_resource type="Texture2D" uid="uid://bo1765yidwlum" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02138.png" id="139_m577o"]
+[ext_resource type="Texture2D" uid="uid://h3joxi6wq3ap" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02139.png" id="140_6nc0o"]
+[ext_resource type="Texture2D" uid="uid://tn3wu1eghikt" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02140.png" id="141_gi2b3"]
+[ext_resource type="Texture2D" uid="uid://btdfgjbjh8rdo" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02141.png" id="142_dgqla"]
+[ext_resource type="Texture2D" uid="uid://dkmv83kkk73cb" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02142.png" id="143_fvym8"]
+[ext_resource type="Texture2D" uid="uid://ixlwl1nas3kk" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02143.png" id="144_o6fnp"]
+[ext_resource type="Texture2D" uid="uid://wfxy3xfbe33f" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02144.png" id="145_riay5"]
+[ext_resource type="Texture2D" uid="uid://csdkip7q8sdeq" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02145.png" id="146_xyab2"]
+[ext_resource type="Texture2D" uid="uid://trx7kogs5qor" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02146.png" id="147_vf1ne"]
+[ext_resource type="Texture2D" uid="uid://bcdtk6b338yr8" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02147.png" id="148_s6j8v"]
+[ext_resource type="Texture2D" uid="uid://2mvoxx3n8uve" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02148.png" id="149_b12qy"]
+[ext_resource type="Texture2D" uid="uid://cou3hnlom8d3" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02149.png" id="150_n1j4h"]
+[ext_resource type="Texture2D" uid="uid://c1otsnia8y0br" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02150.png" id="151_syufm"]
+[ext_resource type="Texture2D" uid="uid://6mscxtg8jas8" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02151.png" id="152_ec36u"]
+[ext_resource type="Texture2D" uid="uid://lqvp88ovhtx1" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02152.png" id="153_r0756"]
+[ext_resource type="Texture2D" uid="uid://5yhbnkgyjjl5" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02153.png" id="154_qjbk4"]
+[ext_resource type="Texture2D" uid="uid://dk1idp3xke56i" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02154.png" id="155_parwx"]
+[ext_resource type="Texture2D" uid="uid://d2bq10wqutnha" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02155.png" id="156_lc1pd"]
+[ext_resource type="Texture2D" uid="uid://yusgvpblgjcw" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02156.png" id="157_f3uhr"]
+[ext_resource type="Texture2D" uid="uid://blrsiada3v7a4" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02157.png" id="158_pw20s"]
+[ext_resource type="Texture2D" uid="uid://dftbtov43m1qp" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02158.png" id="159_gswpe"]
+[ext_resource type="Texture2D" uid="uid://xwmtk7aun2af" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02159.png" id="160_2kmo1"]
+[ext_resource type="Texture2D" uid="uid://c1yq0c7bqnchs" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02160.png" id="161_04vwp"]
+[ext_resource type="Texture2D" uid="uid://co8lmxaxsbye3" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02161.png" id="162_w7bhh"]
+[ext_resource type="Texture2D" uid="uid://vo3ku0opx50" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02162.png" id="163_2xsur"]
+[ext_resource type="Texture2D" uid="uid://xk0o1y3nsc3x" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02163.png" id="164_hjgbs"]
+[ext_resource type="Texture2D" uid="uid://cf7bg63kse4sj" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02164.png" id="165_o81yg"]
+[ext_resource type="Texture2D" uid="uid://byjgbmfs18o46" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02165.png" id="166_mv56q"]
+[ext_resource type="Texture2D" uid="uid://cy8sxne3d1tfp" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02166.png" id="167_3qq5y"]
+[ext_resource type="Texture2D" uid="uid://rcixxqwsicmh" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02167.png" id="168_i4e61"]
+[ext_resource type="Texture2D" uid="uid://85plrmwl5e6u" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02168.png" id="169_iw2lk"]
+[ext_resource type="Texture2D" uid="uid://b32e0sd2rlcde" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02169.png" id="170_wek6y"]
+[ext_resource type="Texture2D" uid="uid://bhu40usfxdgqk" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02170.png" id="171_keuvj"]
+[ext_resource type="Texture2D" uid="uid://bra20xph6d86l" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02171.png" id="172_8xye2"]
+[ext_resource type="Texture2D" uid="uid://cl4osq5wggvpm" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02172.png" id="173_mxix2"]
+[ext_resource type="Texture2D" uid="uid://1leaywrjg0tf" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02173.png" id="174_trxn7"]
+[ext_resource type="Texture2D" uid="uid://kd6lmv17sydi" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02174.png" id="175_f6gi6"]
+[ext_resource type="Texture2D" uid="uid://dvoyv7n5dg6j0" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02175.png" id="176_svd2u"]
+[ext_resource type="Texture2D" uid="uid://cv8gurcnbwnx8" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02176.png" id="177_mipjo"]
+[ext_resource type="Texture2D" uid="uid://b7jo73lrngs60" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02177.png" id="178_rcutk"]
+[ext_resource type="Texture2D" uid="uid://by7wurp26s3vs" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02178.png" id="179_x20qr"]
+[ext_resource type="Texture2D" uid="uid://csjushiywcrf4" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02179.png" id="180_t7dmj"]
+[ext_resource type="Texture2D" uid="uid://c4dm8kh31lhe" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02180.png" id="181_8h1el"]
+[ext_resource type="Texture2D" uid="uid://davpluy4744hc" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02181.png" id="182_rss0p"]
+[ext_resource type="Texture2D" uid="uid://cg6g61cojmdw2" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02182.png" id="183_dat8u"]
+[ext_resource type="Texture2D" uid="uid://cqe2wqtqacd4i" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02183.png" id="184_r3vfa"]
+[ext_resource type="Texture2D" uid="uid://jxniqgxyh6mt" path="res://EW/images/character_select/bg_anim_full/未命名MSR特选曲目组合包_Vol.02184.png" id="185_d0mw2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_43o0e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ths0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2dbt1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uw0it")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gpcu4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_b0kwr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_u8l7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jppjw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_p433l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tydyn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_d8m1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_riqi8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_js2qj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_h267i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_xi787")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_n4c7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_weino")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_w2wgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_int52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_fvurm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_rhl7u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_dd1fe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_6gnd5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_uifux")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_244pt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_ylcmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_g778n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_svuit")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_alyyf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_gspai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_jg05j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_b7acf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_wbd4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_doo3x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_a002l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_darad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_1v4k5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_4w4on")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_dtwqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_ema2t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_ad3y3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_dqpf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_3ck8j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_5pl4w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_ata1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_53xkt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_6dawb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_ky8ya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_kuava")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_t444a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_j1ie5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_rhxas")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_mrug0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_ps4cc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_o5ape")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_kjs1s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_xpeqq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_seg11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_0okpf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_0vqb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_tle8c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_ucb11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_m6ajd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_m6moa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_mcjvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_qw8h6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_a3j41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_pvyxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_x02ki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_r4vbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_uu3lj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_durv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_vd8ih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_jl1po")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_ichte")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_16wlk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_g4pqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_2dvw4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_s1uow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_waqp0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_4h1v1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_fr02u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_65m3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_ystd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_ywlav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_fvlij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_ir1dt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_7by54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_6ef56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_xg4b4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_smlkr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_472ac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_fdwvx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_o6cg6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_5wckg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_0dsdd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_k8ub0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_tlmhy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_a1tdm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_d6dh5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_l8l4j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_q4b01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_qi0m3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_pga8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_bjucl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_mcirs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_7y3nw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_v3jnq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_mcjl4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_8ql1r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_0a767")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_0o7s4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_ixsdx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_86g4j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_gm3mw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_37bjs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_if7y4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_vx8xi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118_67ex4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_pmp7t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120_soyt3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121_d05bp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_steee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("123_djox2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124_g2w1f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125_kvyuw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126_abrjy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("127_ff3qi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("128_rmcgn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129_wujo3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_kqghq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131_044bl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("132_xhgfp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("133_cir57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_lmlg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("135_cjdjj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("136_i41sp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("137_n8tto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("138_84ihm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("139_m577o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("140_6nc0o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141_gi2b3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("142_dgqla")
+}, {
+"duration": 1.0,
+"texture": ExtResource("143_fvym8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("144_o6fnp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("145_riay5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("146_xyab2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("147_vf1ne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("148_s6j8v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("149_b12qy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("150_n1j4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("151_syufm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("152_ec36u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("153_r0756")
+}, {
+"duration": 1.0,
+"texture": ExtResource("154_qjbk4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("155_parwx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("156_lc1pd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("157_f3uhr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("158_pw20s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_gswpe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("160_2kmo1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161_04vwp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("162_w7bhh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("163_2xsur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_hjgbs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("165_o81yg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("166_mv56q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("167_3qq5y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("168_i4e61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("169_iw2lk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("170_wek6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("171_keuvj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("172_8xye2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("173_mxix2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("174_trxn7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175_f6gi6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("176_svd2u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("177_mipjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("178_rcutk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("179_x20qr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("180_t7dmj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("181_8h1el")
+}, {
+"duration": 1.0,
+"texture": ExtResource("182_rss0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("183_dat8u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("184_r3vfa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("185_d0mw2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_43o0e")
+autoplay = "default"
+frame_progress = 0.6178999
+offset = Vector2(550, 253)
