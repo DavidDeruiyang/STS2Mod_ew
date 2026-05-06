@@ -66,7 +66,11 @@ namespace EW.EWCode.Extensions
 
         public static string CharacterUiPath(this string path)
         {
-            return Path.Join(MainFile.ResPath, "images", "charui", path);
+            return Path.Join(MainFile.ResPath, "images", "character_ui", path);
+        }
+        public static string AssetsPath(this string path)
+        {
+            return Path.Join(MainFile.ResPath, "images", "assets", path);
         }
     }
 }

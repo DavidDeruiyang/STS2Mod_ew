@@ -6,14 +6,19 @@ using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Relics;
+using MegaCrit.Sts2.Core.Nodes.Combat;
 
 namespace EW.EWCode.Character
 {
     public class EW : PlaceholderCharacterModel
     {
-        public const string CharacterId = "EW";
+        public const string CharacterId = "维什戴尔";
 
         public static readonly Color Color = new("ffffff");
+
+        public override string CustomCharacterSelectBg =>
+            "res://scenes/screens/char_sel/char_select_bg_ew.tscn";
+
 
         public override Color NameColor => Color;
         public override CharacterGender Gender => CharacterGender.Neutral;
@@ -54,9 +59,9 @@ namespace EW.EWCode.Character
                 return icon;
             }
         }
-        public override string CustomIconTexturePath => "character_icon_char_name.png".CharacterUiPath();
-        public override string CustomCharacterSelectIconPath => "char_select_char_name.png".CharacterUiPath();
-        public override string CustomCharacterSelectLockedIconPath => "char_select_char_name_locked.png".CharacterUiPath();
-        public override string CustomMapMarkerPath => "map_marker_char_name.png".CharacterUiPath();
+        public override string CustomIconTexturePath => "立绘_维什戴尔_skin2.png".AssetsPath(); // need 精2立绘
+        public override string CustomCharacterSelectIconPath => "立绘_维什戴尔_skin2.png".AssetsPath(); // need 精2立绘
+        public override string CustomCharacterSelectLockedIconPath => "立绘_维什戴尔_skin2.png".AssetsPath(); // need 精2立绘
+        public override string CustomMapMarkerPath => "立绘_维什戴尔_skin2.png".AssetsPath(); // need 精2立绘
     }
 }
