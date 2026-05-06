@@ -1,3 +1,16 @@
 {
-  
+  "EW-E_W.title": "The EW",
+  "EW-E_W.titleObject": "The EW",
+  "EW-E_W.description": "A new custom character.",
+  "EW-E_W.pronounObject": "them",
+  "EW-E_W.possessiveAdjective": "their",
+  "EW-E_W.pronounPossessive": "theirs",
+  "EW-E_W.pronounSubject": "they",
+  "EW-E_W.goldMonologue": "Shiny.",
+  "EW-E_W.eventDeathPrevention": "Not yet.",
+  "EW-E_W.aromaPrinciple": "A strange aroma surrounds them.",
+  "EW-E_W.cardsModifierTitle": "EW Cards",
+  "EW-E_W.cardsModifierDescription": "EW cards will now appear in rewards and shops.",
+  "EW-E_W.banter.alive.endTurnPing": "End your turn.",
+  "EW-E_W.banter.dead.endTurnPing": "End your turn."
 }
