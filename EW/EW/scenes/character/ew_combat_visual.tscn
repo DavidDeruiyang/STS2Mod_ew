@@ -1,65 +1,126 @@
-[gd_scene load_steps=80 format=3 uid="uid://sixge4hec2pp"]
+[gd_scene load_steps=170 format=3 uid="uid://sixge4hec2pp"]
 
 [ext_resource type="Texture2D" uid="uid://lbgg1aufykjb" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.101.png" id="1_1t4vt"]
+[ext_resource type="Texture2D" uid="uid://bjkkhchsoxy3p" path="res://EW/images/character_combat/attack/未命名维什戴尔-默认-正面-Attack_C-x100.png" id="1_wlxv4"]
+[ext_resource type="Texture2D" uid="uid://bo6db5c0cf74o" path="res://EW/images/character_combat/attack/未命名维什戴尔-默认-正面-Attack_C-x101.png" id="2_52ev0"]
 [ext_resource type="Texture2D" uid="uid://psq7xts85f61" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.102.png" id="2_86edg"]
+[ext_resource type="Texture2D" uid="uid://dqxxks67hlvvx" path="res://EW/images/character_combat/attack/未命名维什戴尔-默认-正面-Attack_C-x102.png" id="3_gmk1m"]
 [ext_resource type="Texture2D" uid="uid://lgl8384ew5p1" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.103.png" id="3_s2jvv"]
+[ext_resource type="Texture2D" uid="uid://cllhlpvwcnab2" path="res://EW/images/character_combat/attack/未命名维什戴尔-默认-正面-Attack_C-x103.png" id="4_k72me"]
 [ext_resource type="Texture2D" uid="uid://834r5du6v0j2" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.104.png" id="4_ns7so"]
 [ext_resource type="Texture2D" uid="uid://darao3fbkgore" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.105.png" id="5_7o3l1"]
+[ext_resource type="Texture2D" uid="uid://nc8ng6c0kfke" path="res://EW/images/character_combat/attack/未命名维什戴尔-默认-正面-Attack_C-x104.png" id="5_62rjv"]
 [ext_resource type="Texture2D" uid="uid://b774i1kfkjesd" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.106.png" id="6_mmdmi"]
+[ext_resource type="Texture2D" uid="uid://cpv8h738iani1" path="res://EW/images/character_combat/attack/未命名维什戴尔-默认-正面-Attack_C-x105.png" id="6_wpf8r"]
 [ext_resource type="Texture2D" uid="uid://cwbtpqc5cy2mi" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.107.png" id="7_8o5td"]
+[ext_resource type="Texture2D" uid="uid://csa2plpk6k1w6" path="res://EW/images/character_combat/attack/未命名维什戴尔-默认-正面-Attack_C-x106.png" id="7_61j5r"]
 [ext_resource type="Texture2D" uid="uid://bmrxwv6micx41" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.108.png" id="8_mtvfk"]
+[ext_resource type="Texture2D" uid="uid://b4wudaxyhjbip" path="res://EW/images/character_combat/attack/未命名维什戴尔-默认-正面-Attack_C-x107.png" id="8_rxslj"]
+[ext_resource type="Texture2D" uid="uid://dna0p5bepi075" path="res://EW/images/character_combat/attack/未命名维什戴尔-默认-正面-Attack_C-x108.png" id="9_jgvkp"]
 [ext_resource type="Texture2D" uid="uid://blwmwyonxmpc7" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.109.png" id="9_snw26"]
 [ext_resource type="Texture2D" uid="uid://4gifhc3v6hcb" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.110.png" id="10_1w6oj"]
+[ext_resource type="Texture2D" uid="uid://b0ypc1ry60ni2" path="res://EW/images/character_combat/attack/未命名维什戴尔-默认-正面-Attack_C-x109.png" id="10_flmu5"]
 [ext_resource type="Texture2D" uid="uid://chg50qkay36hc" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.111.png" id="11_bl7uj"]
+[ext_resource type="Texture2D" uid="uid://bk5ponp0h745x" path="res://EW/images/character_combat/attack/未命名维什戴尔-默认-正面-Attack_C-x110.png" id="11_w5af3"]
+[ext_resource type="Texture2D" uid="uid://buowpcrub62ms" path="res://EW/images/character_combat/attack/未命名维什戴尔-默认-正面-Attack_C-x111.png" id="12_gijg5"]
 [ext_resource type="Texture2D" uid="uid://cqi5l744xju2h" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.112.png" id="12_jongc"]
 [ext_resource type="Texture2D" uid="uid://c6vl8vq4bmwht" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.113.png" id="13_0recn"]
+[ext_resource type="Texture2D" uid="uid://b0vkw3hd5gcli" path="res://EW/images/character_combat/attack/未命名维什戴尔-默认-正面-Attack_C-x112.png" id="13_eoiwa"]
+[ext_resource type="Texture2D" uid="uid://bt45hcaxt2y76" path="res://EW/images/character_combat/attack/未命名维什戴尔-默认-正面-Attack_C-x113.png" id="14_dcdry"]
 [ext_resource type="Texture2D" uid="uid://brbrtg8d3anqb" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.114.png" id="14_witok"]
+[ext_resource type="Texture2D" uid="uid://nkljbu5edrs" path="res://EW/images/character_combat/attack/未命名维什戴尔-默认-正面-Attack_C-x114.png" id="15_t32do"]
 [ext_resource type="Texture2D" uid="uid://bmd7jqqmss0s2" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.115.png" id="15_xq4nk"]
 [ext_resource type="Texture2D" uid="uid://inlr15x5ql7o" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.116.png" id="16_0xqxb"]
+[ext_resource type="Texture2D" uid="uid://duwascxl8ctso" path="res://EW/images/character_combat/attack/未命名维什戴尔-默认-正面-Attack_C-x115.png" id="16_hncss"]
+[ext_resource type="Texture2D" uid="uid://d0sgcfemf26um" path="res://EW/images/character_combat/attack/未命名维什戴尔-默认-正面-Attack_C-x116.png" id="17_a8bvg"]
 [ext_resource type="Texture2D" uid="uid://cylsvxgwmsxcl" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.117.png" id="17_kpiu2"]
+[ext_resource type="Texture2D" uid="uid://bat7asibb1kvp" path="res://EW/images/character_combat/attack/未命名维什戴尔-默认-正面-Attack_C-x117.png" id="18_e38lt"]
 [ext_resource type="Texture2D" uid="uid://dlk0dxe0yymx0" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.118.png" id="18_qtya6"]
+[ext_resource type="Texture2D" uid="uid://bwpku4ddqsg63" path="res://EW/images/character_combat/attack/未命名维什戴尔-默认-正面-Attack_C-x118.png" id="19_7rrjv"]
 [ext_resource type="Texture2D" uid="uid://p5si5hkevgt4" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.119.png" id="19_ow4xy"]
 [ext_resource type="Texture2D" uid="uid://dahv4asn36cak" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.120.png" id="20_bmrjx"]
+[ext_resource type="Texture2D" uid="uid://bbg1ec6bvygep" path="res://EW/images/character_combat/attack/未命名维什戴尔-默认-正面-Attack_C-x119.png" id="20_wwrxc"]
+[ext_resource type="Texture2D" uid="uid://d1esl7stm5b3l" path="res://EW/images/character_combat/attack/未命名维什戴尔-默认-正面-Attack_C-x120.png" id="21_d1aft"]
 [ext_resource type="Texture2D" uid="uid://mr0k1r83xdhq" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.121.png" id="21_djcoe"]
 [ext_resource type="Texture2D" uid="uid://cal4dlsyv1nss" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.122.png" id="22_osfbj"]
+[ext_resource type="Texture2D" uid="uid://cu2avgv56ameq" path="res://EW/images/character_combat/attack/未命名维什戴尔-默认-正面-Attack_C-x121.png" id="22_otsmc"]
+[ext_resource type="Texture2D" uid="uid://dcanwnf4jn0bq" path="res://EW/images/character_combat/attack/未命名维什戴尔-默认-正面-Attack_C-x122.png" id="23_feopd"]
 [ext_resource type="Texture2D" uid="uid://c5pq4bx7veunf" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.123.png" id="23_n1twr"]
+[ext_resource type="Texture2D" uid="uid://bkqjidlypf3tg" path="res://EW/images/character_combat/attack/未命名维什戴尔-默认-正面-Attack_C-x123.png" id="24_t3x5l"]
 [ext_resource type="Texture2D" uid="uid://65wltq6o23j5" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.124.png" id="24_whn4t"]
+[ext_resource type="Texture2D" uid="uid://bp3u0d3if2ers" path="res://EW/images/character_combat/attack/未命名维什戴尔-默认-正面-Attack_C-x124.png" id="25_fb0bo"]
 [ext_resource type="Texture2D" uid="uid://cvov86pfr5wda" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.125.png" id="25_ged02"]
+[ext_resource type="Texture2D" uid="uid://cuoie5phuk56b" path="res://EW/images/character_combat/attack/未命名维什戴尔-默认-正面-Attack_C-x125.png" id="26_awmcp"]
 [ext_resource type="Texture2D" uid="uid://fdtxeegbxkk6" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.126.png" id="26_pyjyl"]
 [ext_resource type="Texture2D" uid="uid://d2ds0gd0nnoon" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.127.png" id="27_1be6g"]
+[ext_resource type="Texture2D" uid="uid://dh4ctxlikmc7g" path="res://EW/images/character_combat/attack/未命名维什戴尔-默认-正面-Attack_C-x126.png" id="27_yuxle"]
+[ext_resource type="Texture2D" uid="uid://qflx6xbr2ps5" path="res://EW/images/character_combat/attack/未命名维什戴尔-默认-正面-Attack_C-x127.png" id="28_5uaf5"]
 [ext_resource type="Texture2D" uid="uid://cna57p3d32pa5" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.128.png" id="28_ycyl3"]
 [ext_resource type="Texture2D" uid="uid://hl6604qqgp3a" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.129.png" id="29_etm7t"]
+[ext_resource type="Texture2D" uid="uid://gvbvewotksnj" path="res://EW/images/character_combat/attack/未命名维什戴尔-默认-正面-Attack_C-x128.png" id="29_kxgr5"]
+[ext_resource type="Texture2D" uid="uid://yhf0ar4wpruo" path="res://EW/images/character_combat/attack/未命名维什戴尔-默认-正面-Attack_C-x129.png" id="30_mhta4"]
 [ext_resource type="Texture2D" uid="uid://bh220lxkovrf6" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.130.png" id="30_w5wvq"]
+[ext_resource type="Texture2D" uid="uid://c3grpbnxb8sau" path="res://EW/images/character_combat/cast1/未命名维什戴尔-默认-正面-Attack_C-x100.png" id="31_5s6tr"]
 [ext_resource type="Texture2D" uid="uid://3tocd1y8be64" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.131.png" id="31_p763v"]
+[ext_resource type="Texture2D" uid="uid://pn5mak5tbfev" path="res://EW/images/character_combat/cast1/未命名维什戴尔-默认-正面-Attack_C-x101.png" id="32_hyr6y"]
 [ext_resource type="Texture2D" uid="uid://bf33e00wmwkf4" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.132.png" id="32_pgg4e"]
+[ext_resource type="Texture2D" uid="uid://dcwfbej1m2qbc" path="res://EW/images/character_combat/cast1/未命名维什戴尔-默认-正面-Attack_C-x102.png" id="33_5scn2"]
 [ext_resource type="Texture2D" uid="uid://ctpfhdtg05a5d" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.133.png" id="33_s6qvp"]
 [ext_resource type="Texture2D" uid="uid://b8lv6jjixfj7a" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.134.png" id="34_o6mff"]
+[ext_resource type="Texture2D" uid="uid://fdi5mjw8x27m" path="res://EW/images/character_combat/cast1/未命名维什戴尔-默认-正面-Attack_C-x103.png" id="34_u7eou"]
 [ext_resource type="Texture2D" uid="uid://x8r7dvtofdty" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.135.png" id="35_4oh1m"]
+[ext_resource type="Texture2D" uid="uid://oh5udsyu7qsk" path="res://EW/images/character_combat/cast1/未命名维什戴尔-默认-正面-Attack_C-x104.png" id="35_pmpsq"]
 [ext_resource type="Texture2D" uid="uid://dhuc0jxxll2f1" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.136.png" id="36_gh4i0"]
+[ext_resource type="Texture2D" uid="uid://ddh860ma4nuw4" path="res://EW/images/character_combat/cast1/未命名维什戴尔-默认-正面-Attack_C-x105.png" id="36_si6nr"]
+[ext_resource type="Texture2D" uid="uid://cbspswam2jn4h" path="res://EW/images/character_combat/cast1/未命名维什戴尔-默认-正面-Attack_C-x106.png" id="37_a70tg"]
 [ext_resource type="Texture2D" uid="uid://ds48soar3lkb0" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.137.png" id="37_osqks"]
 [ext_resource type="Texture2D" uid="uid://d2ygn64uawh82" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.138.png" id="38_4qhxo"]
+[ext_resource type="Texture2D" uid="uid://b3ocd6143i3ub" path="res://EW/images/character_combat/cast1/未命名维什戴尔-默认-正面-Attack_C-x107.png" id="38_ftjfw"]
+[ext_resource type="Texture2D" uid="uid://7tnw6fmav01e" path="res://EW/images/character_combat/cast1/未命名维什戴尔-默认-正面-Attack_C-x108.png" id="39_iprin"]
 [ext_resource type="Texture2D" uid="uid://bx26w2p060yru" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.139.png" id="39_xfpp6"]
+[ext_resource type="Texture2D" uid="uid://cowdr5siwjpmd" path="res://EW/images/character_combat/cast1/未命名维什戴尔-默认-正面-Attack_C-x109.png" id="40_rltng"]
 [ext_resource type="Texture2D" uid="uid://bn5gnf4gh1qmn" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.140.png" id="40_wsy6b"]
+[ext_resource type="Texture2D" uid="uid://bx7u6wi0yimot" path="res://EW/images/character_combat/cast1/未命名维什戴尔-默认-正面-Attack_C-x110.png" id="41_cw8np"]
 [ext_resource type="Texture2D" uid="uid://bv4ksehy7xbgo" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.141.png" id="41_yfjyp"]
 [ext_resource type="Texture2D" uid="uid://di3rddif0g6e0" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.142.png" id="42_2tb1q"]
+[ext_resource type="Texture2D" uid="uid://c6tkpnbi42k3n" path="res://EW/images/character_combat/cast1/未命名维什戴尔-默认-正面-Attack_C-x111.png" id="42_jix2o"]
+[ext_resource type="Texture2D" uid="uid://cdhtnb7cp238t" path="res://EW/images/character_combat/cast1/未命名维什戴尔-默认-正面-Attack_C-x112.png" id="43_3bn5h"]
 [ext_resource type="Texture2D" uid="uid://bufq8bsys3un7" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.143.png" id="43_ksk2x"]
 [ext_resource type="Texture2D" uid="uid://dcp3hdxk1sdyy" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.144.png" id="44_ct8k2"]
+[ext_resource type="Texture2D" uid="uid://iexpbfnkyxs7" path="res://EW/images/character_combat/cast1/未命名维什戴尔-默认-正面-Attack_C-x113.png" id="44_yy5u1"]
 [ext_resource type="Texture2D" uid="uid://cev5xwxlog2eq" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.145.png" id="45_cdk3p"]
+[ext_resource type="Texture2D" uid="uid://rq46oxs7qgtw" path="res://EW/images/character_combat/cast1/未命名维什戴尔-默认-正面-Attack_C-x114.png" id="45_inc2x"]
+[ext_resource type="Texture2D" uid="uid://dhb45oewwim6e" path="res://EW/images/character_combat/cast1/未命名维什戴尔-默认-正面-Attack_C-x115.png" id="46_7fr3j"]
 [ext_resource type="Texture2D" uid="uid://mybm4h2ojke2" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.146.png" id="46_drmva"]
 [ext_resource type="Texture2D" uid="uid://b484ed8dlf1qs" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.147.png" id="47_ql0q1"]
+[ext_resource type="Texture2D" uid="uid://cb5256e070bjq" path="res://EW/images/character_combat/cast1/未命名维什戴尔-默认-正面-Attack_C-x116.png" id="47_t4abx"]
+[ext_resource type="Texture2D" uid="uid://cax245pe7x8b1" path="res://EW/images/character_combat/cast1/未命名维什戴尔-默认-正面-Attack_C-x117.png" id="48_e6ivr"]
 [ext_resource type="Texture2D" uid="uid://djo8jlan5xnt2" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.148.png" id="48_rmhj1"]
+[ext_resource type="Texture2D" uid="uid://b14buoxjpyt2u" path="res://EW/images/character_combat/cast1/未命名维什戴尔-默认-正面-Attack_C-x118.png" id="49_da0tk"]
 [ext_resource type="Texture2D" uid="uid://dx1bb4rptv4i3" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.149.png" id="49_ii6hm"]
+[ext_resource type="Texture2D" uid="uid://ckioq10867lhh" path="res://EW/images/character_combat/cast1/未命名维什戴尔-默认-正面-Attack_C-x119.png" id="50_bug3e"]
 [ext_resource type="Texture2D" uid="uid://6alqcctnl4rj" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.150.png" id="50_k3x07"]
+[ext_resource type="Texture2D" uid="uid://byl04dqbkh0kn" path="res://EW/images/character_combat/cast1/未命名维什戴尔-默认-正面-Attack_C-x120.png" id="51_6mmh7"]
 [ext_resource type="Texture2D" uid="uid://e6lpfmwk4y1o" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.151.png" id="51_ielk1"]
+[ext_resource type="Texture2D" uid="uid://cujf5l486hohl" path="res://EW/images/character_combat/cast1/未命名维什戴尔-默认-正面-Attack_C-x121.png" id="52_bii3j"]
 [ext_resource type="Texture2D" uid="uid://c1iik6aavl8kv" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.152.png" id="52_jvynt"]
+[ext_resource type="Texture2D" uid="uid://k5auv48k7p20" path="res://EW/images/character_combat/cast1/未命名维什戴尔-默认-正面-Attack_C-x122.png" id="53_gwrql"]
 [ext_resource type="Texture2D" uid="uid://cy0y5y660s44s" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.153.png" id="53_q5ocj"]
 [ext_resource type="Texture2D" uid="uid://dhel6ge14jsbn" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.154.png" id="54_bcdkf"]
+[ext_resource type="Texture2D" uid="uid://dhgl34l08numi" path="res://EW/images/character_combat/cast1/未命名维什戴尔-默认-正面-Attack_C-x123.png" id="54_ppnf8"]
+[ext_resource type="Texture2D" uid="uid://bp12up7uwmduw" path="res://EW/images/character_combat/cast1/未命名维什戴尔-默认-正面-Attack_C-x124.png" id="55_66wxu"]
 [ext_resource type="Texture2D" uid="uid://bsi3d3id3jnvi" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.155.png" id="55_akoff"]
+[ext_resource type="Texture2D" uid="uid://ustw1jtt5rt" path="res://EW/images/character_combat/cast1/未命名维什戴尔-默认-正面-Attack_C-x125.png" id="56_g8tni"]
 [ext_resource type="Texture2D" uid="uid://cegfybd5c20qh" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.156.png" id="56_lumxk"]
 [ext_resource type="Texture2D" uid="uid://ccweg0jub7qdx" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.157.png" id="57_gnkw5"]
+[ext_resource type="Texture2D" uid="uid://bu5ivsgpqijnh" path="res://EW/images/character_combat/cast1/未命名维什戴尔-默认-正面-Attack_C-x126.png" id="57_sv3uf"]
+[ext_resource type="Texture2D" uid="uid://dkfec6su0eyiv" path="res://EW/images/character_combat/cast1/未命名维什戴尔-默认-正面-Attack_C-x127.png" id="58_falut"]
 [ext_resource type="Texture2D" uid="uid://6n533f6qgvew" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.158.png" id="58_gb0wf"]
 [ext_resource type="Texture2D" uid="uid://debm4e5j7dywk" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.159.png" id="59_0xc1i"]
+[ext_resource type="Texture2D" uid="uid://p1tesmcj7aq0" path="res://EW/images/character_combat/cast1/未命名维什戴尔-默认-正面-Attack_C-x128.png" id="59_ej74e"]
+[ext_resource type="Texture2D" uid="uid://cjtouyv0moh2g" path="res://EW/images/character_combat/cast1/未命名维什戴尔-默认-正面-Attack_C-x129.png" id="60_sb8o2"]
 [ext_resource type="Texture2D" uid="uid://77kx5uypl4y6" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.160.png" id="60_vepwc"]
+[ext_resource type="Texture2D" uid="uid://3d72tp3ph751" path="res://EW/images/character_combat/cast1/未命名维什戴尔-默认-正面-Attack_C-x130.png" id="61_3opfs"]
 [ext_resource type="Texture2D" uid="uid://cr05wsne257ph" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.161.png" id="61_hh8xy"]
 [ext_resource type="Texture2D" uid="uid://c6bw6pnv5l4i1" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.162.png" id="62_goh2l"]
 [ext_resource type="Texture2D" uid="uid://cg1cp4jjufqq3" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.163.png" id="63_sh8ak"]
@@ -73,14 +134,330 @@
 [ext_resource type="Texture2D" uid="uid://b86213rvtcqls" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.171.png" id="71_xhlk5"]
 [ext_resource type="Texture2D" uid="uid://cjx84phfckr8x" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.172.png" id="72_d8q1a"]
 [ext_resource type="Texture2D" uid="uid://bm2ulhacgsedx" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.173.png" id="73_6mcw6"]
+[ext_resource type="Texture2D" uid="uid://g376oaa7smoj" path="res://EW/images/character_combat/die/未命名维什戴尔-默认-正面-Attack_C-x100.png" id="74_12eyj"]
 [ext_resource type="Texture2D" uid="uid://bjkhcmv368fav" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.174.png" id="74_51p7t"]
 [ext_resource type="Texture2D" uid="uid://br6oewnarousl" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.175.png" id="75_bjvg3"]
+[ext_resource type="Texture2D" uid="uid://wnofg5axyit8" path="res://EW/images/character_combat/die/未命名维什戴尔-默认-正面-Attack_C-x101.png" id="75_ptieu"]
 [ext_resource type="Texture2D" uid="uid://d1lmhba2g47au" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.176.png" id="76_g8217"]
+[ext_resource type="Texture2D" uid="uid://cb8masdtrhkel" path="res://EW/images/character_combat/die/未命名维什戴尔-默认-正面-Attack_C-x102.png" id="76_kk7uw"]
 [ext_resource type="Texture2D" uid="uid://kqjebuwld0q0" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.177.png" id="77_eo2ab"]
+[ext_resource type="Texture2D" uid="uid://nystjnlvoutf" path="res://EW/images/character_combat/die/未命名维什戴尔-默认-正面-Attack_C-x103.png" id="77_r4ur8"]
 [ext_resource type="Texture2D" uid="uid://bh4cgf42sf1ni" path="res://EW/images/character_combat/idle/未命名维什戴尔-默认-正面-Idle-x0.178.png" id="78_7g5xv"]
+[ext_resource type="Texture2D" uid="uid://yx1j05dwlj56" path="res://EW/images/character_combat/die/未命名维什戴尔-默认-正面-Attack_C-x104.png" id="78_epap2"]
+[ext_resource type="Texture2D" uid="uid://cm76cw5qqmkqe" path="res://EW/images/character_combat/die/未命名维什戴尔-默认-正面-Attack_C-x105.png" id="79_78vyl"]
+[ext_resource type="Texture2D" uid="uid://hyxxnx1xk5y2" path="res://EW/images/character_combat/die/未命名维什戴尔-默认-正面-Attack_C-x106.png" id="80_ae1qn"]
+[ext_resource type="Texture2D" uid="uid://cnr2768huohq" path="res://EW/images/character_combat/die/未命名维什戴尔-默认-正面-Attack_C-x107.png" id="81_qtkug"]
+[ext_resource type="Texture2D" uid="uid://bq45gpm6q7r5o" path="res://EW/images/character_combat/die/未命名维什戴尔-默认-正面-Attack_C-x108.png" id="82_2folo"]
+[ext_resource type="Texture2D" uid="uid://b8ompryiy3p8r" path="res://EW/images/character_combat/die/未命名维什戴尔-默认-正面-Attack_C-x109.png" id="83_vvpmp"]
+[ext_resource type="Texture2D" uid="uid://cqej23w1f0xuc" path="res://EW/images/character_combat/die/未命名维什戴尔-默认-正面-Attack_C-x110.png" id="84_c6yxv"]
+[ext_resource type="Texture2D" uid="uid://ctmrrlxwme7i" path="res://EW/images/character_combat/die/未命名维什戴尔-默认-正面-Attack_C-x111.png" id="85_c4bms"]
+[ext_resource type="Texture2D" uid="uid://46fqknmh5mku" path="res://EW/images/character_combat/die/未命名维什戴尔-默认-正面-Attack_C-x112.png" id="86_wf51s"]
+[ext_resource type="Texture2D" uid="uid://2byc3q88cykk" path="res://EW/images/character_combat/die/未命名维什戴尔-默认-正面-Attack_C-x113.png" id="87_iniwi"]
+[ext_resource type="Texture2D" uid="uid://vup040wtgkjo" path="res://EW/images/character_combat/hurt/未命名维什戴尔-默认-正面-Attack_C-x100.png" id="88_eav8t"]
+[ext_resource type="Texture2D" uid="uid://diuuppd50wpne" path="res://EW/images/character_combat/hurt/未命名维什戴尔-默认-正面-Attack_C-x101.png" id="89_x0rar"]
+[ext_resource type="Texture2D" uid="uid://dn5myiey1s77t" path="res://EW/images/character_combat/hurt/未命名维什戴尔-默认-正面-Attack_C-x102.png" id="90_yih4l"]
+[ext_resource type="Texture2D" uid="uid://b88ohaql5577j" path="res://EW/images/character_combat/hurt/未命名维什戴尔-默认-正面-Attack_C-x103.png" id="91_fwl6p"]
+[ext_resource type="Texture2D" uid="uid://c7v71mhg0jtxu" path="res://EW/images/character_combat/hurt/未命名维什戴尔-默认-正面-Attack_C-x104.png" id="92_7ypm3"]
+[ext_resource type="Texture2D" uid="uid://5fdc7hb307ai" path="res://EW/images/character_combat/hurt/未命名维什戴尔-默认-正面-Attack_C-x105.png" id="93_vhkdf"]
+[ext_resource type="Texture2D" uid="uid://codk0ynv3t5ar" path="res://EW/images/character_combat/hurt/未命名维什戴尔-默认-正面-Attack_C-x106.png" id="94_goiuf"]
+[ext_resource type="Texture2D" uid="uid://dhcr7nov8wl7l" path="res://EW/images/character_combat/hurt/未命名维什戴尔-默认-正面-Attack_C-x107.png" id="95_n1fja"]
+[ext_resource type="Texture2D" uid="uid://de84q2iio7cw5" path="res://EW/images/character_combat/hurt/未命名维什戴尔-默认-正面-Attack_C-x108.png" id="96_6quc1"]
+[ext_resource type="Texture2D" uid="uid://dlfrhr2hcqgfx" path="res://EW/images/character_combat/hurt/未命名维什戴尔-默认-正面-Attack_C-x109.png" id="97_jmf88"]
+[ext_resource type="Texture2D" uid="uid://o0lnpl2mqbe" path="res://EW/images/character_combat/hurt/未命名维什戴尔-默认-正面-Attack_C-x110.png" id="98_kmldp"]
+[ext_resource type="Texture2D" uid="uid://ufnwyarox6he" path="res://EW/images/character_combat/hurt/未命名维什戴尔-默认-正面-Attack_C-x111.png" id="99_ccdbo"]
+[ext_resource type="Texture2D" uid="uid://dlw3uvjjp46og" path="res://EW/images/character_combat/hurt/未命名维什戴尔-默认-正面-Attack_C-x112.png" id="100_dbk1d"]
+[ext_resource type="Texture2D" uid="uid://s31qkt7wa2hs" path="res://EW/images/character_combat/hurt/未命名维什戴尔-默认-正面-Attack_C-x113.png" id="101_qajeg"]
+[ext_resource type="Script" uid="uid://cs3jrom77gt6d" path="res://EW/scenes/character/body.gd" id="180_52ev0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_11isj"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wlxv4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_52ev0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gmk1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_k72me")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_62rjv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wpf8r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_61j5r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rxslj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_jgvkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_flmu5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_w5af3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_gijg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_eoiwa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_dcdry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_t32do")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_hncss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_a8bvg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_e38lt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_7rrjv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_wwrxc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_d1aft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_otsmc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_feopd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_t3x5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_fb0bo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_awmcp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_yuxle")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_5uaf5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_kxgr5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_mhta4")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_5s6tr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_hyr6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_5scn2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_u7eou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_pmpsq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_si6nr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_a70tg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_ftjfw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_iprin")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_rltng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_cw8np")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_jix2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_3bn5h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_yy5u1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_inc2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_7fr3j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_t4abx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_e6ivr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_da0tk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_bug3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_6mmh7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_bii3j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_gwrql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_ppnf8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_66wxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_g8tni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_sv3uf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_falut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_ej74e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_sb8o2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_3opfs")
+}],
+"loop": false,
+"name": &"cast",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("74_12eyj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_ptieu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_kk7uw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_r4ur8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_epap2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_78vyl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_ae1qn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_qtkug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_2folo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_vvpmp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_c6yxv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_c4bms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_wf51s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_iniwi")
+}],
+"loop": false,
+"name": &"die",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("88_eav8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_x0rar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_yih4l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_fwl6p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_7ypm3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_vhkdf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_goiuf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_n1fja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_6quc1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_jmf88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_kmldp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_ccdbo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_dbk1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_qajeg")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 15.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_1t4vt")
@@ -342,9 +719,8 @@ scale = Vector2(0.65, 0.65)
 sprite_frames = SubResource("SpriteFrames_11isj")
 animation = &"idle"
 autoplay = "idle"
-frame = 44
-frame_progress = 0.39978117
 offset = Vector2(0, -220)
+script = ExtResource("180_52ev0")
 
 [node name="Bounds" type="Control" parent="."]
 anchors_preset = 0

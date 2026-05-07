@@ -8,6 +8,8 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Nodes.Combat;
+using MegaCrit.Sts2.Core.Animation;
+using MegaCrit.Sts2.Core.Bindings.MegaSpine;
 
 namespace EW.EWCode.Character
 {
@@ -17,16 +19,39 @@ namespace EW.EWCode.Character
 
         public static readonly Color Color = new("ffffff");
 
+        // background
         public override string CustomCharacterSelectBg =>
             "res://EW/scenes/screens/char_sel/bg_anim_full.tscn";
 
+        // combat visual
         public override string CustomVisualPath =>
             "res://EW/scenes/character/ew_combat_visual.tscn";
+        // combat animation
+        public override CreatureAnimator? SetupCustomAnimationStates(MegaSprite controller)
+        {
+            return SetupAnimationState(
+                controller,
+                idleName: "idle",
+                deadName: "die",
+                deadLoop: false,
+                hitName: "hurt",
+                hitLoop: false,
+                attackName: "attack",
+                attackLoop: false,
+                castName: "cast",
+                castLoop: false,
+                relaxedName: "idle",
+                relaxedLoop: true
+            );
+        }
 
+        // basic setting
         public override Color NameColor => Color;
         public override CharacterGender Gender => CharacterGender.Neutral;
-        public override int StartingHp => 90;
+        public override int StartingHp => 15;
 
+
+        // initial card
         public override IEnumerable<CardModel> StartingDeck => [
             ModelDb.Card<DieZhouJi>(),
             ModelDb.Card<StrikeIronclad>(),
@@ -41,6 +66,7 @@ namespace EW.EWCode.Character
             ModelDb.Card<DefendIronclad>()
         ];
 
+        // starting relic
         public override IReadOnlyList<RelicModel> StartingRelics =>
         [
             ModelDb.Relic<BurningBlood>()
