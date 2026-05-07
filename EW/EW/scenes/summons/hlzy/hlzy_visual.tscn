@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b45dpiappsove"]
+
+[ext_resource type="Texture2D" uid="uid://dkgenkdjtaejm" path="res://EW/images/summons/hlzy/hlzy.png" id="1_c7xbe"]
+
+[node name="HLZYVisual" type="Node2D"]
+
+[node name="Hlzy" type="Sprite2D" parent="."]
+position = Vector2(-0.99998474, -4.0000076)
+scale = Vector2(0.146, 0.12181326)
+texture = ExtResource("1_c7xbe")

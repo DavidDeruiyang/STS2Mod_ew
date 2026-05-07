@@ -1,21 +1,30 @@
 ﻿using BaseLib.Abstracts;
 using BaseLib.Utils.NodeFactories;
+using BaseLib.Utils;
 using EW.EWCode.Cards;
 using EW.EWCode.Extensions;
+using EW.EWCode.Relics;
 using Godot;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Nodes.Combat;
+using MegaCrit.Sts2.Core.Nodes.Rooms;
 using MegaCrit.Sts2.Core.Animation;
 using MegaCrit.Sts2.Core.Bindings.MegaSpine;
+using System.Threading.Tasks;
 
 namespace EW.EWCode.Character
 {
     public class EW : PlaceholderCharacterModel
     {
         public const string CharacterId = "维什戴尔";
+        private static readonly StringName RestartAnimationMethod = "ew_restart_animation";
+        private static readonly StringName AttackAnimation = "attack";
 
         public static readonly Color Color = new("ffffff");
 
@@ -44,6 +53,50 @@ namespace EW.EWCode.Character
                 relaxedLoop: true
             );
         }
+
+        public override Task BeforeCardPlayed(CardPlay cardPlay)
+        {
+            if (cardPlay.Card.Type == CardType.Attack)
+            {
+                RestartCombatAnimation(AttackAnimation);
+            }
+
+            return Task.CompletedTask;
+        }
+
+        private static void RestartCombatAnimation(StringName animationName)
+        {
+            var room = NCombatRoom.Instance;
+            if (room == null)
+            {
+                return;
+            }
+
+            if (!TryCallRestartAnimation(room, animationName))
+            {
+                MainFile.Logger.Info($"EW animation restart skipped: {animationName} body method was not found.");
+            }
+        }
+
+        private static bool TryCallRestartAnimation(Node node, StringName animationName)
+        {
+            if (node.HasMethod(RestartAnimationMethod))
+            {
+                node.Call(RestartAnimationMethod, animationName);
+                return true;
+            }
+
+            foreach (var child in node.GetChildren())
+            {
+                if (child is Node childNode && TryCallRestartAnimation(childNode, animationName))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         // basic setting
         public override Color NameColor => Color;
         public override CharacterGender Gender => CharacterGender.Neutral;
@@ -53,23 +106,18 @@ namespace EW.EWCode.Character
         // initial card
         public override IEnumerable<CardModel> StartingDeck => [
             ModelDb.Card<DieZhouJi>(),
+            ModelDb.Card<DieZhouJi>(),
+            ModelDb.Card<DieZhouJi>(),
             ModelDb.Card<QiangLiJi>(),
-            ModelDb.Card<StrikeIronclad>(),
-            ModelDb.Card<StrikeIronclad>(),
-            ModelDb.Card<StrikeIronclad>(),
-            ModelDb.Card<StrikeIronclad>(),
-            ModelDb.Card<StrikeIronclad>(),
-            ModelDb.Card<DefendIronclad>(),
-            ModelDb.Card<DefendIronclad>(),
-            ModelDb.Card<DefendIronclad>(),
-            ModelDb.Card<DefendIronclad>(),
-            ModelDb.Card<DefendIronclad>()
+            ModelDb.Card<SummonHLZY>(),
+            ModelDb.Card<DismissHLZY>(),
+            ModelDb.Card<D12>()
         ];
 
         // starting relic
         public override IReadOnlyList<RelicModel> StartingRelics =>
         [
-            ModelDb.Relic<BurningBlood>()
+            ModelDb.Relic<HLZYRelic>()
         ];
 
         public override CardPoolModel CardPool => ModelDb.CardPool<EWCardPool>();

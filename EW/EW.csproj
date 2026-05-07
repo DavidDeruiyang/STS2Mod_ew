@@ -61,12 +61,13 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="EWCode\Summons\" />
       <Folder Include="EW\images\powers\big\" />
-      <Folder Include="EW\images\relics\big\" />
       <Folder Include="EW\images\assets\" />
       <Folder Include="EW\scenes\character\" />
       <Folder Include="EW\scenes\events\" />
       <Folder Include="EW\scenes\screens\char_sel\" />
+      <Folder Include="EW\scenes\summons\hlzy\" />
     </ItemGroup>
     
     <Target Name="CheckDependencyPaths">

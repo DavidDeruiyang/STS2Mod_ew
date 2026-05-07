@@ -763,3 +763,4 @@ sprite_frames = SubResource("SpriteFrames_43o0e")
 autoplay = "default"
 frame_progress = 0.6178999
 offset = Vector2(550, 253)
+flip_h = true

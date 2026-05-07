@@ -1,8 +1,17 @@
 {
-  "EW-DIE_ZHOU_JI.title": "爹肘击",
-  "EW-DIE_ZHOU_JI.description": "好大雷造成 {Damage:diff()} 伤害.",
-  "EW-DIE_ZHOU_JI.upgradeDescription": "好大雷造成 {Damage:diff()} 伤害.",
-  "EW-QIANG_LI_JI.title": "强力击",
-  "EW-QIANG_LI_JI.description": "造成 {Damage:diff()} 点伤害 {HitCount:diff()} 次。给予 1 层虚弱。",
-  "EW-QIANG_LI_JI.upgradeDescription": "造成 {Damage:diff()} 点伤害 {HitCount:diff()} 次。给予 1 层虚弱。"
+  "EW-DIE_ZHOU_JI.title": "Die Zhou Ji",
+  "EW-DIE_ZHOU_JI.description": "Deal {Damage:diff()} damage.",
+  "EW-DIE_ZHOU_JI.upgradeDescription": "Deal {Damage:diff()} damage.",
+  "EW-QIANG_LI_JI.title": "Qiang Li Ji",
+  "EW-QIANG_LI_JI.description": "Deal {Damage:diff()} damage {HitCount:diff()} times. Apply #b1 #yWeak.",
+  "EW-QIANG_LI_JI.upgradeDescription": "Deal {Damage:diff()} damage {HitCount:diff()} times. Apply #b1 #yWeak.",
+  "EW-SUMMON_HL_Z_Y.title": "Call Soul Shadow",
+  "EW-SUMMON_HL_Z_Y.description": "Summon #b1 #yHLZY.",
+  "EW-SUMMON_HL_Z_Y.upgradeDescription": "Summon #b1 #yHLZY.",
+  "EW-DISMISS_HL_Z_Y.title": "Release Soul Shadow",
+  "EW-DISMISS_HL_Z_Y.description": "Dismiss #b1 #yHLZY.",
+  "EW-DISMISS_HL_Z_Y.upgradeDescription": "Dismiss #b1 #yHLZY.",
+  "EW-D12.title": "D12",
+  "EW-D12.description": "{Turns:diff()} 回合后，对所有敌人造成 {BombDamage:diff()} 点伤害。",
+  "EW-D12.upgradeDescription": "{Turns:diff()} 回合后，对所有敌人造成 {BombDamage:diff()} 点伤害。"
 }

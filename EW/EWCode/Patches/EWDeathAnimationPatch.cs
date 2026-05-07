@@ -1,4 +1,5 @@
 using HarmonyLib;
+using EW.EWCode.Summons;
 using Godot;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Nodes.Combat;
@@ -24,6 +25,7 @@ namespace EW.EWCode.Patches
                 return;
             }
 
+            SummonManager.ClearForCombatEnd("player death");
             StartDeathAnimation(__instance);
         }
 
