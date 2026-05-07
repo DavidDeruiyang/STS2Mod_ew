@@ -44,7 +44,6 @@ namespace EW.EWCode.Character
                 relaxedLoop: true
             );
         }
-
         // basic setting
         public override Color NameColor => Color;
         public override CharacterGender Gender => CharacterGender.Neutral;
@@ -54,6 +53,7 @@ namespace EW.EWCode.Character
         // initial card
         public override IEnumerable<CardModel> StartingDeck => [
             ModelDb.Card<DieZhouJi>(),
+            ModelDb.Card<QiangLiJi>(),
             ModelDb.Card<StrikeIronclad>(),
             ModelDb.Card<StrikeIronclad>(),
             ModelDb.Card<StrikeIronclad>(),

@@ -1,5 +1,8 @@
 {
   "EW-DIE_ZHOU_JI.title": "爹肘击",
   "EW-DIE_ZHOU_JI.description": "好大雷造成 {Damage:diff()} 伤害.",
-  "EW-DIE_ZHOU_JI.upgradeDescription": "好大雷造成 {Damage:diff()} 伤害."
+  "EW-DIE_ZHOU_JI.upgradeDescription": "好大雷造成 {Damage:diff()} 伤害.",
+  "EW-QIANG_LI_JI.title": "强力击",
+  "EW-QIANG_LI_JI.description": "造成 {Damage:diff()} 点伤害 {HitCount:diff()} 次。给予 1 层虚弱。",
+  "EW-QIANG_LI_JI.upgradeDescription": "造成 {Damage:diff()} 点伤害 {HitCount:diff()} 次。给予 1 层虚弱。"
 }

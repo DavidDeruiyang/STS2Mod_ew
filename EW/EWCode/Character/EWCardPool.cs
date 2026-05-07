@@ -8,8 +8,8 @@ namespace EW.EWCode.Character
     {
         public override string Title => EW.CharacterId; //This is not a display name.
 
-        public override string BigEnergyIconPath => "charui/big_energy.png".ImagePath();
-        public override string TextEnergyIconPath => "charui/text_energy.png".ImagePath();
+        public override string BigEnergyIconPath => "big_energy.png".CharacterUiPath();
+        public override string TextEnergyIconPath => "text_energy.png".CharacterUiPath();
 
 
         /* These HSV values will determine the color of your card back.

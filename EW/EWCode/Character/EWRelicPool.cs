@@ -8,7 +8,7 @@ namespace EW.EWCode.Character
     {
         public override Color LabOutlineColor => EW.Color;
 
-        public override string BigEnergyIconPath => "charui/big_energy.png".ImagePath();
-        public override string TextEnergyIconPath => "charui/text_energy.png".ImagePath();
+        public override string BigEnergyIconPath => "big_energy.png".CharacterUiPath();
+        public override string TextEnergyIconPath => "text_energy.png".CharacterUiPath();
     }
 }
