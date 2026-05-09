@@ -1,4 +1,8 @@
 using Godot;
+using EW.EWCode.Powers;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,10 +27,11 @@ namespace EW.EWCode.Summons
         public const int AnySlot = -1;
         public const int MaxSummons = 3;
         private const int DefaultReadyRetryFrames = 120;
+        private const decimal CamouflagePerHLZY = 2m;
 
         public static IReadOnlyCollection<SummonInstance> Active => ActiveSummons.Values;
 
-        public static bool SummonHLZY(SummonSource source = SummonSource.Other, int slotIndex = AnySlot)
+        public static bool SummonHLZY(SummonSource source = SummonSource.Other, int slotIndex = AnySlot, Creature? summoner = null, CardModel? cardSource = null)
         {
             var summon = ReserveHLZY(source, slotIndex);
             if (summon == null)
@@ -42,12 +47,15 @@ namespace EW.EWCode.Summons
             }
 
             node.Call(SpawnHlzyMethod, summon.SlotIndex);
+            _ = ApplyCamouflage(summoner, cardSource);
             return true;
         }
 
         public static async Task<bool> SummonHLZYWhenReady(
             SummonSource source = SummonSource.Other,
             int slotIndex = AnySlot,
+            Creature? summoner = null,
+            CardModel? cardSource = null,
             int retryFrames = DefaultReadyRetryFrames
         )
         {
@@ -62,6 +70,7 @@ namespace EW.EWCode.Summons
                 if (TryFindCombatVisualMethod(SpawnHlzyMethod, out var node))
                 {
                     node.Call(SpawnHlzyMethod, summon.SlotIndex);
+                    await ApplyCamouflage(summoner, cardSource);
                     return true;
                 }
 
@@ -78,6 +87,21 @@ namespace EW.EWCode.Summons
             ActiveSummons.Remove(summon.SlotIndex);
             MainFile.Logger.Info($"HLZY summon skipped from {source}: combat visual spawn method was not found after waiting.");
             return false;
+        }
+
+        private static async Task ApplyCamouflage(Creature? summoner, CardModel? cardSource)
+        {
+            if (summoner == null || summoner.IsDead)
+            {
+                return;
+            }
+
+            await PowerCmd.Apply<EWCamouflagePower>(
+                summoner,
+                CamouflagePerHLZY,
+                summoner,
+                cardSource
+            );
         }
 
         public static void ClearHLZY(int slotIndex = AnySlot)

@@ -4,7 +4,9 @@ const RETURN_TO_IDLE_ANIMS := ["attack", "hurt", "cast"]
 const DEATH_ANIMS := ["Dead", "dead", "die"]
 const QUICK_RETURN_DELAY_FRAMES := 1
 const HURT_RETURN_DELAY_SECONDS := 0.1
+const HLZY_FADE_SECONDS := 0.42
 const HLZY_SCENE := preload("res://EW/scenes/summons/hlzy/hlzy_visual.tscn")
+const HLZY_WIND_DISSOLVE_SHADER := preload("res://EW/scenes/summons/hlzy/hlzy_wind_dissolve.gdshader")
 const HLZY_NODE_PREFIX := "HLZYCompanion"
 const HLZY_SCALE := Vector2(1.25, 1.25)
 const HLZY_POSITIONS := [
@@ -82,7 +84,9 @@ func ew_spawn_hlzy(slot_index := -1) -> Node2D:
 	hlzy.name = node_name
 	hlzy.position = HLZY_POSITIONS[resolved_slot]
 	hlzy.scale = HLZY_SCALE
+	_prepare_hlzy_wind_dissolve(hlzy)
 	visuals.add_child(hlzy)
+	_reveal_hlzy(hlzy)
 	print("EW HLZY spawned in slot: ", resolved_slot, " at ", hlzy.position)
 	return hlzy
 
@@ -95,12 +99,12 @@ func ew_clear_hlzy(slot_index := -1) -> void:
 	if slot_index < 0:
 		for child in visuals.get_children():
 			if child.name.begins_with(HLZY_NODE_PREFIX):
-				child.queue_free()
+				_fade_and_free(child)
 		return
 
 	var existing := visuals.get_node_or_null(_hlzy_node_name(clampi(slot_index, 0, HLZY_POSITIONS.size() - 1)))
 	if existing != null:
-		existing.queue_free()
+		_fade_and_free(existing)
 
 
 func ew_hlzy_count() -> int:
@@ -174,3 +178,56 @@ func _resolve_hlzy_slot(requested_slot: int) -> int:
 
 func _hlzy_node_name(slot_index: int) -> String:
 	return "%s%d" % [HLZY_NODE_PREFIX, slot_index]
+
+
+func _prepare_hlzy_wind_dissolve(hlzy: Node2D) -> void:
+	var sprite := hlzy.get_node_or_null("Hlzy") as Sprite2D
+	if sprite == null:
+		return
+
+	var material := ShaderMaterial.new()
+	material.shader = HLZY_WIND_DISSOLVE_SHADER
+	material.set_shader_parameter("reveal_progress", 0.0)
+	material.set_shader_parameter("vanish_progress", 0.0)
+	sprite.material = material
+
+
+func _reveal_hlzy(hlzy: Node2D) -> void:
+	var sprite := hlzy.get_node_or_null("Hlzy") as Sprite2D
+	if sprite == null or not sprite.material is ShaderMaterial:
+		return
+
+	var material := sprite.material as ShaderMaterial
+	var tween := create_tween()
+	tween.set_trans(Tween.TRANS_SINE)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(material, "shader_parameter/reveal_progress", 1.0, HLZY_FADE_SECONDS)
+
+
+func _fade_and_free(node: Node) -> void:
+	if node.has_meta("ew_hlzy_clearing"):
+		return
+
+	node.set_meta("ew_hlzy_clearing", true)
+
+	if node is Node2D:
+		var node_2d := node as Node2D
+		var sprite := node_2d.get_node_or_null("Hlzy") as Sprite2D
+		if sprite != null and sprite.material is ShaderMaterial:
+			var material := sprite.material as ShaderMaterial
+			var tween := create_tween()
+			tween.set_parallel(true)
+			tween.set_trans(Tween.TRANS_SINE)
+			tween.set_ease(Tween.EASE_IN)
+			tween.tween_property(material, "shader_parameter/vanish_progress", 1.0, HLZY_FADE_SECONDS)
+			tween.tween_property(node_2d, "position:x", node_2d.position.x + 28.0, HLZY_FADE_SECONDS)
+			tween.chain().tween_callback(node.queue_free)
+			return
+
+	if node is CanvasItem:
+		var canvas_item := node as CanvasItem
+		var fallback_tween := create_tween()
+		fallback_tween.tween_property(canvas_item, "modulate:a", 0.0, HLZY_FADE_SECONDS)
+		fallback_tween.tween_callback(node.queue_free)
+	else:
+		node.queue_free()

@@ -24,6 +24,8 @@ namespace EW.EWCode.Cards
                 cardPlay.Target,
                 vfx: "vfx/vfx_attack_slash"
             ).Execute(choiceContext);
+
+            await PlayHLZYAttack(choiceContext, cardPlay.Target, this);
         }
 
         protected override void OnUpgrade()

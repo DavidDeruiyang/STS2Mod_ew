@@ -62,7 +62,6 @@
 
     <ItemGroup>
       <Folder Include="EWCode\Summons\" />
-      <Folder Include="EW\images\powers\big\" />
       <Folder Include="EW\images\assets\" />
       <Folder Include="EW\scenes\character\" />
       <Folder Include="EW\scenes\events\" />

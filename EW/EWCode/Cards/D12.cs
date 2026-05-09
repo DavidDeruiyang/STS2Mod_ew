@@ -1,39 +1,28 @@
-﻿using MegaCrit.Sts2.Core.Commands;
+using EW.EWCode.Keywords;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Cards;
-using MegaCrit.Sts2.Core.Models.Powers;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace EW.EWCode.Cards
 {
-    public class D12() : EWCard(0, CardType.Skill, CardRarity.Rare, TargetType.Self)
+    public class D12 : BombCard
     {
-        private const string TurnsKey = "Turns";
-        private const string BombDamageKey = "BombDamage";
-
-        protected override IEnumerable<DynamicVar> CanonicalVars =>
-        [
-            new DynamicVar(TurnsKey, 3m),
-            new DynamicVar(BombDamageKey, 20m)
-        ];
+        public D12() : base(0, CardType.Skill, CardRarity.Rare, TargetType.AnyEnemy, 3m, 20m)
+        {
+        }
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             var owner = Owner?.Creature;
-            if (owner == null)
+            var target = cardPlay.Target;
+            if (owner == null || target == null)
             {
                 return;
             }
 
-            (await PowerCmd.Apply<TheBombPower>(
-                owner,
-                DynamicVars[TurnsKey].BaseValue,
-                owner,
-                this
-            )).SetDamage(DynamicVars[BombDamageKey].BaseValue);
+            await BombUtils.ApplyBomb(choiceContext, target, owner, this, BombTurns, BombDamage, cardPlay);
         }
 
         protected override void OnUpgrade()

@@ -3,7 +3,17 @@ using BaseLib.Extensions;
 using BaseLib.Utils;
 using EW.EWCode.Character;
 using EW.EWCode.Extensions;
+using EW.EWCode.Summons;
+using EW.EWCode.Vfx;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Nodes.CommonUi;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace EW.EWCode.Cards
 {
@@ -23,5 +33,41 @@ namespace EW.EWCode.Cards
         //Uses card_portraits/card_name.png as image path. These should be smaller images.
         public override string PortraitPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
         public override string BetaPortraitPath => $"beta/{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+
+        protected static IHoverTip CardPreview<T>(bool upgraded = false) where T : CardModel
+        {
+            var card = ModelDb.Card<T>();
+            if (upgraded)
+            {
+                card = (T)card.ToMutable();
+                CardCmd.Upgrade(card, CardPreviewStyle.None);
+            }
+
+            return new CardHoverTip(card);
+        }
+
+        protected static IEnumerable<IHoverTip> SingleCardPreview<T>(bool upgraded = false) where T : CardModel
+        {
+            yield return CardPreview<T>(upgraded);
+        }
+
+        protected static async Task PlayHLZYAttack(PlayerChoiceContext choiceContext, Creature? target, CardModel cardSource)
+        {
+            var hitCount = SummonManager.CountHLZY();
+            if (target == null || target.IsDead || hitCount <= 0)
+            {
+                return;
+            }
+
+            HLZYAttackVfx.PlayFromAllHLZYTo(target);
+
+            await DamageCmd.Attack(1m)
+                .FromCard(cardSource)
+                .Targeting(target)
+                .Unpowered()
+                .WithNoAttackerAnim()
+                .WithHitCount(hitCount)
+                .Execute(choiceContext);
+        }
     }
 }

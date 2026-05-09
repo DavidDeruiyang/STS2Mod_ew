@@ -29,12 +29,21 @@ namespace EW.EWCode.Character
         public static readonly Color Color = new("ffffff");
 
         // background
+        //public override string CustomCharacterSelectBg =>
+        //    "res://EW/scenes/screens/char_sel/bg_anim_full.tscn";
         public override string CustomCharacterSelectBg =>
-            "res://EW/scenes/screens/char_sel/bg_anim_full.tscn";
+            "res://EW/scenes/screens/char_sel/hq_bg.tscn";
 
         // combat visual
         public override string CustomVisualPath =>
             "res://EW/scenes/character/ew_combat_visual.tscn";
+
+        public override string CustomMerchantAnimPath =>
+            "res://EW/scenes/merchant/characters/ew_merchant.tscn";
+
+        public override string CustomRestSiteAnimPath =>
+            "res://EW/scenes/rest_site/characters/ew_rest_site.tscn";
+
         // combat animation
         public override CreatureAnimator? SetupCustomAnimationStates(MegaSprite controller)
         {
@@ -100,18 +109,33 @@ namespace EW.EWCode.Character
         // basic setting
         public override Color NameColor => Color;
         public override CharacterGender Gender => CharacterGender.Neutral;
-        public override int StartingHp => 15;
+        public override int StartingHp => 99;
 
 
         // initial card
         public override IEnumerable<CardModel> StartingDeck => [
             ModelDb.Card<DieZhouJi>(),
             ModelDb.Card<DieZhouJi>(),
-            ModelDb.Card<DieZhouJi>(),
             ModelDb.Card<QiangLiJi>(),
             ModelDb.Card<SummonHLZY>(),
-            ModelDb.Card<DismissHLZY>(),
-            ModelDb.Card<D12>()
+            //ModelDb.Card<DismissHLZY>(),
+            //ModelDb.Card<D12>(),
+            //ModelDb.Card<BaoFanZhuangJia>(),
+            //ModelDb.Card<D6Bomb>(),
+            //ModelDb.Card<SuperBigBoom>(),
+            //ModelDb.Card<FangYuXingBaoZha>(),
+            //ModelDb.Card<TongGuiYuJin>(),
+            //ModelDb.Card<YuanChengYinBao>(),
+            //ModelDb.Card<ZhanChangZhiZuo>(),
+            //ModelDb.Card<ZhaDanLianJie>(),
+            //ModelDb.Card<ZhaDanKuangRen>(),
+            //ModelDb.Card<ZhaDanMoWangTing>(),
+            //ModelDb.Card<ZhaDanZhiZuo>(),
+            //ModelDb.Card<QiBao>(),
+            //ModelDb.Card<JiKeBaoZha>(),
+            //ModelDb.Card<SanErYi>(),
+            //ModelDb.Card<SuiJiTouZhi>(),
+            //ModelDb.Card<BaoZhaTianCai>()
         ];
 
         // starting relic

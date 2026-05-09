@@ -1,3 +1,20 @@
 {
-  
+  "EW-E_W_TIMED_BOMB_POWER.title": "源石炸弹",
+  "EW-E_W_TIMED_BOMB_POWER.description": "在 {Countdown} 回合后造成 {BombDamage} 点伤害。",
+  "EW-E_W_TIMED_BOMB_POWER.smartDescription": "在 {Countdown} 回合后造成 {BombDamage} 点伤害。",
+  "EW-E_W_CAMOUFLAGE_POWER.title": "迷彩",
+  "EW-E_W_CAMOUFLAGE_POWER.description": "每层使受到的伤害降低 10%。回合结束时失去 1 层。最多 10 层。",
+  "EW-E_W_CAMOUFLAGE_POWER.smartDescription": "每层使受到的伤害降低 10%。回合结束时失去 1 层。最多 10 层。",
+  "EW-E_W_EXPLOSION_GENIUS_POWER.title": "爆炸天才",
+  "EW-E_W_EXPLOSION_GENIUS_POWER.description": "在你的回合开始时，将 1 张炸弹牌加入你的手牌。",
+  "EW-E_W_EXPLOSION_GENIUS_POWER.smartDescription": "在你的回合开始时，将 1 张炸弹牌加入你的手牌。",
+  "EW-E_W_THREE_TWO_ONE_POWER.title": "3！2！1！",
+  "EW-E_W_THREE_TWO_ONE_POWER.description": "3 回合后引爆的源石炸弹造成的伤害增加 {DamageBonus} 点。",
+  "EW-E_W_THREE_TWO_ONE_POWER.smartDescription": "3 回合后引爆的源石炸弹造成的伤害增加 {DamageBonus} 点。",
+  "EW-E_W_BOMB_DEMON_COURT_POWER.title": "炸弹魔王庭",
+  "EW-E_W_BOMB_DEMON_COURT_POWER.description": "你施加的源石炸弹引爆所需回合数减少 {CountdownReduction}。",
+  "EW-E_W_BOMB_DEMON_COURT_POWER.smartDescription": "你施加的源石炸弹引爆所需回合数减少 {CountdownReduction}。",
+  "EW-E_W_BOMB_COUNTER_ARMOR_POWER.title": "爆反装甲",
+  "EW-E_W_BOMB_COUNTER_ARMOR_POWER.description": "每当你施加或引爆源石炸弹时，获得 {Block} 点格挡。",
+  "EW-E_W_BOMB_COUNTER_ARMOR_POWER.smartDescription": "每当你施加或引爆源石炸弹时，获得 {Block} 点格挡。"
 }

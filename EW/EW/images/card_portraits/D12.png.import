@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4iiwlil44s3s"
-path="res://.godot/imported/D12.png-6ce3f1f2683037187d5b3c799ebdd6fb.ctex"
+uid="uid://citkydiibygeo"
+path="res://.godot/imported/d12.png-0b95dfc3ad29d2b26be136ad1cfe055a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://EW/images/card_portraits/D12.png"
-dest_files=["res://.godot/imported/D12.png-6ce3f1f2683037187d5b3c799ebdd6fb.ctex"]
+source_file="res://EW/images/card_portraits/d12.png"
+dest_files=["res://.godot/imported/d12.png-0b95dfc3ad29d2b26be136ad1cfe055a.ctex"]
 
 [params]
 

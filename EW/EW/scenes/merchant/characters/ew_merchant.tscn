@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3tob6sbdm4a0"]
+
+[ext_resource type="Texture2D" uid="uid://c63i1h136pa2l" path="res://EW/images/character/ew_merchant.png" id="1_merchant"]
+
+[node name="EWMerchantCharacter" type="Sprite2D"]
+position = Vector2(5, -292)
+scale = Vector2(0.95, 0.95)
+texture = ExtResource("1_merchant")

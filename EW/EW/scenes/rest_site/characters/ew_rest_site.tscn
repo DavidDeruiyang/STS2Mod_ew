@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://su5n0s6nhu5k"]
+
+[ext_resource type="Texture2D" uid="uid://c8jwxn2sq48df" path="res://EW/images/character/ew_rest_site.png" id="1_rest"]
+
+[node name="EWRestSiteCharacter" type="Sprite2D"]
+position = Vector2(-134, -745)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("1_rest")
