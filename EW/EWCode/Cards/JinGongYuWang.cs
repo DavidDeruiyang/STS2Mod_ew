@@ -1,0 +1,21 @@
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace EW.EWCode.Cards
+{
+    public class JinGongYuWang() : EWCard(1, CardType.Skill, CardRarity.Common, TargetType.None)
+    {
+        protected override IEnumerable<IHoverTip> ExtraHoverTips => SingleCardPreview<QiangLiJi>(IsUpgraded);
+
+        protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+        {
+            if (Owner != null)
+            {
+                await AddCardsToHand<QiangLiJi>(Owner, 2, IsUpgraded);
+            }
+        }
+    }
+}

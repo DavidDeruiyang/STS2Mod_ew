@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5ubebp1ab65o"]
+
+[ext_resource type="Texture2D" uid="uid://byrdy5mi4tqvr" path="res://EW/images/character_ui/big_energy.png" id="1_energy"]
+[ext_resource type="Script" uid="uid://dfnbc48dlnvar" path="res://EW/scenes/combat/energy_counters/babel_triangle_float.gd" id="2_triangle_float"]
+[ext_resource type="Texture2D" uid="uid://j8rdei0iub7c" path="res://EW/images/character_ui/babel_triangle.png" id="3_babel_triangle"]
+[ext_resource type="Shader" path="res://EW/scenes/combat/energy_counters/babel_icon_wave.gdshader" id="4_icon_wave"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_icon_wave"]
+shader = ExtResource("4_icon_wave")
+shader_parameter/expansion_color = Color(0.95, 0.08, 0.1, 0.28)
+shader_parameter/expansion_size = 0.045
+shader_parameter/expansion_speed = 0.42
+shader_parameter/expansion_softness = 0.62
+
+[node name="EWEnergyCounter" type="Control"]
+custom_minimum_size = Vector2(190, 190)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 190.0
+offset_bottom = 190.0
+mouse_filter = 2
+
+[node name="EnergyIcon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.0
+offset_top = -82.0
+offset_right = 82.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_energy")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BabelTriangle" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = -57.0
+offset_right = 56.0
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_triangle_float")
+
+[node name="BabelIcon" type="TextureRect" parent="BabelTriangle"]
+material = SubResource("ShaderMaterial_icon_wave")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -12.0
+offset_right = 1.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_babel_triangle")
+expand_mode = 1
+stretch_mode = 5

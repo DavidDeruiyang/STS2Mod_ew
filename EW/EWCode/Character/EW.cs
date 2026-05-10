@@ -26,7 +26,7 @@ namespace EW.EWCode.Character
         private static readonly StringName RestartAnimationMethod = "ew_restart_animation";
         private static readonly StringName AttackAnimation = "attack";
 
-        public static readonly Color Color = new("ffffff");
+        public static readonly Color Color = new("a11f2b");
 
         // background
         //public override string CustomCharacterSelectBg =>
@@ -43,6 +43,9 @@ namespace EW.EWCode.Character
 
         public override string CustomRestSiteAnimPath =>
             "res://EW/scenes/rest_site/characters/ew_rest_site.tscn";
+
+        public override string CustomEnergyCounterPath =>
+            "res://EW/scenes/combat/energy_counters/ew_energy_counter.tscn";
 
         // combat animation
         public override CreatureAnimator? SetupCustomAnimationStates(MegaSprite controller)
@@ -118,6 +121,57 @@ namespace EW.EWCode.Character
             ModelDb.Card<DieZhouJi>(),
             ModelDb.Card<QiangLiJi>(),
             ModelDb.Card<SummonHLZY>(),
+            ModelDb.Card<HongTaoK>(),
+            ModelDb.Card<ZhanShuSheJi>(),
+            ModelDb.Card<FanWeiDaJi>(),
+            ModelDb.Card<SuperBigCup>(),
+            ModelDb.Card<CiSha>(),
+            ModelDb.Card<LengCiDunRen>(),
+            ModelDb.Card<JiuHuiWanZheGe>(),
+            ModelDb.Card<SuiYiKaiHuo>(),
+            ModelDb.Card<YanWuDan>(),
+            ModelDb.Card<LinShiYanTi>(),
+            ModelDb.Card<ZhiShiXueBao>(),
+            ModelDb.Card<WeiWeiMei>(),
+            ModelDb.Card<ZaiBuShu>(),
+            ModelDb.Card<ShiDaiDeYanLei>(),
+            ModelDb.Card<WoDuBuDongYanJiangGao>(),
+            ModelDb.Card<ShengYuHeiYe>(),
+            ModelDb.Card<GeiWoWanMingRiFangZhou>(),
+            ModelDb.Card<YingZhi>(),
+            ModelDb.Card<HunHeShuangDa>(),
+            ModelDb.Card<DieMengJi>(),
+            ModelDb.Card<JiFengErShi>(),
+            ModelDb.Card<MaFangYu>(),
+            ModelDb.Card<AnYeWuMing>(),
+            ModelDb.Card<YingShao>(),
+            ModelDb.Card<DianXiaDeZhuFu>(),
+            ModelDb.Card<DianXiaQiDeMingZi>(),
+            ModelDb.Card<KaZiDaiErYiZhang>(),
+            ModelDb.Card<KaZiDaiErDeXiWang>(),
+            ModelDb.Card<YongBingTuanAlpha>(),
+            ModelDb.Card<YongBingTuanBeta>(),
+            ModelDb.Card<BiJiBen>(),
+            ModelDb.Card<ZuZongFaSheQi>(),
+            ModelDb.Card<GongTongChuJi>(),
+            ModelDb.Card<ZuZongLeiJi>(),
+            ModelDb.Card<BaoHeFuChou>(),
+            ModelDb.Card<BaoLieLiMingDanYao>(),
+            ModelDb.Card<ShuangChongDaJi>(),
+            ModelDb.Card<GongFangJianBei>(),
+            ModelDb.Card<BaoLieLiMing>(),
+            ModelDb.Card<JinGongYuWang>(),
+            ModelDb.Card<JiNengDuiZhou>(),
+            ModelDb.Card<GunDongXianZu>(),
+            ModelDb.Card<HuoLiBuZu>(),
+            ModelDb.Card<ZuZongXianLing>(),
+            ModelDb.Card<SiHunLingDeYuXi>(),
+            ModelDb.Card<TouZhiShou>(),
+            ModelDb.Card<HunLingBiYou>(),
+            ModelDb.Card<HaoLi>(),
+            ModelDb.Card<XianZuDeBiHu>(),
+            ModelDb.Card<HongMingZhiShou>(),
+            ModelDb.Card<CanYing>(),
             //ModelDb.Card<DismissHLZY>(),
             //ModelDb.Card<D12>(),
             //ModelDb.Card<BaoFanZhuangJia>(),
