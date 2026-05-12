@@ -11,6 +11,7 @@ namespace EW.EWCode.Cards
 {
     public class JiKeBaoZha() : EWCard(2, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
     {
+        protected override string PortraitFileName => "AL2 05 ji_ke_bao_zha.png";
         public override IEnumerable<CardKeyword> CanonicalKeywords => [EWKeywords.OriginiumBomb];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

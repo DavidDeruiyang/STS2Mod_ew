@@ -9,6 +9,7 @@ namespace EW.EWCode.Cards
 {
     public class JiNengDuiZhou() : EWCard(1, CardType.Skill, CardRarity.Common, TargetType.None)
     {
+        protected override string PortraitFileName => "SL4 03 ji_neng_dui_zhou.png";
         public override IEnumerable<CardKeyword> CanonicalKeywords => IsUpgraded ? [EWKeywords.SoulShadow] : [EWKeywords.SoulShadow, CardKeyword.Exhaust];
 
         protected override Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

@@ -12,6 +12,7 @@ namespace EW.EWCode.Cards
 {
     public class YuanChengYinBao() : EWCard(2, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
+        protected override string PortraitFileName => "AL2 01 yuan_cheng_yin_bao.png";
         public override IEnumerable<CardKeyword> CanonicalKeywords => [EWKeywords.OriginiumBomb];
 
         protected override IEnumerable<DynamicVar> CanonicalVars =>

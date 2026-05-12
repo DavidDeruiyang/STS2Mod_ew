@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EW.EWCode.Cards
 {
-    public class FanWeiDaJi() : EWCard(1, CardType.Attack, CardRarity.Common, TargetType.None)
+    public class FanWeiDaJi() : EWCard(1, CardType.Attack, CardRarity.Common, TargetType.AllEnemies)
     {
         protected override string PortraitFileName => "AL1 04 fan_wei_da_ji.png";
 
@@ -18,28 +18,43 @@ namespace EW.EWCode.Cards
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             var owner = Owner?.Creature;
-            if (owner == null) return;
+            if (owner == null || CombatState == null) return;
 
             if (IsUpgraded)
             {
-                await DamageCmd.Attack(7m).FromCard(this).Targeting(owner).Execute(choiceContext);
-                foreach (var enemy in LivingEnemiesOf(owner))
-                {
-                    await DamageCmd.Attack(14m).FromCard(this).Targeting(enemy).Execute(choiceContext);
-                    await PlayHLZYAttack(choiceContext, enemy, this);
-                }
+                await DamageCmd.Attack(7m)
+                    .FromCard(this)
+                    .Targeting(owner)
+                    .WithNoAttackerAnim()
+                    .Execute(choiceContext);
+
+                await DamageCmd.Attack(7m)
+                    .FromCard(this)
+                    .TargetingAllOpponents(CombatState)
+                    .WithHitFx("vfx/vfx_attack_slash")
+                    .Execute(choiceContext);
+
+                await DamageCmd.Attack(7m)
+                    .FromCard(this)
+                    .TargetingAllOpponents(CombatState)
+                    .WithHitFx("vfx/vfx_attack_slash")
+                    .Execute(choiceContext);
 
                 return;
             }
 
-            await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this).Targeting(owner).Execute(choiceContext);
-            foreach (var enemy in LivingEnemiesOf(owner))
-            {
-                await CommonActions.CardAttack(this, enemy, vfx: "vfx/vfx_attack_slash").Execute(choiceContext);
-                await PlayHLZYAttack(choiceContext, enemy, this);
-            }
-        }
+            await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+                .FromCard(this)
+                .Targeting(owner)
+                .WithNoAttackerAnim()
+                .Execute(choiceContext);
 
+            await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+                .FromCard(this)
+                .TargetingAllOpponents(CombatState)
+                .WithHitFx("vfx/vfx_attack_slash")
+                .Execute(choiceContext);
+        }
         protected override void OnUpgrade()
         {
             DynamicVars.Damage.UpgradeValueBy(-7m);

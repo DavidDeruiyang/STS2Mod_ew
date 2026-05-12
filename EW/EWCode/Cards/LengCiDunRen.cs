@@ -12,7 +12,7 @@ namespace EW.EWCode.Cards
     {
         protected override string PortraitFileName => "AL1 07 leng_ci_dun_ren.png";
 
-        protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(10, ValueProp.Move)];
+        protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(10, ValueProp.Unblockable)];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {

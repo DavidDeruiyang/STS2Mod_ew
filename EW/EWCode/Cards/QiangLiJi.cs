@@ -13,6 +13,7 @@ namespace EW.EWCode.Cards
 {
     public class QiangLiJi() : EWCard(1, CardType.Attack, CardRarity.Basic, TargetType.AnyEnemy)
     {
+        protected override string PortraitFileName => "AL1 02 qiang_li_ji.png";
         private int HitCount => (int)DynamicVars["HitCount"].BaseValue;
 
         protected override IEnumerable<DynamicVar> CanonicalVars =>

@@ -12,6 +12,7 @@ namespace EW.EWCode.Cards
 {
     public class ZhaDanLianJie() : EWCard(2, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
+        protected override string PortraitFileName => "AL2 02 zha_dan_lian_jie.png";
         public override IEnumerable<CardKeyword> CanonicalKeywords => [EWKeywords.OriginiumBomb];
 
         protected override IEnumerable<DynamicVar> CanonicalVars =>

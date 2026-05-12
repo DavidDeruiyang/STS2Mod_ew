@@ -8,6 +8,7 @@ namespace EW.EWCode.Cards
 {
     public class JinGongYuWang() : EWCard(1, CardType.Skill, CardRarity.Common, TargetType.None)
     {
+        protected override string PortraitFileName => "SL4 02 jin_gong_yu_wang.png";
         protected override IEnumerable<IHoverTip> ExtraHoverTips => SingleCardPreview<QiangLiJi>(IsUpgraded);
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

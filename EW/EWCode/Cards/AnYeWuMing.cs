@@ -11,6 +11,7 @@ namespace EW.EWCode.Cards
 {
     public class AnYeWuMing() : EWCard(0, CardType.Skill, CardRarity.Common, TargetType.None)
     {
+        protected override string PortraitFileName => "SL3 02 an_ye_wu_ming.png";
         public override IEnumerable<CardKeyword> CanonicalKeywords => [EWKeywords.Camouflage];
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("Camouflage", 1m)];

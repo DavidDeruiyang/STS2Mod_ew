@@ -7,6 +7,7 @@ namespace EW.EWCode.Cards
 {
     public class D6Bomb() : BombCard(0, CardType.Skill, CardRarity.Common, TargetType.AnyEnemy, 3m, 10m)
     {
+        protected override string PortraitFileName => "SL2 01 D6_zha_dan.png";
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             var owner = Owner?.Creature;

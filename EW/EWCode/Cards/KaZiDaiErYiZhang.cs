@@ -8,6 +8,7 @@ namespace EW.EWCode.Cards
 {
     public class KaZiDaiErYiZhang() : EWCard(2, CardType.Power, CardRarity.Rare, TargetType.None)
     {
+        protected override string PortraitFileName => "PL3 01 ka_zi_dai_er_yi_zhang.png";
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             if (Owner != null)

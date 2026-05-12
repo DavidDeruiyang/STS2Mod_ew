@@ -1,21 +1,22 @@
 ﻿using BaseLib.Abstracts;
-using BaseLib.Utils.NodeFactories;
 using BaseLib.Utils;
+using BaseLib.Utils.NodeFactories;
 using EW.EWCode.Cards;
 using EW.EWCode.Extensions;
 using EW.EWCode.Relics;
 using Godot;
+using MegaCrit.Sts2.Core.Animation;
+using MegaCrit.Sts2.Core.Bindings.MegaSpine;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
-using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Entities.Characters;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Nodes.Combat;
+using MegaCrit.Sts2.Core.Nodes.CommonUi;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
-using MegaCrit.Sts2.Core.Animation;
-using MegaCrit.Sts2.Core.Bindings.MegaSpine;
 using System.Threading.Tasks;
 
 namespace EW.EWCode.Character
@@ -116,81 +117,105 @@ namespace EW.EWCode.Character
 
 
         // initial card
+        //public override IEnumerable<CardModel> StartingDeck => [
+        //    // ModelDb.Card<DieZhouJi>(),
+        //    // ModelDb.Card<QiangLiJi>(),
+        //    // ModelDb.Card<SummonHLZY>(), // test card, will be removed later
+        //    // ModelDb.Card<HongTaoK>(),
+        //    // ModelDb.Card<ZhanShuSheJi>(),
+        //    ModelDb.Card<FanWeiDaJi>(),
+        //    // ModelDb.Card<SuperBigCup>(),
+        //    // ModelDb.Card<CiSha>(),
+        //    ModelDb.Card<LengCiDunRen>(),
+        //    // ModelDb.Card<JiuHuiWanZheGe>(),
+        //    // ModelDb.Card<SuiYiKaiHuo>(),
+        //    // ModelDb.Card<YanWuDan>(),
+        //    ModelDb.Card<LinShiYanTi>(),
+        //    // ModelDb.Card<ZhiShiXueBao>(),
+        //    // ModelDb.Card<WeiWeiMei>(),
+        //    ModelDb.Card<ZaiBuShu>(),
+        //    ModelDb.Card<ShiDaiDeYanLei>(),
+        //    ModelDb.Card<WoDuBuDongYanJiangGao>(),
+        //    // ModelDb.Card<ShengYuHeiYe>(),
+        //    ModelDb.Card<GeiWoWanMingRiFangZhou>(),
+        //    // ModelDb.Card<YingZhi>(),
+        //    // ModelDb.Card<HunHeShuangDa>(),
+        //    // ModelDb.Card<DieMengJi>(),
+        //    // ModelDb.Card<JiFengErShi>(),
+        //    // ModelDb.Card<MaFangYu>(),
+        //    // ModelDb.Card<AnYeWuMing>(),
+        //    ModelDb.Card<YingShao>(),
+        //    // ModelDb.Card<DianXiaDeZhuFu>(),
+        //    // ModelDb.Card<DianXiaQiDeMingZi>(),
+        //    ModelDb.Card<KaZiDaiErYiZhang>(),
+        //    ModelDb.Card<KaZiDaiErDeXiWang>(),
+        //    // ModelDb.Card<YongBingTuanAlpha>(),
+        //    // ModelDb.Card<YongBingTuanBeta>(),
+        //    ModelDb.Card<BiJiBen>(),
+        //    // ModelDb.Card<ZuZongFaSheQi>(),
+        //    // ModelDb.Card<GongTongChuJi>(),
+        //    ModelDb.Card<ZuZongLeiJi>(),
+        //    // ModelDb.Card<BaoHeFuChou>(),
+        //    // ModelDb.Card<BaoLieLiMingDanYao>(),
+        //    ModelDb.Card<ShuangChongDaJi>(),
+        //    ModelDb.Card<GongFangJianBei>(),
+        //    // ModelDb.Card<BaoLieLiMing>(),
+        //    // ModelDb.Card<JinGongYuWang>(),
+        //    // ModelDb.Card<JiNengDuiZhou>(),
+        //    // ModelDb.Card<GunDongXianZu>(),
+        //    // ModelDb.Card<HuoLiBuZu>(),
+        //    ModelDb.Card<ZuZongXianLing>(),
+        //    // ModelDb.Card<SiHunLingDeYuXi>(),
+        //    ModelDb.Card<TouZhiShou>(),
+        //    // ModelDb.Card<HunLingBiYou>(),
+        //    ModelDb.Card<HaoLi>(),
+        //    // ModelDb.Card<XianZuDeBiHu>(),
+        //    ModelDb.Card<HongMingZhiShou>(),
+        //    ModelDb.Card<CanYing>(),
+        //    // tested
+        //    //ModelDb.Card<DismissHLZY>(),  // test card, will be removed later
+        //    //ModelDb.Card<D12>(),
+        //    //ModelDb.Card<BaoFanZhuangJia>(),
+        //    //ModelDb.Card<D6Bomb>(),
+        //    //ModelDb.Card<SuperBigBoom>(),
+        //    //ModelDb.Card<FangYuXingBaoZha>(),
+        //    //ModelDb.Card<TongGuiYuJin>(),
+        //    //ModelDb.Card<YuanChengYinBao>(),
+        //    //ModelDb.Card<ZhanChangZhiZuo>(),
+        //    //ModelDb.Card<ZhaDanLianJie>(),
+        //    //ModelDb.Card<ZhaDanKuangRen>(),
+        //    //ModelDb.Card<ZhaDanMoWangTing>(),
+        //    //ModelDb.Card<ZhaDanZhiZuo>(),
+        //    //ModelDb.Card<QiBao>(),
+        //    //ModelDb.Card<JiKeBaoZha>(),
+        //    //ModelDb.Card<SanErYi>(),
+        //    //ModelDb.Card<SuiJiTouZhi>(),
+        //    //ModelDb.Card<BaoZhaTianCai>()
+        //];
+
         public override IEnumerable<CardModel> StartingDeck => [
-            ModelDb.Card<DieZhouJi>(),
-            ModelDb.Card<DieZhouJi>(),
-            ModelDb.Card<QiangLiJi>(),
-            ModelDb.Card<SummonHLZY>(),
-            ModelDb.Card<HongTaoK>(),
-            ModelDb.Card<ZhanShuSheJi>(),
-            ModelDb.Card<FanWeiDaJi>(),
+            //ModelDb.Card<FanWeiDaJi>(),   //卡牌描述问题
             ModelDb.Card<SuperBigCup>(),
-            ModelDb.Card<CiSha>(),
-            ModelDb.Card<LengCiDunRen>(),
-            ModelDb.Card<JiuHuiWanZheGe>(),
-            ModelDb.Card<SuiYiKaiHuo>(),
-            ModelDb.Card<YanWuDan>(),
-            ModelDb.Card<LinShiYanTi>(),
-            ModelDb.Card<ZhiShiXueBao>(),
-            ModelDb.Card<WeiWeiMei>(),
-            ModelDb.Card<ZaiBuShu>(),
-            ModelDb.Card<ShiDaiDeYanLei>(),
-            ModelDb.Card<WoDuBuDongYanJiangGao>(),
-            ModelDb.Card<ShengYuHeiYe>(),
-            ModelDb.Card<GeiWoWanMingRiFangZhou>(),
-            ModelDb.Card<YingZhi>(),
-            ModelDb.Card<HunHeShuangDa>(),
-            ModelDb.Card<DieMengJi>(),
-            ModelDb.Card<JiFengErShi>(),
-            ModelDb.Card<MaFangYu>(),
-            ModelDb.Card<AnYeWuMing>(),
-            ModelDb.Card<YingShao>(),
-            ModelDb.Card<DianXiaDeZhuFu>(),
-            ModelDb.Card<DianXiaQiDeMingZi>(),
-            ModelDb.Card<KaZiDaiErYiZhang>(),
-            ModelDb.Card<KaZiDaiErDeXiWang>(),
-            ModelDb.Card<YongBingTuanAlpha>(),
-            ModelDb.Card<YongBingTuanBeta>(),
-            ModelDb.Card<BiJiBen>(),
-            ModelDb.Card<ZuZongFaSheQi>(),
-            ModelDb.Card<GongTongChuJi>(),
-            ModelDb.Card<ZuZongLeiJi>(),
-            ModelDb.Card<BaoHeFuChou>(),
-            ModelDb.Card<BaoLieLiMingDanYao>(),
-            ModelDb.Card<ShuangChongDaJi>(),
-            ModelDb.Card<GongFangJianBei>(),
-            ModelDb.Card<BaoLieLiMing>(),
-            ModelDb.Card<JinGongYuWang>(),
-            ModelDb.Card<JiNengDuiZhou>(),
-            ModelDb.Card<GunDongXianZu>(),
-            ModelDb.Card<HuoLiBuZu>(),
-            ModelDb.Card<ZuZongXianLing>(),
-            ModelDb.Card<SiHunLingDeYuXi>(),
-            ModelDb.Card<TouZhiShou>(),
-            ModelDb.Card<HunLingBiYou>(),
-            ModelDb.Card<HaoLi>(),
-            ModelDb.Card<XianZuDeBiHu>(),
-            ModelDb.Card<HongMingZhiShou>(),
-            ModelDb.Card<CanYing>(),
-            //ModelDb.Card<DismissHLZY>(),
-            //ModelDb.Card<D12>(),
-            //ModelDb.Card<BaoFanZhuangJia>(),
-            //ModelDb.Card<D6Bomb>(),
-            //ModelDb.Card<SuperBigBoom>(),
-            //ModelDb.Card<FangYuXingBaoZha>(),
-            //ModelDb.Card<TongGuiYuJin>(),
-            //ModelDb.Card<YuanChengYinBao>(),
-            //ModelDb.Card<ZhanChangZhiZuo>(),
-            //ModelDb.Card<ZhaDanLianJie>(),
-            //ModelDb.Card<ZhaDanKuangRen>(),
-            //ModelDb.Card<ZhaDanMoWangTing>(),
-            //ModelDb.Card<ZhaDanZhiZuo>(),
-            //ModelDb.Card<QiBao>(),
-            //ModelDb.Card<JiKeBaoZha>(),
-            //ModelDb.Card<SanErYi>(),
-            //ModelDb.Card<SuiJiTouZhi>(),
-            //ModelDb.Card<BaoZhaTianCai>()
+            ModelDb.Card<LengCiDunRen>(),  // 破盾问题， propvalue.unbblockable好像没用
+            //ModelDb.Card<LinShiYanTi>(),  //减费生效问题
+            //ModelDb.Card<ZaiBuShu>(),
+            //ModelDb.Card<ShiDaiDeYanLei>(),
+            //ModelDb.Card<WoDuBuDongYanJiangGao>(),
+            //ModelDb.Card<GeiWoWanMingRiFangZhou>(),
+            //ModelDb.Card<YingShao>(),
+            //ModelDb.Card<KaZiDaiErYiZhang>(),
+            //ModelDb.Card<KaZiDaiErDeXiWang>(),
+            ModelDb.Card<BiJiBen>(), //不检测是否空手牌
+            //ModelDb.Card<ZuZongLeiJi>(),
+            //ModelDb.Card<ShuangChongDaJi>(),
+            //ModelDb.Card<GongFangJianBei>(),
+            //ModelDb.Card<ZuZongXianLing>(),
+            //ModelDb.Card<TouZhiShou>(),
+            //ModelDb.Card<HaoLi>(),
+            //ModelDb.Card<HongMingZhiShou>(),
+            //ModelDb.Card<CanYing>(),
         ];
+        //  card is DieZhouJi or YingZhi or HunHeShuangDa or DieMengJi or JiFengErShi or MaFangYu or AnYeWuMing or YingShao or DianXiaDeZhuFu or DianXiaQiDeMingZi;
 
         // starting relic
         public override IReadOnlyList<RelicModel> StartingRelics =>

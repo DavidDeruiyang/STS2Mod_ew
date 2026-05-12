@@ -9,6 +9,7 @@ namespace EW.EWCode.Cards
 {
     public class DianXiaQiDeMingZi() : EWCard(1, CardType.Skill, CardRarity.Common, TargetType.None)
     {
+        protected override string PortraitFileName => "SL3 05 dian_xia_qi_de_ming_zi.png";
         protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(12, MegaCrit.Sts2.Core.ValueProps.ValueProp.Move)];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

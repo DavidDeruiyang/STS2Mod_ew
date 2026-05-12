@@ -27,12 +27,24 @@ namespace EW.EWCode.Cards
 
             foreach (var enemy in LivingEnemiesOf(owner))
             {
-                await CommonActions.CardAttack(this, enemy, vfx: "vfx/vfx_attack_slash").Execute(choiceContext);
+                var hadBomb = BombUtils.CountBombs(enemy) > 0;
+
+                await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+                    .FromCard(this)
+                    .Targeting(enemy)
+                    .WithNoAttackerAnim()
+                    .Execute(choiceContext);
+
                 await PlayHLZYAttack(choiceContext, enemy, this);
 
-                if (BombUtils.CountBombs(enemy) > 0)
+                if (hadBomb && enemy.IsAlive)
                 {
-                    await CommonActions.Apply<TemporaryStrengthPower>(choiceContext, enemy, this, -1m);
+                    await PowerCmd.Apply<StrengthPower>(
+                        enemy,
+                        -1m,
+                        owner,
+                        this
+                    );
                 }
             }
         }

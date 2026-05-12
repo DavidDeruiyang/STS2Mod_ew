@@ -8,6 +8,7 @@ namespace EW.EWCode.Cards
 {
     public class HuoLiBuZu() : EWCard(1, CardType.Skill, CardRarity.Uncommon, TargetType.None)
     {
+        protected override string PortraitFileName => "SL4 05 huo_li_bu_zu.png";
         protected override IEnumerable<IHoverTip> ExtraHoverTips => SingleCardPreview<QiangLiJi>(IsUpgraded);
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

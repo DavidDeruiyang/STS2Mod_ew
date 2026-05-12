@@ -24,11 +24,18 @@ namespace EW.EWCode.Cards
             var target = BombUtils.RandomLivingEnemyOf(Owner.Creature);
             if (target != null)
             {
-                await CommonActions.CardAttack(this, target, vfx: "vfx/vfx_attack_slash").Execute(choiceContext);
+                await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+                    .FromCard(this)
+                    .Targeting(target)
+                    .WithNoAttackerAnim()
+                    .Execute(choiceContext);
+
                 await PlayHLZYAttack(choiceContext, target, this);
             }
 
-            var cardToExhaust = CardPile.GetCards(Owner, [PileType.Hand]).FirstOrDefault(card => card != this);
+            var cardToExhaust = CardPile.GetCards(Owner, [PileType.Hand])
+                .FirstOrDefault(card => card != this);
+
             if (cardToExhaust != null)
             {
                 await CardCmd.Exhaust(choiceContext, cardToExhaust, true, false);

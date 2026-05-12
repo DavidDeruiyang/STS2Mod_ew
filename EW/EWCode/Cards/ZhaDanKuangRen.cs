@@ -14,6 +14,7 @@ namespace EW.EWCode.Cards
 {
     public class ZhaDanKuangRen() : EWCard(2, CardType.Skill, CardRarity.Rare, TargetType.None)
     {
+        protected override string PortraitFileName => "SL2 04 bao_zha_tian_cai.png";
         private const string GeneratedCardKey = "GeneratedCard";
 
         public override IEnumerable<CardKeyword> CanonicalKeywords => [EWKeywords.OriginiumBomb];

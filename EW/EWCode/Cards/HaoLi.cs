@@ -8,6 +8,7 @@ namespace EW.EWCode.Cards
 {
     public class HaoLi() : EWCard(3, CardType.Power, CardRarity.Rare, TargetType.None)
     {
+        protected override string PortraitFileName => "PL4 04 hao_li.png";
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             if (Owner != null) await PowerCmd.Apply<EWHLZYRepeatAttackPower>(Owner.Creature, IsUpgraded ? 70m : 50m, Owner.Creature, this);

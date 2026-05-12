@@ -10,6 +10,7 @@ namespace EW.EWCode.Cards
 {
     public class BaoLieLiMing() : EWCard(2, CardType.Skill, CardRarity.Rare, TargetType.None)
     {
+        protected override string PortraitFileName => "SL4 01 bao_lie_li_ming.png";
         public override IEnumerable<CardKeyword> CanonicalKeywords => [EWKeywords.SoulShadow];
         protected override IEnumerable<IHoverTip> ExtraHoverTips => SingleCardPreview<BaoLieLiMingDanYao>(IsUpgraded);
 

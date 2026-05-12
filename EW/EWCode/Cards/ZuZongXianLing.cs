@@ -8,6 +8,7 @@ namespace EW.EWCode.Cards
 {
     public class ZuZongXianLing() : EWCard(3, CardType.Skill, CardRarity.Rare, TargetType.None)
     {
+        protected override string PortraitFileName => "SL4 06 zu_zong_xian_ling.png";
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
         [
             CardPreview<SiHunLingDeYuXi>(),

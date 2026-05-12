@@ -9,6 +9,7 @@ namespace EW.EWCode.Cards
 {
     public class D12 : BombCard
     {
+        protected override string PortraitFileName => "SL2 02 D12_zha_dan.png";
         public D12() : base(0, CardType.Skill, CardRarity.Rare, TargetType.AnyEnemy, 3m, 20m)
         {
         }

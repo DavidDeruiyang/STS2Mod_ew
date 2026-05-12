@@ -20,6 +20,8 @@ namespace EW.EWCode.Cards
 
         protected override IEnumerable<DynamicVar> CanonicalVars =>
         [
+            new DynamicVar("Strength", 1m),
+            new DynamicVar("Energy", 1m),
             new BlockVar(1, MegaCrit.Sts2.Core.ValueProps.ValueProp.Move),
             new CardsVar(1),
             new HealVar(1),
@@ -32,8 +34,8 @@ namespace EW.EWCode.Cards
             var owner = Owner.Creature;
             var debuff = DynamicVars["Debuff"].BaseValue;
 
-            await CommonActions.ApplySelf<StrengthPower>(choiceContext, this, 1m);
-            await PlayerCmd.GainEnergy(1m, Owner);
+            await CommonActions.ApplySelf<StrengthPower>(choiceContext, this, DynamicVars["Strength"].BaseValue);
+            await PlayerCmd.GainEnergy(DynamicVars["Energy"].BaseValue, Owner);
             await CreatureCmd.GainBlock(owner, DynamicVars.Block, cardPlay, false);
             await CommonActions.Draw(this, choiceContext);
             await CreatureCmd.Heal(owner, DynamicVars.Heal.BaseValue, false);
@@ -49,6 +51,11 @@ namespace EW.EWCode.Cards
 
         protected override void OnUpgrade()
         {
+            DynamicVars["Strength"].UpgradeValueBy(1m);
+            DynamicVars["Energy"].UpgradeValueBy(1m);
+            DynamicVars.Block.UpgradeValueBy(1m);
+            DynamicVars.Cards.UpgradeValueBy(1m);
+            DynamicVars.Heal.UpgradeValueBy(1m);
             DynamicVars["Debuff"].UpgradeValueBy(1m);
         }
     }

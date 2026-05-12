@@ -10,6 +10,7 @@ namespace EW.EWCode.Cards
 {
     public class HunLingBiYou() : EWCard(2, CardType.Power, CardRarity.Uncommon, TargetType.None)
     {
+        protected override string PortraitFileName => "PL4 03 hun_lin_bi_you.png";
         public override IEnumerable<CardKeyword> CanonicalKeywords => [EWKeywords.SoulShadow];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

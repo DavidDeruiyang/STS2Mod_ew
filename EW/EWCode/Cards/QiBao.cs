@@ -10,6 +10,7 @@ namespace EW.EWCode.Cards
 {
     public class QiBao() : EWCard(3, CardType.Skill, CardRarity.Rare, TargetType.None)
     {
+        protected override string PortraitFileName => "SL2 03 qi_bao.png";
         public override IEnumerable<CardKeyword> CanonicalKeywords => [EWKeywords.OriginiumBomb];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

@@ -11,6 +11,8 @@ namespace EW.EWCode.Cards
 {
     public class FangYuXingBaoZha() : BombCard(1, CardType.Skill, CardRarity.Uncommon, TargetType.None, 2m, 10m)
     {
+        protected override string PortraitFileName => "SL2 06 fang_yu_xing_bao_zha.png";
+
         private const string BlockKey = "Block";
 
         protected override IEnumerable<DynamicVar> CanonicalVars =>

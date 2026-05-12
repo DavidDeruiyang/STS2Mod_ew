@@ -12,6 +12,7 @@ namespace EW.EWCode.Cards
 {
     public class BaoFanZhuangJia() : EWCard(3, CardType.Power, CardRarity.Rare, TargetType.None)
     {
+        protected override string PortraitFileName => "PL2 04 bao_fan_zhuang_jia.png";
         protected override IEnumerable<DynamicVar> CanonicalVars =>
         [
             new DynamicVar(EWBombCounterArmorPower.BlockKey, 3m)
