@@ -177,7 +177,7 @@ namespace EW.EWCode.Powers
         public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
         {
             if (Owner == null || player.Creature != Owner || SummonManager.CountHLZY() <= 0) return;
-            await PowerCmd.Apply<EWCamouflagePower>(Owner, 1m, Owner, null);
+            await PowerCmd.Apply<EWCamouflagePower>(Owner, Amount, Owner, null);
         }
     }
 
@@ -189,7 +189,7 @@ namespace EW.EWCode.Powers
         public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
         {
             if (Owner == null || player.Creature != Owner || SummonManager.CountHLZY() <= 0) return;
-            await PlayerCmd.GainEnergy(1m, player);
+            await PlayerCmd.GainEnergy(Amount, player);
         }
     }
 

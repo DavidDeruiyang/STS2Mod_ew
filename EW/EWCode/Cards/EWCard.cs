@@ -148,53 +148,61 @@ namespace EW.EWCode.Cards
             await CardPileCmd.AddGeneratedCardsToCombat(cards, pileType, true, CardPilePosition.Top);
         }
 
-        protected static async Task PlayHLZYAttack(PlayerChoiceContext choiceContext, Creature? target, CardModel cardSource)
+        protected static async Task PlayHLZYAttack(
+            PlayerChoiceContext choiceContext,
+            Creature? target,
+            CardModel cardSource,
+            decimal? sourceHitCount = null
+        )
         {
             var hitCount = SummonManager.CountHLZY();
-            if (target == null || target.IsDead || hitCount <= 0)
+            if (target == null || hitCount <= 0)
             {
                 return;
             }
 
-            HLZYAttackVfx.PlayFromAllHLZYTo(target);
-
-            var mainDamage = GetCardDamage(cardSource);
-            var repeatPower = cardSource.Owner?.Creature.GetPowerInstances<EWHLZYRepeatAttackPower>().FirstOrDefault();
-            var hlzyDamage = repeatPower == null
-                ? 1m
-                : decimal.Max(1m, decimal.Ceiling(mainDamage * repeatPower.Amount / 100m));
-
-            await DamageCmd.Attack(hlzyDamage)
-                .FromCard(cardSource)
-                .Targeting(target)
-                .Unpowered()
-                .WithNoAttackerAnim()
-                .WithHitCount(hitCount)
-                .Execute(choiceContext);
-
-            SummonManager.RecordHLZYAttacks(hitCount);
-            if (cardSource.Owner != null)
-            {
-                ZuZongLeiJi.RefreshDamageForPlayer(cardSource.Owner);
-            }
-
+            var mainDamage = GetCardTotalDamage(cardSource, sourceHitCount);
             var owner = cardSource.Owner?.Creature;
             if (owner == null)
             {
                 return;
             }
 
-            var roaringAmount = owner.GetPowerInstances<EWHLZYRoaringHandPower>().Sum(power => power.Amount);
-            if (roaringAmount > 0m)
+            if (!target.IsDead)
             {
-                var strengthGain = roaringAmount * hitCount;
-                await PowerCmd.Apply<MegaCrit.Sts2.Core.Models.Powers.StrengthPower>(owner, strengthGain, owner, cardSource);
-                await PowerCmd.Apply<EWRemoveStrengthAtTurnEndPower>(owner, strengthGain, owner, cardSource);
-            }
+                HLZYAttackVfx.PlayFromAllHLZYTo(target);
 
-            if (owner.GetPowerInstances<EWAfterimagePower>().Any())
-            {
-                await PowerCmd.Apply<EWAfterimageMarkPower>(target, 1m, owner, cardSource);
+                var repeatPower = owner.GetPowerInstances<EWHLZYRepeatAttackPower>().FirstOrDefault();
+                var hlzyDamage = repeatPower == null
+                    ? 1m
+                    : decimal.Max(1m, decimal.Ceiling(mainDamage * repeatPower.Amount / 100m));
+
+                await DamageCmd.Attack(hlzyDamage)
+                    .FromCard(cardSource)
+                    .Targeting(target)
+                    .Unpowered()
+                    .WithNoAttackerAnim()
+                    .WithHitCount(hitCount)
+                    .Execute(choiceContext);
+
+                SummonManager.RecordHLZYAttacks(hitCount);
+                if (cardSource.Owner != null)
+                {
+                    ZuZongLeiJi.RefreshDamageForPlayer(cardSource.Owner);
+                }
+
+                var roaringAmount = owner.GetPowerInstances<EWHLZYRoaringHandPower>().Sum(power => power.Amount);
+                if (roaringAmount > 0m)
+                {
+                    var strengthGain = roaringAmount * hitCount;
+                    await PowerCmd.Apply<MegaCrit.Sts2.Core.Models.Powers.StrengthPower>(owner, strengthGain, owner, cardSource);
+                    await PowerCmd.Apply<EWRemoveStrengthAtTurnEndPower>(owner, strengthGain, owner, cardSource);
+                }
+
+                if (owner.GetPowerInstances<EWAfterimagePower>().Any())
+                {
+                    await PowerCmd.Apply<EWAfterimageMarkPower>(target, 1m, owner, cardSource);
+                }
             }
 
             if (cardSource.TargetType == TargetType.AnyEnemy &&
@@ -220,6 +228,24 @@ namespace EW.EWCode.Cards
             try
             {
                 return card.DynamicVars.Damage.BaseValue;
+            }
+            catch
+            {
+                return 1m;
+            }
+        }
+
+        private static decimal GetCardTotalDamage(CardModel card, decimal? sourceHitCount)
+        {
+            var hitCount = sourceHitCount ?? GetCardHitCount(card);
+            return GetCardDamage(card) * decimal.Max(0m, hitCount);
+        }
+
+        private static decimal GetCardHitCount(CardModel card)
+        {
+            try
+            {
+                return decimal.Max(1m, card.DynamicVars["HitCount"].BaseValue);
             }
             catch
             {

@@ -10,13 +10,6 @@ namespace EW.EWCode.Cards
     {
         protected override string PortraitFileName => "SL1 07 yan_jiang.png";
 
-        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
-        [
-            CardPreview<ShengYuHeiYe>(),
-            CardPreview<GeiWoWanMingRiFangZhou>(),
-            CardPreview<SiHunLingDeYuXi>()
-        ];
-
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             if (Owner == null) return;

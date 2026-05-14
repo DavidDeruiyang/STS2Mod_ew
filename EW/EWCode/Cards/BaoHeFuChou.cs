@@ -28,7 +28,7 @@ namespace EW.EWCode.Cards
                 await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this).Targeting(target).WithHitCount(hits).Execute(choiceContext);
             }
 
-            await PlayHLZYAttack(choiceContext, target, this);
+            await PlayHLZYAttack(choiceContext, target, this, hits);
         }
 
         protected override void OnUpgrade() => DynamicVars.Damage.UpgradeValueBy(2m);

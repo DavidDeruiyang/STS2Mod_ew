@@ -10,6 +10,8 @@ namespace EW.EWCode.Powers
     {
         private static readonly Dictionary<string, string> CardPowerIconFiles = new()
         {
+            [nameof(EWTimedBombPower)] = "timed_bomb.png",
+            [nameof(EWCamouflagePower)] = "micai.png",
             [nameof(EWEndCombatHealPower)] = "PIL1 02 gei_wo_wan_mrfz.png",
             [nameof(EWExplosionGeniusPower)] = "PIL2 01 bao_zha_tian_cai.png",
             [nameof(EWThreeTwoOnePower)] = "PIL2 02 3_2_1.png",
@@ -27,6 +29,8 @@ namespace EW.EWCode.Powers
             [nameof(EWAncestorGuardPower)] = "PIL4 05 xian_zu_de_bi_hu.png",
             [nameof(EWHLZYRoaringHandPower)] = "PIL4 06 hong_ming_zhi_shou.png",
             [nameof(EWAfterimagePower)] = "PIL4 07 can_ying.png",
+            [nameof(EWAfterimageMarkPower)] = "canying_debuff.png",
+            [nameof(EWNextTurnEnergyPower)] = "nextTurnEnergy.png",
         };
 
         private string IconFileName =>

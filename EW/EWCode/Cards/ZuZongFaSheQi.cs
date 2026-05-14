@@ -30,7 +30,7 @@ namespace EW.EWCode.Cards
                     .Execute(choiceContext);
             }
 
-            await PlayHLZYAttack(choiceContext, target, this);
+            await PlayHLZYAttack(choiceContext, target, this, count);
             SummonManager.ClearHLZY();
         }
 

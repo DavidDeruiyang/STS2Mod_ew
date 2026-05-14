@@ -169,13 +169,13 @@ namespace EW.EWCode.Character
         //    // ModelDb.Card<GunDongXianZu>(),
         //    // ModelDb.Card<HuoLiBuZu>(),
         //    // ModelDb.Card<ZuZongXianLing>(),
-        //    // ModelDb.Card<SiHunLingDeYuXi>(),
-        //    // ModelDb.Card<TouZhiShou>(),
+        //    ModelDb.Card<SiHunLingDeYuXi>(),
+        //    ModelDb.Card<TouZhiShou>(),
         //    // ModelDb.Card<HunLingBiYou>(),
-        //    // ModelDb.Card<HaoLi>(),
-        //    // ModelDb.Card<XianZuDeBiHu>(),
+        //    ModelDb.Card<HaoLi>(),
+        //    ModelDb.Card<XianZuDeBiHu>(),
         //    // ModelDb.Card<HongMingZhiShou>(),
-        //    // ModelDb.Card<CanYing>(),
+        //    ModelDb.Card<CanYing>(),
         //    // ModelDb.Card<DismissHLZY>(),
         //    // ModelDb.Card<D12>(),
         //    // ModelDb.Card<BaoFanZhuangJia>(),
@@ -196,11 +196,19 @@ namespace EW.EWCode.Character
         //    // ModelDb.Card<BaoZhaTianCai>()
         //];
 
+        //initial deck
         public override IEnumerable<CardModel> StartingDeck => [
             ModelDb.Card<BasicAttack>(),
             ModelDb.Card<BasicAttack>(),
+            ModelDb.Card<BasicAttack>(),
+            ModelDb.Card<BasicAttack>(),
+            ModelDb.Card<BasicAttack>(),
             ModelDb.Card<BasicDefense>(),
-            ModelDb.Card<SuperBigCup>(),
+            ModelDb.Card<BasicDefense>(),
+            ModelDb.Card<BasicDefense>(),
+            ModelDb.Card<BasicDefense>(),
+            ModelDb.Card<YanWuDan>(),
+            ModelDb.Card<QiangLiJi>(),
         ];
 
         // starting relic

@@ -4,5 +4,5 @@
   "EW-SOULSHADOW.title": "魂灵之影",
   "EW-SOULSHADOW.description": "召唤物。每获得 1 个魂灵之影，获得 2 层迷彩。每当角色使用攻击牌时，每个魂灵之影额外对目标造成 1 点伤害。角色受到未被格挡的伤害后，失去 1 个魂灵之影。",
   "EW-CAMOUFLAGE.title": "迷彩",
-  "EW-CAMOUFLAGE.description": "友方增益。每层使受到的伤害降低 10%。回合结束时失去 1 层。最多 10 层。"
+  "EW-CAMOUFLAGE.description": "每层使受到的伤害降低 10%。回合结束时失去 1 层。最多 10 层。"
 }

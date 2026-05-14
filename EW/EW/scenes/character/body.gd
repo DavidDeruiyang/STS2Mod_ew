@@ -9,6 +9,7 @@ const HLZY_SCENE := preload("res://EW/scenes/summons/hlzy/hlzy_visual.tscn")
 const HLZY_WIND_DISSOLVE_SHADER := preload("res://EW/scenes/summons/hlzy/hlzy_wind_dissolve.gdshader")
 const HLZY_NODE_PREFIX := "HLZYCompanion"
 const HLZY_SCALE := Vector2(1.25, 1.25)
+const PENDING_ABANDON_DEATH_UNTIL_TICKS := "ew/pending_abandon_death_until_ticks"
 const HLZY_POSITIONS := [
 	Vector2(-713, -630),
 	Vector2(-760, -695),
@@ -27,6 +28,7 @@ func _ready() -> void:
 
 	animation_changed.connect(_on_animation_changed)
 	animation_finished.connect(_on_animation_finished)
+	_play_pending_abandon_death_if_needed()
 
 
 func ew_play_death() -> void:
@@ -39,6 +41,17 @@ func ew_play_death() -> void:
 
 	if animation != "die":
 		play("die")
+
+
+func _play_pending_abandon_death_if_needed() -> void:
+	var pending_until := int(ProjectSettings.get_setting(PENDING_ABANDON_DEATH_UNTIL_TICKS, 0))
+	if pending_until <= 0:
+		return
+
+	ProjectSettings.set_setting(PENDING_ABANDON_DEATH_UNTIL_TICKS, 0)
+	if Time.get_ticks_msec() <= pending_until:
+		print("EW pending abandon death animation consumed")
+		ew_play_death.call_deferred()
 
 
 func ew_restart_animation(animation_name: StringName) -> void:

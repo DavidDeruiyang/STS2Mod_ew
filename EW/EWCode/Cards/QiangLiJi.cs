@@ -37,7 +37,7 @@ namespace EW.EWCode.Cards
                 vfx: "vfx/vfx_attack_slash"
             ).Execute(choiceContext);
 
-            await PlayHLZYAttack(choiceContext, target, this);
+            await PlayHLZYAttack(choiceContext, target, this, HitCount);
 
             await CommonActions.Apply<WeakPower>(
                 choiceContext,

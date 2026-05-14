@@ -35,7 +35,7 @@ namespace EW.EWCode.Cards
             }
 
             await CommonActions.CardAttack(this, target, hitCount, vfx: "vfx/vfx_attack_slash").Execute(choiceContext);
-            await PlayHLZYAttack(choiceContext, target, this);
+            await PlayHLZYAttack(choiceContext, target, this, hitCount);
         }
 
         protected override void OnUpgrade()

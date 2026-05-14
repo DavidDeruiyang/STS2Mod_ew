@@ -18,7 +18,7 @@ namespace EW.EWCode.Cards
         {
             if (cardPlay.Target == null) return;
             await CommonActions.CardAttack(this, cardPlay.Target, 2, vfx: "vfx/vfx_attack_slash").Execute(choiceContext);
-            await PlayHLZYAttack(choiceContext, cardPlay.Target, this);
+            await PlayHLZYAttack(choiceContext, cardPlay.Target, this, 2m);
         }
 
         protected override void OnUpgrade()
