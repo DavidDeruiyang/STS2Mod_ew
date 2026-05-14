@@ -9,6 +9,7 @@ using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace EW.EWCode.Cards
@@ -25,8 +26,14 @@ namespace EW.EWCode.Cards
             var owner = Owner?.Creature;
             if (owner == null) return;
 
-            foreach (var enemy in LivingEnemiesOf(owner))
+            var targets = LivingEnemiesOf(owner).ToList();
+            foreach (var enemy in targets)
             {
+                if (!enemy.IsAlive || !enemy.IsHittable)
+                {
+                    continue;
+                }
+
                 var hadBomb = BombUtils.CountBombs(enemy) > 0;
 
                 await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
@@ -35,7 +42,10 @@ namespace EW.EWCode.Cards
                     .WithNoAttackerAnim()
                     .Execute(choiceContext);
 
-                await PlayHLZYAttack(choiceContext, enemy, this);
+                if (enemy.IsAlive && enemy.IsHittable)
+                {
+                    await PlayHLZYAttack(choiceContext, enemy, this);
+                }
 
                 if (hadBomb && enemy.IsAlive)
                 {

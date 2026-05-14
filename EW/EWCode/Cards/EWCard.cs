@@ -3,6 +3,7 @@ using BaseLib.Extensions;
 using BaseLib.Utils;
 using EW.EWCode.Character;
 using EW.EWCode.Extensions;
+using EW.EWCode.Powers;
 using EW.EWCode.Summons;
 using EW.EWCode.Vfx;
 using MegaCrit.Sts2.Core.Commands;
@@ -78,6 +79,47 @@ namespace EW.EWCode.Cards
             await AddGeneratedCards<T>(player, PileType.Draw, amount, upgraded);
         }
 
+        protected async Task ChooseCardFromEWPoolToHand(
+            PlayerChoiceContext choiceContext,
+            CardType cardType,
+            bool upgraded = false,
+            int optionCount = 3
+        )
+        {
+            if (Owner == null || Owner.Creature.CombatState == null)
+            {
+                return;
+            }
+
+            var options = ModelDb.CardPool<EWCardPool>()
+                .AllCards
+                .Where(card => card.Type == cardType && card.GetType() != GetType())
+                .OrderBy(_ => Guid.NewGuid())
+                .Take(optionCount)
+                .Select(card =>
+                {
+                    var generated = Owner.Creature.CombatState.CreateCard(card, Owner);
+                    if (upgraded)
+                    {
+                        CardCmd.Upgrade(generated, CardPreviewStyle.None);
+                    }
+
+                    return generated;
+                })
+                .ToList();
+
+            if (options.Count == 0)
+            {
+                return;
+            }
+
+            var selected = await CardSelectCmd.FromChooseACardScreen(choiceContext, options, Owner, false);
+            if (selected != null)
+            {
+                await CardPileCmd.AddGeneratedCardsToCombat([selected], PileType.Hand, true, CardPilePosition.Top);
+            }
+        }
+
         public static async Task AddGeneratedCards<T>(
             Player player,
             PileType pileType,
@@ -93,6 +135,11 @@ namespace EW.EWCode.Cards
                 if (upgraded)
                 {
                     CardCmd.Upgrade(card, CardPreviewStyle.None);
+                }
+
+                if (costDeltaThisTurn != 0)
+                {
+                    card.EnergyCost.AddThisTurn(costDeltaThisTurn);
                 }
 
                 cards.Add(card);
@@ -111,13 +158,73 @@ namespace EW.EWCode.Cards
 
             HLZYAttackVfx.PlayFromAllHLZYTo(target);
 
-            await DamageCmd.Attack(1m)
+            var mainDamage = GetCardDamage(cardSource);
+            var repeatPower = cardSource.Owner?.Creature.GetPowerInstances<EWHLZYRepeatAttackPower>().FirstOrDefault();
+            var hlzyDamage = repeatPower == null
+                ? 1m
+                : decimal.Max(1m, decimal.Ceiling(mainDamage * repeatPower.Amount / 100m));
+
+            await DamageCmd.Attack(hlzyDamage)
                 .FromCard(cardSource)
                 .Targeting(target)
                 .Unpowered()
                 .WithNoAttackerAnim()
                 .WithHitCount(hitCount)
                 .Execute(choiceContext);
+
+            SummonManager.RecordHLZYAttacks(hitCount);
+            if (cardSource.Owner != null)
+            {
+                ZuZongLeiJi.RefreshDamageForPlayer(cardSource.Owner);
+            }
+
+            var owner = cardSource.Owner?.Creature;
+            if (owner == null)
+            {
+                return;
+            }
+
+            var roaringAmount = owner.GetPowerInstances<EWHLZYRoaringHandPower>().Sum(power => power.Amount);
+            if (roaringAmount > 0m)
+            {
+                var strengthGain = roaringAmount * hitCount;
+                await PowerCmd.Apply<MegaCrit.Sts2.Core.Models.Powers.StrengthPower>(owner, strengthGain, owner, cardSource);
+                await PowerCmd.Apply<EWRemoveStrengthAtTurnEndPower>(owner, strengthGain, owner, cardSource);
+            }
+
+            if (owner.GetPowerInstances<EWAfterimagePower>().Any())
+            {
+                await PowerCmd.Apply<EWAfterimageMarkPower>(target, 1m, owner, cardSource);
+            }
+
+            if (cardSource.TargetType == TargetType.AnyEnemy &&
+                owner.GetPowerInstances<EWHLZYSplashPower>().Any() &&
+                mainDamage > 0m)
+            {
+                var splashPercent = owner.GetPowerInstances<EWHLZYSplashPower>().Max(power => power.Amount);
+                var splashDamage = decimal.Max(1m, decimal.Ceiling(mainDamage * splashPercent / 100m));
+                foreach (var enemy in LivingEnemiesOf(owner).Where(enemy => enemy != target))
+                {
+                    await DamageCmd.Attack(splashDamage)
+                        .FromCard(cardSource)
+                        .Targeting(enemy)
+                        .Unpowered()
+                        .WithNoAttackerAnim()
+                        .Execute(choiceContext);
+                }
+            }
+        }
+
+        private static decimal GetCardDamage(CardModel card)
+        {
+            try
+            {
+                return card.DynamicVars.Damage.BaseValue;
+            }
+            catch
+            {
+                return 1m;
+            }
         }
     }
 }

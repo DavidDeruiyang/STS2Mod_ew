@@ -21,7 +21,7 @@ namespace EW.EWCode.Cards
         {
             if (Owner == null) return;
 
-            await AddCardsToHand<ShengYuHeiYe>(Owner, 1, IsUpgraded);
+            await ChooseCardFromEWPoolToHand(choiceContext, CardType.Power, IsUpgraded);
         }
 
         protected override void OnUpgrade()

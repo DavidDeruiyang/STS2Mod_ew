@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EW.EWCode.Cards
 {
-    public class SuiJiTouZhi() : BombCard(0, CardType.Skill, CardRarity.Rare, TargetType.None, 3m, 20m)
+    public class SuiJiTouZhi() : BombCard(0, CardType.Skill, CardRarity.Uncommon, TargetType.None, 3m, 20m)
     {
         protected override string PortraitFileName => "SL2 08 sui_ji_tou_zhi.png";
         private const string GeneratedCardKey = "GeneratedCard";

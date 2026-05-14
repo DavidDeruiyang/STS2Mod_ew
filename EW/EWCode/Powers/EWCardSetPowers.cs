@@ -5,11 +5,14 @@ using EW.EWCode.Summons;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.Rooms;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -17,8 +20,62 @@ namespace EW.EWCode.Powers
 {
     public class EWEndCombatHealPower : EWPower
     {
+        private static readonly Dictionary<Creature, decimal> ActiveHealing = [];
+
         public override PowerType Type => PowerType.Buff;
         public override PowerStackType StackType => PowerStackType.Counter;
+
+        public static void Register(Creature owner, decimal percent)
+        {
+            ActiveHealing[owner] = percent;
+        }
+
+        public static async Task HealRegisteredAtCombatEnd()
+        {
+            var entries = ActiveHealing.ToList();
+            ActiveHealing.Clear();
+
+            foreach (var (owner, percent) in entries)
+            {
+                if (owner == null || owner.IsDead)
+                {
+                    continue;
+                }
+
+                var missingHp = owner.MaxHp - owner.CurrentHp;
+                if (missingHp <= 0)
+                {
+                    continue;
+                }
+
+                var healAmount = decimal.Ceiling(missingHp * percent / 100m);
+                if (healAmount > 0m)
+                {
+                    await CreatureCmd.Heal(owner, healAmount, false);
+                }
+            }
+        }
+
+        public override async Task AfterCombatEnd(CombatRoom room)
+        {
+            if (Owner == null || Owner.IsDead)
+            {
+                return;
+            }
+
+            var missingHp = Owner.MaxHp - Owner.CurrentHp;
+            if (missingHp <= 0m)
+            {
+                return;
+            }
+
+            var healAmount = decimal.Ceiling(missingHp * Amount / 100m);
+            if (healAmount > 0m)
+            {
+                await CreatureCmd.Heal(Owner, healAmount, false);
+                MainFile.Logger.Info($"[EW] 给我玩明日方舟 healed {healAmount} at combat end ({Amount}% of missing HP).");
+            }
+        }
     }
 
     public class EWKazdelSpeakerPower : EWPower
@@ -29,14 +86,46 @@ namespace EW.EWCode.Powers
         public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
         {
             if (Owner == null || player.Creature != Owner) return;
-            await EWCard.AddGeneratedCards<DieZhouJi>(player, PileType.Hand, 1, false, Amount > 0m ? -1 : 0);
+            await KazdelCardUtils.AddRandomKazdelCardToHand(player, false, Amount > 1m ? -1 : 0);
         }
     }
 
     public class EWKazdelHopePower : EWPower
     {
+        private int _kazdelCardsPlayedThisTurn;
+        private bool _triggeredThisTurn;
+
         public override PowerType Type => PowerType.Buff;
         public override PowerStackType StackType => PowerStackType.Counter;
+
+        public override Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+        {
+            if (Owner != null && player.Creature == Owner)
+            {
+                _kazdelCardsPlayedThisTurn = 0;
+                _triggeredThisTurn = false;
+            }
+
+            return Task.CompletedTask;
+        }
+
+        public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+        {
+            if (Owner == null || cardPlay.Card.Owner?.Creature != Owner || !KazdelCardUtils.IsKazdelCard(cardPlay.Card))
+            {
+                return;
+            }
+
+            _kazdelCardsPlayedThisTurn++;
+            if (_triggeredThisTurn || _kazdelCardsPlayedThisTurn < 3)
+            {
+                return;
+            }
+
+            _triggeredThisTurn = true;
+            await PowerCmd.Apply<PlatingPower>(Owner, 5m, Owner, cardPlay.Card);
+            await PowerCmd.Apply<StrengthPower>(Owner, 3m, Owner, cardPlay.Card);
+        }
     }
 
     public class EWKazdelStrengthPower : EWPower
@@ -46,22 +135,19 @@ namespace EW.EWCode.Powers
 
         public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            if (Owner == null || cardPlay.Card.Owner?.Creature != Owner || !IsKazdelCard(cardPlay.Card)) return;
+            if (Owner == null || cardPlay.Card.Owner?.Creature != Owner || !KazdelCardUtils.IsKazdelCard(cardPlay.Card)) return;
             await CommonActions.ApplySelf<StrengthPower>(choiceContext, cardPlay.Card, Amount);
-        }
-
-        protected static bool IsKazdelCard(CardModel card)
-        {
-            return card is DieZhouJi or YingZhi or HunHeShuangDa or DieMengJi or JiFengErShi
-                or MaFangYu or AnYeWuMing or YingShao or DianXiaDeZhuFu or DianXiaQiDeMingZi;
         }
     }
 
-    public class EWKazdelDexterityPower : EWKazdelStrengthPower
+    public class EWKazdelDexterityPower : EWPower
     {
+        public override PowerType Type => PowerType.Buff;
+        public override PowerStackType StackType => PowerStackType.Counter;
+
         public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            if (Owner == null || cardPlay.Card.Owner?.Creature != Owner || !IsKazdelCard(cardPlay.Card)) return;
+            if (Owner == null || cardPlay.Card.Owner?.Creature != Owner || !KazdelCardUtils.IsKazdelCard(cardPlay.Card)) return;
             await CommonActions.ApplySelf<DexterityPower>(choiceContext, cardPlay.Card, Amount);
         }
     }
@@ -74,6 +160,11 @@ namespace EW.EWCode.Powers
         public override async Task BeforeTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
         {
             if (Owner == null || side != Owner.Side) return;
+
+            var player = CombatManager.Instance.DebugOnlyGetState()?.Players
+                .FirstOrDefault(player => player.Creature == Owner);
+            if (player == null || CardPile.GetCards(player, [PileType.Hand]).Any()) return;
+
             await PowerCmd.Apply<EWNextTurnEnergyPower>(Owner, Amount, Owner, null);
         }
     }
@@ -133,9 +224,65 @@ namespace EW.EWCode.Powers
         public override PowerStackType StackType => PowerStackType.Counter;
     }
 
+    public class EWRemoveStrengthAtTurnEndPower : EWPower
+    {
+        public override PowerType Type => PowerType.Debuff;
+        public override PowerStackType StackType => PowerStackType.Counter;
+
+        public override async Task BeforeTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+        {
+            if (Owner == null || side != Owner.Side)
+            {
+                return;
+            }
+
+            await PowerCmd.Apply<StrengthPower>(Owner, -Amount, Owner, null);
+            await PowerCmd.Remove(this);
+        }
+    }
+
+    public class EWRestoreStrengthAtTurnEndPower : EWPower
+    {
+        public override PowerType Type => PowerType.Buff;
+        public override PowerStackType StackType => PowerStackType.Counter;
+
+        public override async Task BeforeTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+        {
+            if (Owner == null || side != Owner.Side)
+            {
+                return;
+            }
+
+            await PowerCmd.Apply<StrengthPower>(Owner, Amount, Owner, null);
+            await PowerCmd.Remove(this);
+        }
+    }
+
     public class EWAfterimagePower : EWPower
     {
         public override PowerType Type => PowerType.Buff;
         public override PowerStackType StackType => PowerStackType.Counter;
+    }
+
+    public class EWAfterimageMarkPower : EWPower
+    {
+        public override PowerType Type => PowerType.Debuff;
+        public override PowerStackType StackType => PowerStackType.Counter;
+
+        public override decimal ModifyDamageAdditive(
+            Creature? target,
+            decimal amount,
+            MegaCrit.Sts2.Core.ValueProps.ValueProp props,
+            Creature? dealer,
+            CardModel? cardSource
+        )
+        {
+            if (Owner == null || target != Owner || cardSource?.Owner?.Creature != dealer)
+            {
+                return 0m;
+            }
+
+            return 2m * Amount;
+        }
     }
 }

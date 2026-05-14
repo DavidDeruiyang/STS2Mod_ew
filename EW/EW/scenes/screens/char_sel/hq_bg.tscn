@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=3 uid="uid://d1twrb1mdh7q0"]
+[gd_scene load_steps=96 format=3 uid="uid://d1twrb1mdh7q0"]
 
 [ext_resource type="Texture2D" uid="uid://d3kxopq0faj1i" path="res://EW/images/character_select/HQ_bg/未命名MSR特选曲目组合包_Vol.0200.png" id="1_dl7s1"]
 [ext_resource type="Texture2D" uid="uid://da0epngs58xsc" path="res://EW/images/character_select/HQ_bg/未命名MSR特选曲目组合包_Vol.0201.png" id="2_0ul8t"]
@@ -93,6 +93,7 @@
 [ext_resource type="Texture2D" uid="uid://c3id04kbx2cde" path="res://EW/images/character_select/HQ_bg/未命名MSR特选曲目组合包_Vol.0290.png" id="91_8q5am"]
 [ext_resource type="Texture2D" uid="uid://c2cv12ulswcry" path="res://EW/images/character_select/HQ_bg/未命名MSR特选曲目组合包_Vol.0291.png" id="92_rgorr"]
 [ext_resource type="Texture2D" uid="uid://poi7l76sadh0" path="res://EW/images/character_select/HQ_bg/未命名MSR特选曲目组合包_Vol.0292.png" id="93_203fb"]
+[ext_resource type="AudioStream" path="res://EW/audio/问候 日语.wav" id="94_greeting"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3tps6"]
 animations = [{
@@ -395,3 +396,7 @@ sprite_frames = SubResource("SpriteFrames_3tps6")
 autoplay = "default"
 frame_progress = 0.88703144
 flip_h = true
+
+[node name="GreetingVoice" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("94_greeting")
+autoplay = true

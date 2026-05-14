@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EW.EWCode.Cards
 {
-    public class ZhaDanMoWangTing() : EWCard(3, CardType.Power, CardRarity.Rare, TargetType.None)
+    public class ZhaDanMoWangTing() : EWCard(3, CardType.Power, CardRarity.Uncommon, TargetType.None)
     {
         protected override string PortraitFileName => "PL2 03 zha_dan_mo_wang_ting.png";
         public override IEnumerable<CardKeyword> CanonicalKeywords => [EWKeywords.OriginiumBomb];

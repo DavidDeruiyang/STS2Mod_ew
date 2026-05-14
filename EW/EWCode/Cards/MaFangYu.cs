@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EW.EWCode.Cards
 {
-    public class MaFangYu() : EWCard(2, CardType.Skill, CardRarity.Basic, TargetType.None)
+    public class MaFangYu() : EWCard(2, CardType.Skill, CardRarity.Common, TargetType.None)
     {
         protected override string PortraitFileName => "SL3 01 ma_fang_yu.png";
         protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(14, MegaCrit.Sts2.Core.ValueProps.ValueProp.Move)];

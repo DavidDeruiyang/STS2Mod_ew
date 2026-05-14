@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EW.EWCode.Cards
 {
-    public class JiuHuiWanZheGe() : EWCard(3, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
+    public class JiuHuiWanZheGe() : EWCard(3, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
         protected override string PortraitFileName => "AL1 08 jiu_hui_wan_zhe_ge.png";
 

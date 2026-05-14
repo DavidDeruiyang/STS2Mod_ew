@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace EW.EWCode.Cards
 {
-    public class BaoZhaTianCai() : EWCard(2, CardType.Power, CardRarity.Rare, TargetType.None)
+    public class BaoZhaTianCai() : EWCard(2, CardType.Power, CardRarity.Uncommon, TargetType.None)
     {
         protected override string PortraitFileName => "PL2 01 bao_zha_tian_cai.png";
 

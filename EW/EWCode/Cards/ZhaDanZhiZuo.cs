@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EW.EWCode.Cards
 {
-    public class ZhaDanZhiZuo() : EWCard(2, CardType.Skill, CardRarity.Uncommon, TargetType.None)
+    public class ZhaDanZhiZuo() : EWCard(2, CardType.Skill, CardRarity.Rare, TargetType.None)
     {
         protected override string PortraitFileName => "SL2 07 zha_dan_zhi_zuo.png";
         private const string GeneratedCardKey = "GeneratedCard";

@@ -10,8 +10,9 @@ using System.Threading.Tasks;
 
 namespace EW.EWCode.Cards
 {
-    public class DieZhouJi() : EWCard(1, CardType.Attack, CardRarity.Basic, TargetType.AnyEnemy)
+    public class DieZhouJi() : EWCard(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
     {
+        protected override string PortraitFileName => "AL3 04 die_meng_ji.png";
         protected override IEnumerable<DynamicVar> CanonicalVars =>
         [
             new DamageVar(12, ValueProp.Move)

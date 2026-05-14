@@ -19,7 +19,7 @@ namespace EW.EWCode.Cards
             if (Owner == null || cardPlay.Target == null) return;
             await CommonActions.CardAttack(this, cardPlay.Target, vfx: "vfx/vfx_attack_slash").Execute(choiceContext);
             await PlayHLZYAttack(choiceContext, cardPlay.Target, this);
-            await AddCardsToHand<SummonHLZY>(Owner, 1, IsUpgraded);
+            await ChooseCardFromEWPoolToHand(choiceContext, CardType.Skill, IsUpgraded);
         }
 
         protected override void OnUpgrade() => DynamicVars.Damage.UpgradeValueBy(3m);

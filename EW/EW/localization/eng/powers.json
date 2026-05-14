@@ -1,4 +1,4 @@
-{
+﻿{
   "EW-E_W_TIMED_BOMB_POWER.title": "源石炸弹",
   "EW-E_W_TIMED_BOMB_POWER.description": "在 {Countdown} 回合后造成 {BombDamage} 点伤害。",
   "EW-E_W_TIMED_BOMB_POWER.smartDescription": "在 {Countdown} 回合后造成 {BombDamage} 点伤害。",
@@ -27,11 +27,11 @@
   "EW-E_W_END_COMBAT_HEAL_POWER.description": "战斗结束时回复生命。",
   "EW-E_W_END_COMBAT_HEAL_POWER.smartDescription": "战斗结束时回复生命。",
   "EW-E_W_KAZDEL_SPEAKER_POWER.title": "卡兹戴尔议长",
-  "EW-E_W_KAZDEL_SPEAKER_POWER.description": "在你的回合开始时，将 1 张卡兹戴尔牌加入手牌。",
-  "EW-E_W_KAZDEL_SPEAKER_POWER.smartDescription": "在你的回合开始时，将 1 张卡兹戴尔牌加入手牌。",
+  "EW-E_W_KAZDEL_SPEAKER_POWER.description": "在你的回合开始时，将 1 张随机卡兹戴尔牌加入手牌。",
+  "EW-E_W_KAZDEL_SPEAKER_POWER.smartDescription": "在你的回合开始时，将 1 张随机卡兹戴尔牌加入手牌。",
   "EW-E_W_KAZDEL_HOPE_POWER.title": "卡兹戴尔的希望",
-  "EW-E_W_KAZDEL_HOPE_POWER.description": "卡兹戴尔的希望。",
-  "EW-E_W_KAZDEL_HOPE_POWER.smartDescription": "卡兹戴尔的希望。",
+  "EW-E_W_KAZDEL_HOPE_POWER.description": "如果你在一回合内打出了至少 3 张卡兹戴尔角色牌，获得 5 层覆甲和 3 点力量。",
+  "EW-E_W_KAZDEL_HOPE_POWER.smartDescription": "如果你在一回合内打出了至少 3 张卡兹戴尔角色牌，获得 5 层覆甲和 3 点力量。",
   "EW-E_W_KAZDEL_STRENGTH_POWER.title": "佣兵团α",
   "EW-E_W_KAZDEL_STRENGTH_POWER.description": "使用卡兹戴尔角色牌时获得力量。",
   "EW-E_W_KAZDEL_STRENGTH_POWER.smartDescription": "使用卡兹戴尔角色牌时获得力量。",
@@ -59,7 +59,17 @@
   "EW-E_WH_LZ_Y_ROARING_HAND_POWER.title": "轰鸣之手",
   "EW-E_WH_LZ_Y_ROARING_HAND_POWER.description": "魂灵之影攻击时获得力量。",
   "EW-E_WH_LZ_Y_ROARING_HAND_POWER.smartDescription": "魂灵之影攻击时获得力量。",
+  "EW-E_W_REMOVE_STRENGTH_AT_TURN_END_POWER.title": "临时力量",
+  "EW-E_W_REMOVE_STRENGTH_AT_TURN_END_POWER.description": "回合结束时失去力量。",
+  "EW-E_W_REMOVE_STRENGTH_AT_TURN_END_POWER.smartDescription": "回合结束时失去力量。",
+  "EW-E_W_RESTORE_STRENGTH_AT_TURN_END_POWER.title": "临时失力",
+  "EW-E_W_RESTORE_STRENGTH_AT_TURN_END_POWER.description": "回合结束时恢复力量。",
+  "EW-E_W_RESTORE_STRENGTH_AT_TURN_END_POWER.smartDescription": "回合结束时恢复力量。",
   "EW-E_W_AFTERIMAGE_POWER.title": "残影",
   "EW-E_W_AFTERIMAGE_POWER.description": "攻击会附着残影。",
-  "EW-E_W_AFTERIMAGE_POWER.smartDescription": "攻击会附着残影。"
+  "EW-E_W_AFTERIMAGE_POWER.smartDescription": "攻击会附着残影。",
+  "EW-E_W_AFTERIMAGE_MARK_POWER.title": "\u6b8b\u5f71",
+  "EW-E_W_AFTERIMAGE_MARK_POWER.description": "\u89d2\u8272\u5bf9\u9644\u7740\u6b8b\u5f71\u7684\u654c\u4eba\u9020\u6210\u7684\u4f24\u5bb3\u589e\u52a0 2\u3002",
+  "EW-E_W_AFTERIMAGE_MARK_POWER.smartDescription": "\u89d2\u8272\u5bf9\u9644\u7740\u6b8b\u5f71\u7684\u654c\u4eba\u9020\u6210\u7684\u4f24\u5bb3\u589e\u52a0 2\u3002"
 }
+

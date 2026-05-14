@@ -5,14 +5,9 @@ uniform float expansion_size : hint_range(0.0, 0.12) = 0.045;
 uniform float expansion_speed : hint_range(0.0, 3.0) = 0.42;
 uniform float expansion_softness : hint_range(0.0, 1.0) = 0.62;
 
-float expanded_alpha(vec2 uv, float amount) {
+vec2 expanded_uv(vec2 uv, float amount) {
 	vec2 center = vec2(0.5, 0.55);
-	vec2 scaled_uv = center + (uv - center) / (1.0 + amount);
-	if (scaled_uv.x < 0.0 || scaled_uv.x > 1.0 || scaled_uv.y < 0.0 || scaled_uv.y > 1.0) {
-		return 0.0;
-	}
-
-	return texture(TEXTURE, scaled_uv).a;
+	return center + (uv - center) / (1.0 + amount);
 }
 
 void fragment() {
@@ -25,7 +20,12 @@ void fragment() {
 	for (int i = 0; i < 3; i++) {
 		float layer_phase = fract(phase + float(i) / 3.0);
 		float amount = expansion_size * layer_phase;
-		float layer_alpha = max(expanded_alpha(uv, amount) - base_alpha, 0.0);
+		vec2 scaled_uv = expanded_uv(uv, amount);
+		float expanded = 0.0;
+		if (scaled_uv.x >= 0.0 && scaled_uv.x <= 1.0 && scaled_uv.y >= 0.0 && scaled_uv.y <= 1.0) {
+			expanded = texture(TEXTURE, scaled_uv).a;
+		}
+		float layer_alpha = max(expanded - base_alpha, 0.0);
 		float fade = pow(1.0 - layer_phase, 1.0 + expansion_softness);
 		ghost += layer_alpha * fade;
 	}

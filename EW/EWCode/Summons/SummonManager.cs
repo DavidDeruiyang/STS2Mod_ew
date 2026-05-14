@@ -30,6 +30,7 @@ namespace EW.EWCode.Summons
         private const decimal CamouflagePerHLZY = 2m;
 
         public static IReadOnlyCollection<SummonInstance> Active => ActiveSummons.Values;
+        public static int TotalHLZYAttackCount { get; private set; }
 
         public static bool SummonHLZY(SummonSource source = SummonSource.Other, int slotIndex = AnySlot, Creature? summoner = null, CardModel? cardSource = null)
         {
@@ -124,12 +125,24 @@ namespace EW.EWCode.Summons
         public static void ResetForCombatStart()
         {
             ActiveSummons.Clear();
+            TotalHLZYAttackCount = 0;
         }
 
         public static void ClearForCombatEnd(string reason)
         {
             ClearHLZY();
+            TotalHLZYAttackCount = 0;
             MainFile.Logger.Info($"HLZY summons cleared: {reason}.");
+        }
+
+        public static void RecordHLZYAttacks(int count)
+        {
+            if (count <= 0)
+            {
+                return;
+            }
+
+            TotalHLZYAttackCount += count;
         }
 
         public static bool DismissOneHLZY()

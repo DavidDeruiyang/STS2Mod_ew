@@ -1,4 +1,5 @@
 using EW.EWCode.Summons;
+using EW.EWCode.Powers;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
 using System.Collections.Generic;
@@ -31,6 +32,7 @@ namespace EW.EWCode.Patches
 
         public static void Postfix(MethodBase __originalMethod)
         {
+            _ = EWEndCombatHealPower.HealRegisteredAtCombatEnd();
             SummonManager.ClearForCombatEnd($"combat room {__originalMethod.Name}");
         }
     }

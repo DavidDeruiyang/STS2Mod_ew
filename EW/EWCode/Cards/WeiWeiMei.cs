@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EW.EWCode.Cards
 {
-    public class WeiWeiMei() : EWCard(2, CardType.Skill, CardRarity.Uncommon, TargetType.None)
+    public class WeiWeiMei() : EWCard(2, CardType.Skill, CardRarity.Rare, TargetType.None)
     {
         protected override string PortraitFileName => "SL1 04 wei_wei_mei.png";
 

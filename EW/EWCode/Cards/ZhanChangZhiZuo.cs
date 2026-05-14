@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace EW.EWCode.Cards
 {
-    public class ZhanChangZhiZuo() : EWCard(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
+    public class ZhanChangZhiZuo() : EWCard(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
         protected override string PortraitFileName => "AL2 03 zhan_chang_zhi_zuo.png";
         private const string GeneratedCardKey = "GeneratedCard";

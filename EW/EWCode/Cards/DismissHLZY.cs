@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EW.EWCode.Cards
 {
-    public class DismissHLZY() : EWCard(0, CardType.Skill, CardRarity.Rare, TargetType.None)
+    public class DismissHLZY() : EWCard(0, CardType.Skill, CardRarity.None, TargetType.None)
     {
         public override IEnumerable<CardKeyword> CanonicalKeywords => [EWKeywords.SoulShadow];
 

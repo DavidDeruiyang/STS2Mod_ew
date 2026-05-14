@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace EW.EWCode.Cards
@@ -13,7 +14,11 @@ namespace EW.EWCode.Cards
     {
         protected override string PortraitFileName => "AL1 04 fan_wei_da_ji.png";
 
-        protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(14, ValueProp.Move)];
+        protected override IEnumerable<DynamicVar> CanonicalVars =>
+        [
+            new DamageVar(14, ValueProp.Move),
+            new StringVar("UpgradeExtraText", "")
+        ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
@@ -22,23 +27,32 @@ namespace EW.EWCode.Cards
 
             if (IsUpgraded)
             {
+                var targets = LivingEnemiesOf(owner).ToList();
+
                 await DamageCmd.Attack(7m)
                     .FromCard(this)
                     .Targeting(owner)
                     .WithNoAttackerAnim()
                     .Execute(choiceContext);
 
-                await DamageCmd.Attack(7m)
-                    .FromCard(this)
-                    .TargetingAllOpponents(CombatState)
-                    .WithHitFx("vfx/vfx_attack_slash")
-                    .Execute(choiceContext);
+                foreach (var target in targets)
+                {
+                    if (!target.IsAlive || !target.IsHittable)
+                    {
+                        continue;
+                    }
 
-                await DamageCmd.Attack(7m)
-                    .FromCard(this)
-                    .TargetingAllOpponents(CombatState)
-                    .WithHitFx("vfx/vfx_attack_slash")
-                    .Execute(choiceContext);
+                    await DamageCmd.Attack(14m)
+                        .FromCard(this)
+                        .Targeting(target)
+                        .WithHitFx("vfx/vfx_attack_slash")
+                        .Execute(choiceContext);
+
+                    if (target.IsAlive && target.IsHittable)
+                    {
+                        await PlayHLZYAttack(choiceContext, target, this);
+                    }
+                }
 
                 return;
             }
@@ -58,6 +72,7 @@ namespace EW.EWCode.Cards
         protected override void OnUpgrade()
         {
             DynamicVars.Damage.UpgradeValueBy(-7m);
+            ((StringVar)DynamicVars["UpgradeExtraText"]).StringValue = "对所有敌人额外造成 7 点伤害。";
         }
     }
 }

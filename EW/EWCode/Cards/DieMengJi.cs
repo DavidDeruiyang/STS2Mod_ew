@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace EW.EWCode.Cards
 {
-    public class DieMengJi() : EWCard(1, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
+    public class DieMengJi() : EWCard(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
         protected override string PortraitFileName => "AL3 04 die_meng_ji.png";
 

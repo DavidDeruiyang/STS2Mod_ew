@@ -82,6 +82,7 @@ namespace EW.EWCode.Powers
             }
 
             attack.Targeting(Owner)
+                .Unpowered()
                 .WithNoAttackerAnim();
 
             await attack.Execute(choiceContext);

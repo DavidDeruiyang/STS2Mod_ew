@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EW.EWCode.Cards
 {
-    public class JiKeBaoZha() : EWCard(2, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)
+    public class JiKeBaoZha() : EWCard(2, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
         protected override string PortraitFileName => "AL2 05 ji_ke_bao_zha.png";
         public override IEnumerable<CardKeyword> CanonicalKeywords => [EWKeywords.OriginiumBomb];
@@ -31,6 +31,7 @@ namespace EW.EWCode.Cards
             await DamageCmd.Attack(BombUtils.GetBombCardDamage(bombCard))
                 .FromCard(this)
                 .Targeting(target)
+                .Unpowered()
                 .Execute(choiceContext);
             await PlayHLZYAttack(choiceContext, target, this);
         }

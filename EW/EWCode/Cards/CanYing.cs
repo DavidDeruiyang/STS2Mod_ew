@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EW.EWCode.Cards
 {
-    public class CanYing() : EWCard(3, CardType.Power, CardRarity.Rare, TargetType.None)
+    public class CanYing() : EWCard(3, CardType.Power, CardRarity.Uncommon, TargetType.None)
     {
         protected override string PortraitFileName => "PL4 07 can_ying.png";
         public override IEnumerable<CardKeyword> CanonicalKeywords => [EWKeywords.SoulShadow];

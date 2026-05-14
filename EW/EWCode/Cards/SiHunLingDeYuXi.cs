@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EW.EWCode.Cards
 {
-    public class SiHunLingDeYuXi() : EWCard(2, CardType.Power, CardRarity.Uncommon, TargetType.None)
+    public class SiHunLingDeYuXi() : EWCard(2, CardType.Power, CardRarity.Rare, TargetType.None)
     {
         protected override string PortraitFileName => "PL4 01 si_hun_ling_de_yu_xi.png";
         public override IEnumerable<CardKeyword> CanonicalKeywords => [EWKeywords.SoulShadow, EWKeywords.Camouflage];

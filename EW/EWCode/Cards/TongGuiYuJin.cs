@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EW.EWCode.Cards
 {
-    public class TongGuiYuJin() : BombCard(1, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy, 2m, 20m)
+    public class TongGuiYuJin() : BombCard(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy, 2m, 20m)
     {
         protected override string PortraitFileName => "AL2 04 tong_gui_yu_jin.png";
         protected override IEnumerable<DynamicVar> CanonicalVars =>

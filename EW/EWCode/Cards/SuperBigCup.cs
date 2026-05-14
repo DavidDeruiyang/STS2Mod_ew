@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace EW.EWCode.Cards
 {
-    public class SuperBigCup() : EWCard(0, CardType.Skill, CardRarity.Uncommon, TargetType.AnyEnemy)
+    public class SuperBigCup() : EWCard(0, CardType.Skill, CardRarity.Rare, TargetType.AnyEnemy)
     {
         protected override string PortraitFileName => "AL1 05 super_big_cup.png";
         public override IEnumerable<CardKeyword> CanonicalKeywords => [EWKeywords.SoulShadow, EWKeywords.Camouflage, CardKeyword.Exhaust];

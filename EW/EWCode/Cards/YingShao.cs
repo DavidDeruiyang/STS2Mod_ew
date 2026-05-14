@@ -1,9 +1,12 @@
 using BaseLib.Utils;
+using EW.EWCode.Powers;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace EW.EWCode.Cards
@@ -15,10 +18,20 @@ namespace EW.EWCode.Cards
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            if (Owner == null) return;
-            foreach (var enemy in LivingEnemiesOf(Owner.Creature))
+            var owner = Owner?.Creature;
+            if (owner == null) return;
+
+            var targets = LivingEnemiesOf(owner).ToList();
+            foreach (var enemy in targets)
             {
-                await CommonActions.Apply<TemporaryStrengthPower>(choiceContext, enemy, this, -DynamicVars["StrengthLoss"].BaseValue);
+                if (!enemy.IsAlive)
+                {
+                    continue;
+                }
+
+                var amount = DynamicVars["StrengthLoss"].BaseValue;
+                await PowerCmd.Apply<StrengthPower>(enemy, -amount, owner, this);
+                // await PowerCmd.Apply<PiercingWailPower>(enemy, amount, owner, this);
             }
         }
 
