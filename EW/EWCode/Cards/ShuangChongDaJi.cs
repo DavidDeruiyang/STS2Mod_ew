@@ -13,6 +13,7 @@ namespace EW.EWCode.Cards
         protected override string PortraitFileName => "AL4 06 shuang_chong_da_ji.png";
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(6, ValueProp.Move)];
+        protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
