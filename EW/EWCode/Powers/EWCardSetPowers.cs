@@ -12,6 +12,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Rooms;
+using MegaCrit.Sts2.Core.ValueProps;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -136,7 +137,7 @@ namespace EW.EWCode.Powers
         public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             if (Owner == null || cardPlay.Card.Owner?.Creature != Owner || !KazdelCardUtils.IsKazdelCard(cardPlay.Card)) return;
-            await CommonActions.ApplySelf<StrengthPower>(choiceContext, cardPlay.Card, Amount);
+            await CommonActions.ApplySelf<VigorPower>(choiceContext, cardPlay.Card, Amount);
         }
     }
 
@@ -148,7 +149,7 @@ namespace EW.EWCode.Powers
         public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             if (Owner == null || cardPlay.Card.Owner?.Creature != Owner || !KazdelCardUtils.IsKazdelCard(cardPlay.Card)) return;
-            await CommonActions.ApplySelf<DexterityPower>(choiceContext, cardPlay.Card, Amount);
+            await CreatureCmd.GainBlock(Owner, Amount, ValueProp.Unpowered, cardPlay, false);
         }
     }
 
@@ -202,7 +203,7 @@ namespace EW.EWCode.Powers
         {
             if (Owner == null || side != Owner.Side) return;
             var block = Amount * SummonManager.CountHLZY();
-            if (block > 0m) await CreatureCmd.GainBlock(Owner, block, MegaCrit.Sts2.Core.ValueProps.ValueProp.Move, null, false);
+            if (block > 0m) await CreatureCmd.GainBlock(Owner, block, ValueProp.Unpowered, null, false);
         }
     }
 
@@ -282,7 +283,7 @@ namespace EW.EWCode.Powers
                 return 0m;
             }
 
-            return 2m * Amount;
+            return 2m;
         }
     }
 }

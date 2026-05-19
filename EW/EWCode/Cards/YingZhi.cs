@@ -1,4 +1,5 @@
 using BaseLib.Utils;
+using EW.EWCode.Keywords;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
@@ -12,6 +13,8 @@ namespace EW.EWCode.Cards
     public class YingZhi() : EWCard(1, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
     {
         protected override string PortraitFileName => "AL3 02 yin_zhi.png";
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [EWKeywords.KazdelCard];
+
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(6, ValueProp.Move)];
 

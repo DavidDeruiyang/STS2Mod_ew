@@ -1,3 +1,4 @@
+using EW.EWCode.Keywords;
 using EW.EWCode.Powers;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -13,6 +14,8 @@ namespace EW.EWCode.Cards
         private const string UpgradeTextKey = "UpgradeText";
 
         protected override string PortraitFileName => "PL3 01 ka_zi_dai_er_yi_zhang.png";
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [EWKeywords.KazdelCard];
+
         protected override IEnumerable<DynamicVar> CanonicalVars => [new StringVar(UpgradeTextKey, "。")];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

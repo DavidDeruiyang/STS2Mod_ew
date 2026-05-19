@@ -1,4 +1,5 @@
 using BaseLib.Utils;
+using EW.EWCode.Keywords;
 using EW.EWCode.Powers;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -14,6 +15,8 @@ namespace EW.EWCode.Cards
     public class YingShao() : EWCard(3, CardType.Skill, CardRarity.Uncommon, TargetType.None)
     {
         protected override string PortraitFileName => "SL3 03 ying_shao.png";
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [EWKeywords.KazdelCard];
+
         protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("StrengthLoss", 20m)];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -31,7 +34,7 @@ namespace EW.EWCode.Cards
 
                 var amount = DynamicVars["StrengthLoss"].BaseValue;
                 await PowerCmd.Apply<StrengthPower>(enemy, -amount, owner, this);
-                // await PowerCmd.Apply<PiercingWailPower>(enemy, amount, owner, this);
+                await PowerCmd.Apply<EWRestoreStrengthAtTurnEndPower>(enemy, amount, owner, this);
             }
         }
 

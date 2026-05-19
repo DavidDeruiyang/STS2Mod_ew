@@ -1,4 +1,5 @@
 using BaseLib.Utils;
+using EW.EWCode.Keywords;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -14,6 +15,8 @@ namespace EW.EWCode.Cards
     public class DieMengJi() : EWCard(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
         protected override string PortraitFileName => "AL3 04 die_meng_ji.png";
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [EWKeywords.KazdelCard];
+
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(11, ValueProp.Move)];
 

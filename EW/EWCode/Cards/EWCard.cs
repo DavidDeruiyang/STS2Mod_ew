@@ -83,7 +83,8 @@ namespace EW.EWCode.Cards
             PlayerChoiceContext choiceContext,
             CardType cardType,
             bool upgraded = false,
-            int optionCount = 3
+            int optionCount = 3,
+            int? costThisTurn = null
         )
         {
             if (Owner == null || Owner.Creature.CombatState == null)
@@ -102,6 +103,11 @@ namespace EW.EWCode.Cards
                     if (upgraded)
                     {
                         CardCmd.Upgrade(generated, CardPreviewStyle.None);
+                    }
+
+                    if (costThisTurn.HasValue)
+                    {
+                        generated.EnergyCost.SetThisTurn(costThisTurn.Value, false);
                     }
 
                     return generated;

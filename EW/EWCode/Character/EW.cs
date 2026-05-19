@@ -115,7 +115,7 @@ namespace EW.EWCode.Character
         public override Color MapDrawingColor => Color;
         public override Color RemoteTargetingLineColor => Color;
         public override CharacterGender Gender => CharacterGender.Neutral;
-        public override int StartingHp => 99;
+        public override int StartingHp => 75;
 
 
         // all card

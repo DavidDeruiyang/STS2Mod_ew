@@ -62,7 +62,7 @@ namespace EW.EWCode.Powers
                 return;
             }
 
-            await CreatureCmd.GainBlock(Owner, BlockAmount, ValueProp.Move, cardPlay, false);
+            await CreatureCmd.GainBlock(Owner, BlockAmount, ValueProp.Unpowered, cardPlay, false);
         }
     }
 }

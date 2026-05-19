@@ -1,3 +1,4 @@
+using EW.EWCode.Keywords;
 using EW.EWCode.Powers;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -8,12 +9,14 @@ using System.Threading.Tasks;
 
 namespace EW.EWCode.Cards
 {
-    public class YongBingTuanAlpha() : EWCard(2, CardType.Power, CardRarity.Rare, TargetType.None)
+    public class YongBingTuanAlpha() : EWCard(1, CardType.Power, CardRarity.Rare, TargetType.None)
     {
         private const string PowerAmountKey = "PowerAmount";
 
         protected override string PortraitFileName => "PL3 03 yong_bing_tuan_α.png";
-        protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar(PowerAmountKey, 1m)];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [EWKeywords.KazdelCard];
+
+        protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar(PowerAmountKey, 2m)];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {

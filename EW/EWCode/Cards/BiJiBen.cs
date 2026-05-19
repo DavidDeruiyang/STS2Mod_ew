@@ -1,3 +1,4 @@
+using EW.EWCode.Keywords;
 using EW.EWCode.Powers;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -13,6 +14,8 @@ namespace EW.EWCode.Cards
         private const string EnergyKey = "Energy";
 
         protected override string PortraitFileName => "PL3 05 bi_ji_ben.png";
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [EWKeywords.KazdelCard];
+
 
         protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar(EnergyKey, 1m)];
 

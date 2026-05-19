@@ -14,7 +14,7 @@ namespace EW.EWCode.Cards
         {
             if (Owner == null) return;
 
-            await ChooseCardFromEWPoolToHand(choiceContext, CardType.Power, IsUpgraded);
+            await ChooseCardFromEWPoolToHand(choiceContext, CardType.Power, IsUpgraded, costThisTurn: 0);
         }
 
         protected override void OnUpgrade()

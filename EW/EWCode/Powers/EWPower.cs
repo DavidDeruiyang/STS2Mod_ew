@@ -28,8 +28,11 @@ namespace EW.EWCode.Powers
             [nameof(EWHLZYRepeatAttackPower)] = "PIL4 04 hao_li.png",
             [nameof(EWAncestorGuardPower)] = "PIL4 05 xian_zu_de_bi_hu.png",
             [nameof(EWHLZYRoaringHandPower)] = "PIL4 06 hong_ming_zhi_shou.png",
+            [nameof(EWRemoveStrengthAtTurnEndPower)] = "remove_strength_at_turn_end.png",
             [nameof(EWAfterimagePower)] = "PIL4 07 can_ying.png",
             [nameof(EWAfterimageMarkPower)] = "canying_debuff.png",
+            [nameof(EWRestoreStrengthAtTurnEndPower)] = "restore_strength_at_turn_end.png",
+            [nameof(EWNextCardCostUpPower)] = "next_card_cost_up.png",
             [nameof(EWNextTurnEnergyPower)] = "nextTurnEnergy.png",
         };
 

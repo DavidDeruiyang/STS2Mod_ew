@@ -16,5 +16,13 @@ namespace EW.EWCode.Keywords
         [CustomEnum("Camouflage")]
         [KeywordProperties(AutoKeywordPosition.None)]
         public static CardKeyword Camouflage;
+
+        [CustomEnum("Afterimage")]
+        [KeywordProperties(AutoKeywordPosition.None)]
+        public static CardKeyword Afterimage;
+
+        [CustomEnum("KazdelCard")]
+        [KeywordProperties(AutoKeywordPosition.None)]
+        public static CardKeyword KazdelCard;
     }
 }

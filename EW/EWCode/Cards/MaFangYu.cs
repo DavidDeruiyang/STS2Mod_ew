@@ -1,3 +1,4 @@
+using EW.EWCode.Keywords;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -10,6 +11,8 @@ namespace EW.EWCode.Cards
     public class MaFangYu() : EWCard(2, CardType.Skill, CardRarity.Common, TargetType.None)
     {
         protected override string PortraitFileName => "SL3 01 ma_fang_yu.png";
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [EWKeywords.KazdelCard];
+
         protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(14, MegaCrit.Sts2.Core.ValueProps.ValueProp.Move)];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

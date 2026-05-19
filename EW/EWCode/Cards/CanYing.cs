@@ -11,7 +11,7 @@ namespace EW.EWCode.Cards
     public class CanYing() : EWCard(3, CardType.Power, CardRarity.Uncommon, TargetType.None)
     {
         protected override string PortraitFileName => "PL4 07 can_ying.png";
-        public override IEnumerable<CardKeyword> CanonicalKeywords => [EWKeywords.SoulShadow];
+        public override IEnumerable<CardKeyword> CanonicalKeywords => [EWKeywords.KazdelCard, EWKeywords.SoulShadow, EWKeywords.Afterimage];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
