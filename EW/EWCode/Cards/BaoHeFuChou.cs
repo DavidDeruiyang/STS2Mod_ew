@@ -21,7 +21,7 @@ namespace EW.EWCode.Cards
             var target = cardPlay.Target;
             if (target == null) return;
 
-            var x = int.Max(cardPlay.Resources.EnergySpent, EnergyCost.CapturedXValue);
+            var x = GetResolvedEnergyXValue(cardPlay);
             var hits = x * SummonManager.CountHLZY();
             if (hits > 0)
             {

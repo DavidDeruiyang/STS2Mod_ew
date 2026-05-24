@@ -14,7 +14,6 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.CommonUi;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -67,6 +66,17 @@ namespace EW.EWCode.Cards
             return owner.GetPowerInstances<T>().Any();
         }
 
+        protected int GetResolvedEnergyXValue(CardPlay cardPlay)
+        {
+            return int.Max(
+                ResolveEnergyXValue(),
+                int.Max(
+                    EnergyCost.CapturedXValue,
+                    int.Max(cardPlay.Resources.EnergySpent, cardPlay.Resources.EnergyValue)
+                )
+            );
+        }
+
         protected static async Task AddCardsToHand<T>(Player player, int amount, bool upgraded = false, int costDeltaThisTurn = 0)
             where T : CardModel
         {
@@ -92,10 +102,13 @@ namespace EW.EWCode.Cards
                 return;
             }
 
-            var options = ModelDb.CardPool<EWCardPool>()
+            var candidates = ModelDb.CardPool<EWCardPool>()
                 .AllCards
                 .Where(card => card.Type == cardType && card.GetType() != GetType())
-                .OrderBy(_ => Guid.NewGuid())
+                .ToList();
+            Owner.RunState.Rng.CombatCardSelection.Shuffle(candidates);
+
+            var options = candidates
                 .Take(optionCount)
                 .Select(card =>
                 {

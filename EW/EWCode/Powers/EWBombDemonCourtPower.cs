@@ -10,7 +10,7 @@ namespace EW.EWCode.Powers
         public const string CountdownReductionKey = "CountdownReduction";
 
         public override PowerType Type => PowerType.Buff;
-        public override PowerStackType StackType => PowerStackType.Counter;
+        public override PowerStackType StackType => PowerStackType.Single;
 
         public decimal CountdownReduction => DynamicVars[CountdownReductionKey].BaseValue;
 

@@ -35,15 +35,7 @@ namespace EW.EWCode.Cards
                 return;
             }
 
-            var count = int.Max(
-                cardPlay.Resources.EnergySpent,
-                cardPlay.Resources.EnergyValue
-            );
-
-            if (count <= 0)
-            {
-                count = EnergyCost.CapturedXValue;
-            }
+            var count = GetResolvedEnergyXValue(cardPlay);
 
             for (var i = 0; i < count; i++)
             {

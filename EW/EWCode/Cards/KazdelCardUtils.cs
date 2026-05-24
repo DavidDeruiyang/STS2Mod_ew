@@ -4,7 +4,6 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.CommonUi;
-using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -26,11 +25,13 @@ namespace EW.EWCode.Cards
                 return;
             }
 
-            var card = ModelDb.CardPool<EWCardPool>()
+            var candidates = ModelDb.CardPool<EWCardPool>()
                 .AllCards
                 .Where(IsKazdelCard)
-                .OrderBy(_ => Guid.NewGuid())
-                .FirstOrDefault();
+                .ToList();
+            player.RunState.Rng.CombatCardSelection.Shuffle(candidates);
+
+            var card = candidates.FirstOrDefault();
             if (card == null)
             {
                 return;

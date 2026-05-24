@@ -88,7 +88,10 @@ namespace EW.EWCode.Cards
 
         public static Creature? RandomLivingEnemyOf(Creature owner)
         {
-            return LivingEnemiesOf(owner).OrderBy(_ => Guid.NewGuid()).FirstOrDefault();
+            var enemies = LivingEnemiesOf(owner).ToList();
+            return enemies.Count == 0
+                ? null
+                : owner.CombatState!.RunState.Rng.CombatTargets.NextItem(enemies);
         }
 
         public static bool IsBombCard(CardModel card)

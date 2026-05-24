@@ -11,9 +11,9 @@ const HLZY_NODE_PREFIX := "HLZYCompanion"
 const HLZY_SCALE := Vector2(1.25, 1.25)
 const PENDING_ABANDON_DEATH_UNTIL_TICKS := "ew/pending_abandon_death_until_ticks"
 const HLZY_POSITIONS := [
-	Vector2(-713, -630),
-	Vector2(-760, -695),
-	Vector2(-965, -600),
+	Vector2(184, -79),
+	Vector2(137, -144),
+	Vector2(-68, -49),
 ]
 
 var death_started := false
