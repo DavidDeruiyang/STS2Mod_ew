@@ -174,22 +174,22 @@ namespace EW.EWCode.Cards
             decimal? sourceHitCount = null
         )
         {
-            var hitCount = SummonManager.CountHLZY();
-            if (target == null || hitCount <= 0)
-            {
-                return;
-            }
-
-            var mainDamage = GetCardTotalDamage(cardSource, sourceHitCount);
             var owner = cardSource.Owner?.Creature;
             if (owner == null)
             {
                 return;
             }
 
+            var hitCount = SummonManager.CountHLZY(owner);
+            if (target == null || hitCount <= 0)
+            {
+                return;
+            }
+
+            var mainDamage = GetCardTotalDamage(cardSource, sourceHitCount);
             if (!target.IsDead)
             {
-                HLZYAttackVfx.PlayFromAllHLZYTo(target);
+                HLZYAttackVfx.PlayFromAllHLZYTo(owner, target);
 
                 var repeatPower = owner.GetPowerInstances<EWHLZYRepeatAttackPower>().FirstOrDefault();
                 var hlzyDamage = repeatPower == null
@@ -204,7 +204,7 @@ namespace EW.EWCode.Cards
                     .WithHitCount(hitCount)
                     .Execute(choiceContext);
 
-                SummonManager.RecordHLZYAttacks(hitCount);
+                SummonManager.RecordHLZYAttacks(owner, hitCount);
                 if (cardSource.Owner != null)
                 {
                     ZuZongLeiJi.RefreshDamageForPlayer(cardSource.Owner);

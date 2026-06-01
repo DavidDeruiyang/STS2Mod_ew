@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EW.EWCode.Cards
 {
-    public class BiJiBen() : EWCard(2, CardType.Power, CardRarity.Uncommon, TargetType.None)
+    public class BiJiBen() : EWCard(1, CardType.Power, CardRarity.Uncommon, TargetType.None)
     {
         private const string EnergyKey = "Energy";
 

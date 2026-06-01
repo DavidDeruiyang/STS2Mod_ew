@@ -20,7 +20,10 @@ namespace EW.EWCode.Cards
             var target = cardPlay.Target;
             if (target == null) return;
 
-            var count = SummonManager.CountHLZY();
+            var owner = Owner?.Creature;
+            if (owner == null) return;
+
+            var count = SummonManager.CountHLZY(owner);
             if (count > 0)
             {
                 await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
@@ -31,7 +34,7 @@ namespace EW.EWCode.Cards
             }
 
             await PlayHLZYAttack(choiceContext, target, this, count);
-            SummonManager.ClearHLZY();
+            SummonManager.ClearHLZY(owner);
         }
 
         protected override void OnUpgrade() => DynamicVars.Damage.UpgradeValueBy(3m);

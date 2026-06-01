@@ -18,7 +18,7 @@ namespace EW.EWCode.Cards
 
         protected override IEnumerable<DynamicVar> CanonicalVars =>
         [
-            new DamageVar(12, ValueProp.Move)
+            new DamageVar(11, ValueProp.Move)
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -34,7 +34,7 @@ namespace EW.EWCode.Cards
 
         protected override void OnUpgrade()
         {
-            DynamicVars.Damage.UpgradeValueBy(4m);
+            DynamicVars.Damage.UpgradeValueBy(3m);
         }
     }
 }

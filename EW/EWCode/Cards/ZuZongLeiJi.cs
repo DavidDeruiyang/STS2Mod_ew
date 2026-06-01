@@ -42,7 +42,7 @@ namespace EW.EWCode.Cards
 
         private void RefreshDamage()
         {
-            DynamicVars.Damage.BaseValue = BaseDamage + SummonManager.TotalHLZYAttackCount * DynamicVars[DamagePerAttackKey].BaseValue;
+            DynamicVars.Damage.BaseValue = BaseDamage + SummonManager.GetTotalHLZYAttackCount(Owner?.Creature) * DynamicVars[DamagePerAttackKey].BaseValue;
         }
 
         public static void RefreshDamageForPlayer(Player player)

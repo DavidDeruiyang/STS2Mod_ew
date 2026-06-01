@@ -6,7 +6,6 @@ using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.CommonUi;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -26,7 +25,7 @@ namespace EW.EWCode.Cards
         )
         {
             turns = AdjustTurns(applier, turns);
-            damage = AdjustDamage(applier, turns, damage);
+            damage = AdjustDamage(applier, damage);
 
             var bomb = await PowerCmd.Apply<EWTimedBombPower>(target, turns, applier, cardSource);
             bomb?.SetBomb(damage, cardSource);
@@ -106,16 +105,14 @@ namespace EW.EWCode.Cards
 
         private static decimal AdjustTurns(Creature applier, decimal turns)
         {
-            var reduction = applier.GetPowerInstances<EWBombDemonCourtPower>()
-                .Sum(power => power.CountdownReduction);
-            return Math.Max(1m, turns - reduction);
+            return applier.GetPowerInstances<EWBombDemonCourtPower>().Any()
+                ? 1m
+                : turns;
         }
 
-        private static decimal AdjustDamage(Creature applier, decimal turns, decimal damage)
+        private static decimal AdjustDamage(Creature applier, decimal damage)
         {
-            var bonus = turns == 3m
-                ? applier.GetPowerInstances<EWThreeTwoOnePower>().Sum(power => power.DamageBonus)
-                : 0m;
+            var bonus = applier.GetPowerInstances<EWThreeTwoOnePower>().Sum(power => power.DamageBonus);
             return damage + bonus;
         }
 

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EW.EWCode.Cards
 {
-    public class QiBao() : EWCard(3, CardType.Skill, CardRarity.Rare, TargetType.None)
+    public class QiBao() : EWCard(2, CardType.Skill, CardRarity.Uncommon, TargetType.None)
     {
         protected override string PortraitFileName => "SL2 03 qi_bao.png";
         public override IEnumerable<CardKeyword> CanonicalKeywords => [EWKeywords.OriginiumBomb];

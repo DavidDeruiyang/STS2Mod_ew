@@ -17,7 +17,7 @@ namespace EW.EWCode.Cards
         {
             if (Owner != null)
             {
-                await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block.BaseValue * SummonManager.CountHLZY(), MegaCrit.Sts2.Core.ValueProps.ValueProp.Move, cardPlay, false);
+                await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block.BaseValue * SummonManager.CountHLZY(Owner.Creature), MegaCrit.Sts2.Core.ValueProps.ValueProp.Move, cardPlay, false);
             }
         }
 

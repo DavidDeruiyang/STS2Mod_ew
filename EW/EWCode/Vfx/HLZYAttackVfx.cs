@@ -18,10 +18,15 @@ namespace EW.EWCode.Vfx
 
         public static void PlayFromAllHLZYTo(Creature? target)
         {
+            PlayFromAllHLZYTo(null, target);
+        }
+
+        public static void PlayFromAllHLZYTo(Creature? owner, Creature? target)
+        {
             try
             {
                 MainFile.Logger.Info($"HLZY attack VFX request received. target={(target == null ? "null" : target.LogName)}.");
-                PlayFromAllHLZYToInternal(target);
+                PlayFromAllHLZYToInternal(owner, target);
             }
             catch (Exception ex)
             {
@@ -29,7 +34,7 @@ namespace EW.EWCode.Vfx
             }
         }
 
-        private static void PlayFromAllHLZYToInternal(Creature? target)
+        private static void PlayFromAllHLZYToInternal(Creature? owner, Creature? target)
         {
             var room = NCombatRoom.Instance;
             if (room == null || target == null)
@@ -51,7 +56,14 @@ namespace EW.EWCode.Vfx
             {
                 targetPosition = targetNode.Body?.GlobalPosition ?? targetNode.GlobalPosition;
             }
-            var summons = FindHLZYSummonNodes(room).ToList();
+            Node? summonRoot = owner == null ? room : room.GetCreatureNode(owner);
+            if (summonRoot == null)
+            {
+                MainFile.Logger.Info("HLZY attack VFX skipped: owner node was not found.");
+                return;
+            }
+
+            var summons = FindHLZYSummonNodes(summonRoot).ToList();
             MainFile.Logger.Info($"HLZY attack VFX: summons={summons.Count}, target={targetPosition}.");
 
             foreach (var hlzy in summons)

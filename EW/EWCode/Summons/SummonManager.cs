@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -23,32 +24,29 @@ namespace EW.EWCode.Summons
         private static readonly StringName ClearHlzyMethod = "ew_clear_hlzy";
         private static readonly StringName HlzyCountMethod = "ew_hlzy_count";
         private static readonly Dictionary<int, SummonInstance> ActiveSummons = [];
+        private static readonly Dictionary<Creature, Dictionary<int, SummonInstance>> ActiveSummonsByOwner = [];
+        private static readonly Dictionary<Creature, int> TotalHLZYAttackCountByOwner = [];
 
         public const int AnySlot = -1;
         public const int MaxSummons = 3;
         private const int DefaultReadyRetryFrames = 120;
         private const decimal CamouflagePerHLZY = 2m;
 
-        public static IReadOnlyCollection<SummonInstance> Active => ActiveSummons.Values;
-        public static int TotalHLZYAttackCount { get; private set; }
+        public static IReadOnlyCollection<SummonInstance> Active => ActiveSummons.Values
+            .Concat(ActiveSummonsByOwner.Values.SelectMany(summons => summons.Values))
+            .ToList();
+        public static int TotalHLZYAttackCount => TotalHLZYAttackCountByOwner.Values.Sum();
 
         public static bool SummonHLZY(SummonSource source = SummonSource.Other, int slotIndex = AnySlot, Creature? summoner = null, CardModel? cardSource = null)
         {
-            var summon = ReserveHLZY(source, slotIndex);
+            var summon = ReserveHLZY(source, slotIndex, summoner);
             if (summon == null)
             {
                 return false;
             }
 
-            if (!TryFindCombatVisualMethod(SpawnHlzyMethod, out var node))
-            {
-                ActiveSummons.Remove(summon.SlotIndex);
-                MainFile.Logger.Info($"HLZY summon skipped from {source}: combat visual spawn method was not found.");
-                return false;
-            }
-
-            node.Call(SpawnHlzyMethod, summon.SlotIndex);
-            _ = ApplyCamouflage(summoner, cardSource);
+            _ = ApplyCamouflageSafely(summoner, cardSource);
+            _ = SpawnVisualWhenReadySafely(source, summoner, summon, DefaultReadyRetryFrames);
             return true;
         }
 
@@ -60,19 +58,60 @@ namespace EW.EWCode.Summons
             int retryFrames = DefaultReadyRetryFrames
         )
         {
-            var summon = ReserveHLZY(source, slotIndex);
+            var summon = ReserveHLZY(source, slotIndex, summoner);
             if (summon == null)
             {
                 return false;
             }
 
+            await ApplyCamouflageSafely(summoner, cardSource);
+            _ = SpawnVisualWhenReadySafely(source, summoner, summon, retryFrames);
+            return true;
+        }
+
+        private static async Task SpawnVisualWhenReadySafely(
+            SummonSource source,
+            Creature? summoner,
+            SummonInstance summon,
+            int retryFrames
+        )
+        {
+            try
+            {
+                await SpawnVisualWhenReady(source, summoner, summon, retryFrames);
+            }
+            catch (Exception ex)
+            {
+                MainFile.Logger.Info($"HLZY visual spawn skipped from {source} after error: {ex.Message}");
+            }
+        }
+
+        private static async Task SpawnVisualWhenReady(
+            SummonSource source,
+            Creature? summoner,
+            SummonInstance summon,
+            int retryFrames
+        )
+        {
             for (var attempt = 0; attempt <= retryFrames; attempt++)
             {
-                if (TryFindCombatVisualMethod(SpawnHlzyMethod, out var node))
+                if (!IsActiveSummon(summoner, summon))
                 {
-                    node.Call(SpawnHlzyMethod, summon.SlotIndex);
-                    await ApplyCamouflage(summoner, cardSource);
-                    return true;
+                    return;
+                }
+
+                if (TryFindCombatVisualMethod(SpawnHlzyMethod, summoner, out var node))
+                {
+                    try
+                    {
+                        node.Call(SpawnHlzyMethod, summon.SlotIndex);
+                    }
+                    catch (Exception ex)
+                    {
+                        MainFile.Logger.Info($"HLZY visual spawn skipped from {source} after error: {ex.Message}");
+                    }
+
+                    return;
                 }
 
                 var room = NCombatRoom.Instance;
@@ -85,9 +124,19 @@ namespace EW.EWCode.Summons
                 await room.ToSignal(room.GetTree(), SceneTree.SignalName.ProcessFrame);
             }
 
-            ActiveSummons.Remove(summon.SlotIndex);
-            MainFile.Logger.Info($"HLZY summon skipped from {source}: combat visual spawn method was not found after waiting.");
-            return false;
+            MainFile.Logger.Info($"HLZY visual spawn skipped from {source}: combat visual spawn method was not found after waiting.");
+        }
+
+        private static async Task ApplyCamouflageSafely(Creature? summoner, CardModel? cardSource)
+        {
+            try
+            {
+                await ApplyCamouflage(summoner, cardSource);
+            }
+            catch (Exception ex)
+            {
+                MainFile.Logger.Info($"HLZY camouflage application skipped after error: {ex.Message}");
+            }
         }
 
         private static async Task ApplyCamouflage(Creature? summoner, CardModel? cardSource)
@@ -107,16 +156,44 @@ namespace EW.EWCode.Summons
 
         public static void ClearHLZY(int slotIndex = AnySlot)
         {
+            ClearHLZYFor(null, slotIndex);
+        }
+
+        public static void ClearHLZY(Creature owner, int slotIndex = AnySlot)
+        {
+            ClearHLZYFor(owner, slotIndex);
+        }
+
+        private static void ClearHLZYFor(Creature? owner, int slotIndex)
+        {
+            var activeSummons = GetActiveSummons(owner, create: false);
             if (slotIndex == AnySlot)
             {
-                ActiveSummons.Clear();
+                activeSummons?.Clear();
+                if (owner == null)
+                {
+                    foreach (var summons in ActiveSummonsByOwner.Values)
+                    {
+                        summons.Clear();
+                    }
+                }
             }
             else
             {
-                ActiveSummons.Remove(slotIndex);
+                activeSummons?.Remove(slotIndex);
             }
 
-            if (TryFindCombatVisualMethod(ClearHlzyMethod, out var node))
+            if (owner == null)
+            {
+                foreach (var visualNode in FindCombatVisualMethods(ClearHlzyMethod))
+                {
+                    visualNode.Call(ClearHlzyMethod, slotIndex);
+                }
+
+                return;
+            }
+
+            if (TryFindCombatVisualMethod(ClearHlzyMethod, owner, out var node))
             {
                 node.Call(ClearHlzyMethod, slotIndex);
             }
@@ -125,29 +202,63 @@ namespace EW.EWCode.Summons
         public static void ResetForCombatStart()
         {
             ActiveSummons.Clear();
-            TotalHLZYAttackCount = 0;
+            ActiveSummonsByOwner.Clear();
+            TotalHLZYAttackCountByOwner.Clear();
+        }
+
+        public static void ResetForCombatStart(Creature owner)
+        {
+            ActiveSummonsByOwner.Remove(owner);
+            TotalHLZYAttackCountByOwner.Remove(owner);
         }
 
         public static void ClearForCombatEnd(string reason)
         {
             ClearHLZY();
-            TotalHLZYAttackCount = 0;
+            ActiveSummonsByOwner.Clear();
+            TotalHLZYAttackCountByOwner.Clear();
             MainFile.Logger.Info($"HLZY summons cleared: {reason}.");
         }
 
         public static void RecordHLZYAttacks(int count)
+        {
+            RecordHLZYAttacks(null, count);
+        }
+
+        public static void RecordHLZYAttacks(Creature? owner, int count)
         {
             if (count <= 0)
             {
                 return;
             }
 
-            TotalHLZYAttackCount += count;
+            if (owner == null)
+            {
+                return;
+            }
+
+            TotalHLZYAttackCountByOwner[owner] = GetTotalHLZYAttackCount(owner) + count;
         }
 
         public static bool DismissOneHLZY()
         {
-            var summon = ActiveSummons.Values
+            return DismissOneHLZYFor(null);
+        }
+
+        public static bool DismissOneHLZY(Creature owner)
+        {
+            return DismissOneHLZYFor(owner);
+        }
+
+        private static bool DismissOneHLZYFor(Creature? owner)
+        {
+            var activeSummons = GetActiveSummons(owner, create: false);
+            if (activeSummons == null)
+            {
+                return false;
+            }
+
+            var summon = activeSummons.Values
                 .Where(summon => summon.Id == SummonInstance.HLZYId && summon.IsAlive)
                 .OrderByDescending(summon => summon.SlotIndex)
                 .FirstOrDefault();
@@ -157,13 +268,29 @@ namespace EW.EWCode.Summons
                 return false;
             }
 
-            ClearHLZY(summon.SlotIndex);
+            ClearHLZYFor(owner, summon.SlotIndex);
             return true;
         }
 
         public static int CountHLZY()
         {
-            return ActiveSummons.Values.Count(summon =>
+            return CountHLZYFor(null);
+        }
+
+        public static int CountHLZY(Creature owner)
+        {
+            return CountHLZYFor(owner);
+        }
+
+        private static int CountHLZYFor(Creature? owner)
+        {
+            var activeSummons = GetActiveSummons(owner, create: false);
+            if (activeSummons == null)
+            {
+                return 0;
+            }
+
+            return activeSummons.Values.Count(summon =>
                 summon.Id == SummonInstance.HLZYId &&
                 summon.IsAlive
             );
@@ -172,6 +299,7 @@ namespace EW.EWCode.Summons
         public static IReadOnlyList<SummonInstance> GetLivingSummons()
         {
             return ActiveSummons.Values
+                .Concat(ActiveSummonsByOwner.Values.SelectMany(summons => summons.Values))
                 .Where(summon => summon.IsAlive)
                 .OrderBy(summon => summon.SlotIndex)
                 .ToList();
@@ -180,6 +308,7 @@ namespace EW.EWCode.Summons
         public static int GetProvidedEffectAmount(SummonEffectKind kind)
         {
             return ActiveSummons.Values
+                .Concat(ActiveSummonsByOwner.Values.SelectMany(summons => summons.Values))
                 .Where(summon => summon.IsAlive)
                 .SelectMany(summon => summon.ProvidedEffects)
                 .Where(effect => effect.Kind == kind)
@@ -203,9 +332,17 @@ namespace EW.EWCode.Summons
             return true;
         }
 
-        private static SummonInstance? ReserveHLZY(SummonSource source, int requestedSlot)
+        public static int GetTotalHLZYAttackCount(Creature? owner)
         {
-            var slotIndex = ResolveSlot(requestedSlot);
+            return owner != null && TotalHLZYAttackCountByOwner.TryGetValue(owner, out var count)
+                ? count
+                : 0;
+        }
+
+        private static SummonInstance? ReserveHLZY(SummonSource source, int requestedSlot, Creature? owner)
+        {
+            var activeSummons = GetActiveSummons(owner, create: true)!;
+            var slotIndex = ResolveSlot(activeSummons, requestedSlot);
             if (slotIndex < 0)
             {
                 MainFile.Logger.Info($"HLZY summon skipped from {source}: no free summon slot.");
@@ -219,22 +356,22 @@ namespace EW.EWCode.Summons
                 MaxBlood = 1
             };
 
-            ActiveSummons[slotIndex] = summon;
+            activeSummons[slotIndex] = summon;
             return summon;
         }
 
-        private static int ResolveSlot(int requestedSlot)
+        private static int ResolveSlot(Dictionary<int, SummonInstance> activeSummons, int requestedSlot)
         {
             if (requestedSlot != AnySlot)
             {
-                return requestedSlot >= 0 && requestedSlot < MaxSummons && !ActiveSummons.ContainsKey(requestedSlot)
+                return requestedSlot >= 0 && requestedSlot < MaxSummons && !activeSummons.ContainsKey(requestedSlot)
                     ? requestedSlot
                     : -1;
             }
 
             for (var slotIndex = 0; slotIndex < MaxSummons; slotIndex++)
             {
-                if (!ActiveSummons.ContainsKey(slotIndex))
+                if (!activeSummons.ContainsKey(slotIndex))
                 {
                     return slotIndex;
                 }
@@ -243,7 +380,29 @@ namespace EW.EWCode.Summons
             return -1;
         }
 
-        private static bool TryFindCombatVisualMethod(StringName methodName, out Node node)
+        private static bool IsActiveSummon(Creature? owner, SummonInstance summon)
+        {
+            return GetActiveSummons(owner, create: false)?.TryGetValue(summon.SlotIndex, out var activeSummon) == true
+                && ReferenceEquals(activeSummon, summon);
+        }
+
+        private static Dictionary<int, SummonInstance>? GetActiveSummons(Creature? owner, bool create)
+        {
+            if (owner == null)
+            {
+                return ActiveSummons;
+            }
+
+            if (!ActiveSummonsByOwner.TryGetValue(owner, out var summons) && create)
+            {
+                summons = [];
+                ActiveSummonsByOwner[owner] = summons;
+            }
+
+            return summons;
+        }
+
+        private static bool TryFindCombatVisualMethod(StringName methodName, Creature? owner, out Node node)
         {
             node = null!;
 
@@ -253,7 +412,21 @@ namespace EW.EWCode.Summons
                 return false;
             }
 
+            if (owner != null)
+            {
+                var creatureNode = room.GetCreatureNode(owner);
+                return creatureNode != null && TryFindMethod(creatureNode, methodName, out node);
+            }
+
             return TryFindMethod(room, methodName, out node);
+        }
+
+        private static IEnumerable<Node> FindCombatVisualMethods(StringName methodName)
+        {
+            var room = NCombatRoom.Instance;
+            return room == null
+                ? []
+                : FindMethodNodes(room, methodName).ToList();
         }
 
         private static bool TryFindMethod(Node current, StringName methodName, out Node node)
@@ -274,6 +447,27 @@ namespace EW.EWCode.Summons
 
             node = null!;
             return false;
+        }
+
+        private static IEnumerable<Node> FindMethodNodes(Node current, StringName methodName)
+        {
+            if (current.HasMethod(methodName))
+            {
+                yield return current;
+            }
+
+            foreach (var child in current.GetChildren())
+            {
+                if (child is not Node childNode)
+                {
+                    continue;
+                }
+
+                foreach (var node in FindMethodNodes(childNode, methodName))
+                {
+                    yield return node;
+                }
+            }
         }
     }
 }

@@ -20,7 +20,10 @@ namespace EW.EWCode.Cards
             var target = cardPlay.Target;
             if (target == null) return;
 
-            var count = SummonManager.CountHLZY();
+            var owner = Owner?.Creature;
+            if (owner == null) return;
+
+            var count = SummonManager.CountHLZY(owner);
             if (count > 0)
             {
                 await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this).Targeting(target).WithHitCount(count).Execute(choiceContext);

@@ -1,8 +1,10 @@
 using BaseLib.Utils;
 using EW.EWCode.Keywords;
+using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.ValueProps;
@@ -18,7 +20,7 @@ namespace EW.EWCode.Cards
         public override IEnumerable<CardKeyword> CanonicalKeywords => [EWKeywords.KazdelCard];
 
 
-        protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(11, ValueProp.Move)];
+        protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(9, ValueProp.Move)];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
@@ -26,10 +28,36 @@ namespace EW.EWCode.Cards
             await CommonActions.CardAttack(this, cardPlay.Target, vfx: "vfx/vfx_attack_slash").Execute(choiceContext);
             await PlayHLZYAttack(choiceContext, cardPlay.Target, this);
 
-            var cardToExhaust = CardPile.GetCards(Owner, [PileType.Hand]).FirstOrDefault(card => card != this);
-            if (cardToExhaust != null)
+            var selectableCards = CardPile.GetCards(Owner, [PileType.Hand])
+                .Where(card => card != this)
+                .ToList();
+
+            if (selectableCards.Count == 0)
             {
-                await CardCmd.Exhaust(choiceContext, cardToExhaust, true, false);
+                return;
+            }
+
+            var prefs = new CardSelectorPrefs(
+                new LocString("cards", "EW-DIE_MENG_JI.prompt"),
+                minCount: 1,
+                maxCount: 1
+            )
+            {
+                Cancelable = false,
+                RequireManualConfirmation = true
+            };
+
+            var selectedCards = await CardSelectCmd.FromHand(
+                choiceContext,
+                Owner,
+                prefs,
+                card => card != this,
+                this
+            );
+
+            foreach (var selectedCard in selectedCards)
+            {
+                await CardCmd.Exhaust(choiceContext, selectedCard, true, false);
             }
         }
 

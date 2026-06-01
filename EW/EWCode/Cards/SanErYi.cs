@@ -15,7 +15,7 @@ namespace EW.EWCode.Cards
         protected override string PortraitFileName => "PL2 02 3_2_1.png";
         protected override IEnumerable<DynamicVar> CanonicalVars =>
         [
-            new DynamicVar(EWThreeTwoOnePower.DamageBonusKey, 4m)
+            new DynamicVar(EWThreeTwoOnePower.DamageBonusKey, 5m)
         ];
 
         public override IEnumerable<CardKeyword> CanonicalKeywords => [EWKeywords.OriginiumBomb];
@@ -38,7 +38,7 @@ namespace EW.EWCode.Cards
 
         protected override void OnUpgrade()
         {
-            DynamicVars[EWThreeTwoOnePower.DamageBonusKey].UpgradeValueBy(2m);
+            DynamicVars[EWThreeTwoOnePower.DamageBonusKey].UpgradeValueBy(5m);
         }
     }
 }

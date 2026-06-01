@@ -21,8 +21,11 @@ namespace EW.EWCode.Cards
             var target = cardPlay.Target;
             if (target == null) return;
 
+            var owner = Owner?.Creature;
+            if (owner == null) return;
+
             var x = GetResolvedEnergyXValue(cardPlay);
-            var hits = x * SummonManager.CountHLZY();
+            var hits = x * SummonManager.CountHLZY(owner);
             if (hits > 0)
             {
                 await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this).Targeting(target).WithHitCount(hits).Execute(choiceContext);

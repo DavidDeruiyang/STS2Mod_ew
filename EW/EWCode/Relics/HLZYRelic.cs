@@ -30,9 +30,15 @@ namespace EW.EWCode.Relics
             _dealersThatConsumedHLZYThisTurn.Clear();
             _hasSeenFirstPlayerTurnStart = false;
 
-            SummonManager.ResetForCombatStart();
+            var owner = Owner?.Creature;
+            if (owner == null)
+            {
+                return Task.CompletedTask;
+            }
 
-            if (SummonManager.CountHLZY() == 0)
+            SummonManager.ResetForCombatStart(owner);
+
+            if (SummonManager.CountHLZY(owner) == 0)
             {
                 _ = SummonManager.SummonHLZYWhenReady(
                     SummonSource.Relic,
@@ -98,7 +104,7 @@ namespace EW.EWCode.Relics
                 return Task.CompletedTask;
             }
 
-            if (SummonManager.DismissOneHLZY())
+            if (SummonManager.DismissOneHLZY(owner))
             {
                 _dealersThatConsumedHLZYThisTurn.Add(dealer);
                 MainFile.Logger.Info($"[EW] HLZY dismissed after unblocked damage from {dealer.LogName}: {result.UnblockedDamage}.");

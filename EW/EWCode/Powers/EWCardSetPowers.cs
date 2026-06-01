@@ -177,7 +177,7 @@ namespace EW.EWCode.Powers
 
         public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
         {
-            if (Owner == null || player.Creature != Owner || SummonManager.CountHLZY() <= 0) return;
+            if (Owner == null || player.Creature != Owner || SummonManager.CountHLZY(Owner) <= 0) return;
             await PowerCmd.Apply<EWCamouflagePower>(Owner, Amount, Owner, null);
         }
     }
@@ -189,7 +189,7 @@ namespace EW.EWCode.Powers
 
         public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
         {
-            if (Owner == null || player.Creature != Owner || SummonManager.CountHLZY() <= 0) return;
+            if (Owner == null || player.Creature != Owner || SummonManager.CountHLZY(Owner) <= 0) return;
             await PlayerCmd.GainEnergy(Amount, player);
         }
     }
@@ -202,7 +202,7 @@ namespace EW.EWCode.Powers
         public override async Task BeforeTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
         {
             if (Owner == null || side != Owner.Side) return;
-            var block = Amount * SummonManager.CountHLZY();
+            var block = Amount * SummonManager.CountHLZY(Owner);
             if (block > 0m) await CreatureCmd.GainBlock(Owner, block, ValueProp.Unpowered, null, false);
         }
     }

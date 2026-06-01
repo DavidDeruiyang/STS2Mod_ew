@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace EW.EWCode.Cards
 {
-    public class SuperBigBoom() : BombCard(1, CardType.Skill, CardRarity.Uncommon, TargetType.AnyEnemy, 3m, 30m)
+    public class SuperBigBoom() : BombCard(1, CardType.Skill, CardRarity.Uncommon, TargetType.AnyEnemy, 3m, 40m)
     {
         protected override string PortraitFileName => "SL2 05 super_big_boom.png";
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

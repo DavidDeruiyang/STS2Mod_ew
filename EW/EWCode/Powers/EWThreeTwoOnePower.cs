@@ -17,7 +17,7 @@ namespace EW.EWCode.Powers
 
         protected override IEnumerable<DynamicVar> CanonicalVars =>
         [
-            new DynamicVar(DamageBonusKey, 4m)
+            new DynamicVar(DamageBonusKey, 5m)
         ];
     }
 }
